@@ -1,0 +1,32 @@
+/* DEPENDENCIES */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NAV */
+@layer components {
+  nav {
+    @apply w-full flex flex-wrap items-end justify-between px-6 py-4 md:px-10 lg:px-12;
+  }
+
+  .page-title {
+    @apply text-3xl md:text-4xl whitespace-nowrap;
+  }
+
+  /* HAMBURGER NAV */
+  #ham-nav {
+    @apply block md:hidden;
+  }
+
+  #ham-nav-button {
+  }
+
+  /* FULL SIZE NAV */
+  #main-nav {
+    @apply hidden md:block;
+  }
+
+  #main-nav-links {
+    @apply flex flex-col lg:flex-row lg:gap-8;
+  }
+}

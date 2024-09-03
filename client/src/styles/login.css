@@ -1,0 +1,52 @@
+/* DEPENDENCIES */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LOGIN */
+@layer components {
+  #login-page {
+    @apply bg-white flex items-center justify-center px-4 mt-10;
+  }
+
+  #login-form {
+    @apply w-full max-w-md;
+  }
+
+  #login-form-inner {
+    @apply bg-white p-6 rounded-lg shadow-2xl mt-4;
+  }
+
+  #form-greeting {
+    @apply text-3xl text-center;
+  }
+
+  #form-title {
+    @apply text-xl font-bold w-full my-2;
+  }
+
+  #form-error {
+    @apply bg-red-100 border-l-4 border-red-500 text-red-700 p-3 mb-4 text-sm;
+  }
+
+  .login-label {
+    @apply flex flex-col gap-2 w-full mb-6;
+  }
+
+  .login-input {
+    @apply w-full px-3 py-2 border-2 border-gray-300 rounded-lg;
+  }
+
+  #login-or-signup-div {
+    @apply flex justify-center;
+  }
+
+  #login-or-signup {
+    @apply bg-black px-8 py-3 rounded-lg text-white font-bold border border-transparent;
+  }
+}
+
+#login-page {
+  min-height: calc(100vh - 200px);
+  margin: 0 auto;
+}

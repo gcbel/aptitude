@@ -1,0 +1,23 @@
+/* DEPENDENCIES */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FOOTER */
+@layer components {
+  .footer {
+    @apply py-4;
+  }
+
+  .footer-container {
+    @apply container mx-auto px-4 flex flex-col items-center sm:flex-row sm:justify-between;
+  }
+
+  .footer-text {
+    @apply text-sm mb-4 sm:mb-0;
+  }
+
+  .footer-links {
+    @apply text-sm flex flex-row space-x-4 sm:space-x-6;
+  }
+}

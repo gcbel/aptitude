@@ -1,14 +1,15 @@
-# Aptitude
+# Full-stack Template Repository
 
 ## Description
 
-Visit the site ...
+Visit the site [here]().
 
-This site is built with React, Vite, and Framer Motion.
+Built with React, Vite, Tailwind, Framer, Node.js, Express.js, MongoDB, Mongoose and JWT.
 
 ## Installation
 
-N/A
+Clone the repository locally. Install dependencies with `npm install`.
+Configure environment variables in as specified in `.env.EXAMPLE` in a `.env` file in the server folder. Run `npm run dev` to start the application.
 
 ## Usage
 
