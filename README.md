@@ -1,4 +1,4 @@
-# Full-stack Template Repository
+# Aptitude
 
 ## Description
 
@@ -8,8 +8,7 @@ Built with React, Vite, Tailwind, Framer, Node.js, Express.js, MongoDB, Mongoose
 
 ## Installation
 
-Clone the repository locally. Install dependencies with `npm install`.
-Configure environment variables in as specified in `.env.EXAMPLE` in a `.env` file in the server folder. Run `npm run dev` to start the application.
+Clone the repository locally. Install dependencies with `npm install`. Configure environment variables as specified in the `.env.EXAMPLE` file in a `.env` file in the server folder. Run `npm run dev` to start the application.
 
 ## Usage
 
