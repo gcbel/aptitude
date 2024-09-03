@@ -1,0 +1,27 @@
+/* DEPENDENCIES */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HOME PAGE */
+@layer components {
+  #home-page {
+    @apply h-full flex flex-col items-center px-5 justify-center;
+  }
+
+  #intro-cards {
+    @apply flex flex-row gap-[2vw] mt-20;
+  }
+
+  .card {
+    @apply w-[30vw] h-[500px] rounded-xl text-white p-5;
+  }
+
+  .card h3 {
+    @apply text-2xl text-center;
+  }
+
+  #customize-cards {
+    @apply flex flex-row gap-[2vw] mt-20;
+  }
+}
