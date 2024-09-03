@@ -14,14 +14,28 @@
   }
 
   .card {
-    @apply w-[30vw] h-[500px] rounded-xl text-white p-5;
+    @apply w-[30vw] rounded-xl text-white p-5;
   }
 
   .card h3 {
     @apply text-2xl text-center;
   }
 
+  /* EXAMPLE PROFILE */
+  #example-profile {
+    @apply h-[70vh] w-[90vw] rounded-xl;
+  }
+
+  /* CUSTOMIZABILITY */
   #customize-cards {
     @apply flex flex-row gap-[2vw] mt-20;
+  }
+
+  .mini-card-outer {
+    @apply flex flex-row rounded-xl mt-2 p-4;
+  }
+
+  .mini-card {
+    @apply w-[15vw] h-[70px] rounded-xl;
   }
 }

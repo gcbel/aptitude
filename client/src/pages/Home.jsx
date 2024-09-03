@@ -9,30 +9,33 @@ const loading = false;
 const themes = [
   {
     id: 0,
-    name: "default",
+    name: "Default",
     outer_text: "text-slate-900",
     inner_text: "text-white",
     dark: "bg-slate-900",
     medium: "bg-blue-950",
     light: "bg-slate-800",
+    clear_bg: "bg-slate-300",
   },
   {
     id: 1,
-    name: "neutral",
+    name: "Neutral",
     outer_text: "text-stone-900",
     inner_text: "text-white",
     dark: "bg-stone-900",
     medium: "bg-stone-800",
     light: "bg-neutral-900",
+    clear_bg: "bg-stone-300",
   },
   {
-    id: 1,
-    name: "colorful",
+    id: 2,
+    name: "Colorful",
     outer_text: "text-black",
     inner_text: "text-white",
     dark: "bg-blue-950",
     medium: "bg-cyan-700",
     light: "bg-pink-900",
+    clear_bg: "bg-pink-100",
   },
 ];
 
@@ -45,10 +48,9 @@ export default function Home() {
   }
 
   return (
-    <div id="home-page">
-      <h1 className={`title playfair ${themes[theme].outer_text}`}>
-        Personalize your productivity. Meet your goals.
-      </h1>
+    <div className={`${themes[theme].outer_text}`} id="home-page">
+      <h1 className="title playfair">Personalize your productivity.</h1>
+      <h2 className="title playfair">Meet your goals.</h2>
 
       {/* INTRODUCTION */}
       <div className="montserrat" id="intro-cards">
@@ -64,37 +66,34 @@ export default function Home() {
       </div>
 
       {/* EXAMPLE PROFILE */}
-      <div>
-        <h2 className={`title playfair ${themes[theme].outer_text}`}>
-          Centralize your productivity.
+      <h2 className="title playfair">Centralize your productivity.</h2>
+      <div className={`${themes[theme].clear_bg}`} id="example-profile">
+        <h2 className={`playfair ${themes[theme].outer_text}`}>
+          Good morning, Gabby!
         </h2>
+        <div className="card">
+          <h3>Todo</h3>
+        </div>
       </div>
 
       {/* CUSTOMIZABILITY */}
-      <h2 className={`title playfair ${themes[theme].outer_text}`}>
-        Customize
-      </h2>
+      <h2 className="title playfair">Customize</h2>
       <div id="customize-cards">
-        <div
-          className={`card ${themes[0].dark} ${themes[0].inner_text}`}
-          onClick={() => setTheme(0)}
-        >
-          <h2>{themes[0].name}</h2>
-          <div>
-            <div className="mini-card"></div>
-            <div className="mini-card"></div>
-            <div className="mini-card"></div>
-            <div className="mini-card"></div>
+        {themes.map((theme) => (
+          <div
+            key={theme.id}
+            className={`card ${theme.dark} ${theme.inner_text}`}
+            onClick={() => setTheme(theme.id)}
+          >
+            <h2>{theme.name}</h2>
+            <div className={`mini-card-outer ${theme.clear_bg}`}>
+              <div className={`mini-card ${theme.medium}`}></div>
+              <div className={`mini-card ${theme.light}`}></div>
+              <div className={`mini-card ${theme.medium}`}></div>
+              <div className={`mini-card ${theme.dark}`}></div>
+            </div>
           </div>
-        </div>
-        <div
-          className={`card ${themes[1].dark}`}
-          onClick={() => setTheme(1)}
-        ></div>
-        <div
-          className={`card ${themes[2].dark}`}
-          onClick={() => setTheme(2)}
-        ></div>
+        ))}
       </div>
     </div>
   );
