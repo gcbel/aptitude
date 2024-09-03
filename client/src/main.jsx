@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "./pages/Error.jsx";
 import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
 import Login from "./pages/Login.jsx";
 import Profile from "./pages/Profile.jsx";
 import "./styles/tailwind.css";
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/profile",

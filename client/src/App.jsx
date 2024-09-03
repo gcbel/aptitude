@@ -39,9 +39,7 @@ export default function Root() {
   return (
     <ApolloProvider client={client}>
       <div className="min-width" id="main-outer-div">
-        <header>
-          <Nav />
-        </header>
+        <Nav />
         <main id="main-inner-div">
           <Outlet />
         </main>

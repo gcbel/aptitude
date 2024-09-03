@@ -4,29 +4,12 @@
 @tailwind utilities;
 
 @layer components {
-  /* FONTS */
-  .playfair {
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    transform: scale(1, 0.9);
-  }
-
-  .montserrat {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    transform: scale(0.92, 1);
-  }
-
   /* REUSABLE */
   .title {
     @apply text-3xl md:text-4xl;
   }
 
-  /* MAIN PAGE */
+  /* PAGE DETAILS */
   #main-outer-div {
     @apply flex flex-col min-h-screen;
   }
@@ -35,12 +18,35 @@
     @apply flex-grow w-full;
   }
 
+  /* HOURGLASS */
+  #hourglass {
+    @apply h-full flex items-center justify-center;
+  }
+
   /* ERROR PAGE */
   .error-page {
     @apply h-full flex flex-col items-center px-5 justify-center;
   }
 }
 
+/* FONTS */
+.playfair {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  transform: scale(1, 0.9);
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  transform: scale(0.92, 1);
+}
+
+/* REUSABLE */
 .min-width {
   min-width: 250px;
 }

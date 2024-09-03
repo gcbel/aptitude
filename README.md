@@ -17,6 +17,8 @@ Webpage can be viewed in any browser and navigation links in the top right can b
 
 ## Credits
 
+Hourglass loader: https://uiball.com/ldrs/ <br>
+
 ## License
 
 [MIT License](https://opensource.org/license/mit)
