@@ -8,6 +8,9 @@ import Auth from "../utils/auth";
 
 /* LOGIN */
 export default function Login() {
+  const [passwordAlert, setPasswordAlert] = useState(false);
+  const [usernameAlert, setUsernameAlert] = useState(false);
+
   const [isLogin, setIsLogin] = useState(true);
   const [formErrorMessage, setFormErrorMessage] = useState("");
   const [formData, setFormData] = useState({ username: "", password: "" });
@@ -57,14 +60,16 @@ export default function Login() {
   }
 
   return (
-    <div id="login-page">
+    <div className="montserrat" id="login-page">
       <form onSubmit={handleSubmit} id="login-form">
-        <div id="login-form-inner">
-          <h2 id="form-greeting">{isLogin ? "Welcome back!" : "Welcome!"}</h2>
-          <h3 id="form-title">{isLogin ? "Login" : "Sign Up"}</h3>
+        <div className="card">
+          <h2 className="playfair title">
+            {isLogin ? "Welcome back!" : "Welcome!"}
+          </h2>
+          <h3 className="large-text">{isLogin ? "Login" : "Sign Up"}</h3>
           {formErrorMessage && <div id="form-error">{formErrorMessage}</div>}
           <label htmlFor="username" className="login-label">
-            <span className="login-title">Username</span>
+            <span className="med-text">Username</span>
             <input
               className="login-input"
               type="text"
@@ -78,13 +83,15 @@ export default function Login() {
                 setFormData({ ...formData, username: e.target.value })
               }
             />
-            <p>
-              Your username should be at least 6 characters long and must use
-              only lowercase alphanumeric characters.
-            </p>
+            {usernameAlert && (
+              <p className="small-text">
+                Your username should be at least 6 characters long and must use
+                only lowercase alphanumeric characters.
+              </p>
+            )}
           </label>
           <label htmlFor="password" className="login-label" id="password-label">
-            <span className="login-title">Password</span>
+            <span className="med-text">Password</span>
             <input
               className="login-input"
               type="password"
@@ -99,22 +106,24 @@ export default function Login() {
                 setFormData({ ...formData, password: e.target.value })
               }
             />
-            <p>Your password must be at least 6 characters long.</p>
+            {passwordAlert && (
+              <p className="small-text">
+                Your password must be at least 6 characters long.
+              </p>
+            )}
           </label>
-          <div className="flex flex-col w-full gap-4 mt-2">
-            <div id="login-or-signup-div">
-              <button type="submit" id="login-or-signup">
-                {isLogin ? "Login" : "Sign up"}
-              </button>
-            </div>
+          <div id="submit-div">
+            <button type="submit" className="bg-slate-900" id="submit">
+              {isLogin ? "Login" : "Sign up"}
+            </button>
           </div>
           {isLogin ? (
-            <p>
+            <p className="med-text" id="">
               Don't have an account?
               <span onClick={() => setIsLogin(false)}> Sign up</span>
             </p>
           ) : (
-            <p>
+            <p className="med-text">
               Already have an account?
               <span onClick={() => setIsLogin(true)}> Login</span>
             </p>

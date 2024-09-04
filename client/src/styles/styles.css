@@ -6,7 +6,23 @@
 @layer components {
   /* REUSABLE */
   .title {
-    @apply text-3xl md:text-4xl;
+    @apply text-3xl md:text-4xl text-center;
+  }
+
+  .large-text {
+    @apply text-xl my-2;
+  }
+
+  .med-text {
+    @apply text-lg;
+  }
+
+  .small-text {
+    @apply text-sm;
+  }
+
+  .card {
+    @apply rounded-xl p-8 shadow-xl;
   }
 
   /* PAGE DETAILS */

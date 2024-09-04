@@ -13,9 +13,9 @@
     @apply flex flex-row gap-[2vw] mt-20;
   }
 
-  .card {
+  /* .card {
     @apply w-[30vw] rounded-xl text-white p-5;
-  }
+  } */
 
   .card h3 {
     @apply text-2xl text-center;
