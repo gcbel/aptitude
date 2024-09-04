@@ -5,6 +5,10 @@
 
 @layer components {
   /* REUSABLE */
+  .main-title {
+    @apply text-3xl md:text-5xl text-center;
+  }
+
   .title {
     @apply text-3xl md:text-4xl text-center;
   }
@@ -23,6 +27,10 @@
 
   .card {
     @apply rounded-xl p-8 shadow-xl;
+  }
+
+  .card h3 {
+    @apply text-2xl text-center;
   }
 
   /* HOURGLASS */

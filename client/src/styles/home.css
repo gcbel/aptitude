@@ -6,29 +6,51 @@
 /* HOME PAGE */
 @layer components {
   #home-page {
-    @apply h-full flex flex-col items-center px-5 justify-center;
+    @apply h-full flex flex-col items-center justify-center;
   }
 
+  #home-page h1 {
+    @apply mt-[15vh];
+  }
+
+  /* INTRO CARDS */
   #intro-cards {
-    @apply flex flex-row gap-[2vw] mt-20;
+    @apply flex flex-row flex-wrap justify-center items-end gap-[2vw] mt-20 mb-32;
   }
 
-  /* .card {
-    @apply w-[30vw] rounded-xl text-white p-5;
-  } */
+  #first-intro-card {
+    @apply h-[46vh];
+  }
 
-  .card h3 {
-    @apply text-2xl text-center;
+  #second-intro-card {
+    @apply h-[30vh];
+  }
+
+  #first-intro-card,
+  #sec-intro-card {
+    @apply w-[48vw] md:w-[32vw];
+  }
+
+  #third-intro-card {
+    @apply w-[98vw] md:w-[32vw] h-[300px];
   }
 
   /* EXAMPLE PROFILE */
   #example-profile {
-    @apply h-[70vh] w-[90vw] rounded-xl;
+    @apply h-[65vh] w-[98vw] rounded-xl mt-10;
   }
 
   /* CUSTOMIZABILITY */
+  #customize-section {
+    @apply flex flex-row items-center gap-4 pt-5 pb-32;
+  }
+
   #customize-cards {
-    @apply flex flex-row gap-[2vw] mt-20;
+    @apply flex flex-row flex-wrap justify-center gap-4;
+  }
+
+  .customize-card {
+    @apply h-[58px] w-[60px] rounded-full;
   }
 
   .mini-card-outer {
