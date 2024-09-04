@@ -51,7 +51,7 @@ export default function Home() {
           </div>
         </div>
         {/* GET MOTIVATED CARD */}
-        <div className={`card ${themes[theme].medium}`} id="sec-intro-card">
+        <div className={`card ${themes[theme].light}`} id="sec-intro-card">
           <h3>Get motivated</h3>
           <div className={`clear-mini-card`}>
             <i className="fa-regular fa-circle-check"></i>
@@ -66,12 +66,19 @@ export default function Home() {
           </div>
         </div>
         {/* PHYSCOLOGY */}
-        <div className={`card ${themes[theme].light}`} id="third-intro-card">
+        <div className={`card ${themes[theme].medium}`} id="third-intro-card">
           <h3>Psychology-backed productivity techniques</h3>
-          <div
-            className={`${themes[theme].clear_bg} ${themes[theme].outer_text} mini-card large-text`}
-          >
-            Get started
+          <div className="separator mt-2"></div>
+          <div className={`clear-mini-card`}>
+            <i className="fa-regular fa-circle-check"></i>
+            <p>Control your productivity style</p>
+          </div>
+          <div className="button-outer pb-2">
+            <button
+              className={`${themes[theme].clear_bg} ${themes[theme].outer_text} button large-text`}
+            >
+              Get started <span className="font-bold"> ➛</span>
+            </button>
           </div>
         </div>
       </div>
@@ -79,12 +86,24 @@ export default function Home() {
       {/* EXAMPLE PROFILE */}
       <h2 className="main-title playfair">Centralize your productivity.</h2>
       <div
-        className={`${themes[theme].clear_bg} ${themes[theme].inner_text}`}
+        className={`${themes[theme].clear_bg} ${themes[theme].inner_text} card`}
         id="example-profile"
       >
-        <h2 className="playfair">Good morning, Gabby!</h2>
-        <div className="card">
-          <h3>Todo</h3>
+        <div id="example-profile-left">
+          <div className={`${themes[theme].dark} card`}>
+            <h3>Hi Gabby!</h3>
+          </div>
+          <div className={`${themes[theme].medium} card`}>
+            <h3>Edit profile</h3>
+          </div>
+        </div>
+        <div id="example-profile-right">
+          <div className={`${themes[theme].light} card`}>
+            <h3>Goals</h3>
+          </div>
+          <div className="card">
+            <h3>Goals</h3>
+          </div>
         </div>
       </div>
       <div id="customize-section">

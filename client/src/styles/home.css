@@ -22,17 +22,13 @@
     @apply min-h-[46vh];
   }
 
-  #second-intro-card {
-    @apply h-[30vh];
-  }
-
   #first-intro-card,
   #sec-intro-card {
     @apply w-[48vw] md:w-[32vw];
   }
 
   #third-intro-card {
-    @apply w-[98vw] md:w-[32vw] h-[300px];
+    @apply w-[98vw] md:w-[32vw];
   }
 
   #intro-cards .mini-card,
@@ -42,7 +38,15 @@
 
   /* EXAMPLE PROFILE */
   #example-profile {
-    @apply h-[65vh] w-[98vw] rounded-xl mt-10;
+    @apply h-[65vh] w-[98vw] rounded-xl mt-10 flex flex-row;
+  }
+
+  #example-profile-left {
+    @apply flex flex-col flex-auto;
+  }
+
+  #example-profile-right {
+    @apply flex flex-col flex-auto;
   }
 
   /* CUSTOMIZABILITY */

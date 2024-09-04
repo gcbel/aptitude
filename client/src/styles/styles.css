@@ -41,6 +41,14 @@
     @apply px-2 my-3;
   }
 
+  .button-outer {
+    @apply flex;
+  }
+
+  .button {
+    @apply rounded-xl py-3 px-5 shadow-xl font-medium italic;
+  }
+
   /* HOURGLASS */
   #hourglass {
     @apply h-full flex items-center justify-center;
