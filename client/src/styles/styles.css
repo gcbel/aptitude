@@ -25,15 +25,6 @@
     @apply rounded-xl p-8 shadow-xl;
   }
 
-  /* PAGE DETAILS */
-  #main-outer-div {
-    @apply flex flex-col min-h-screen;
-  }
-
-  #main-inner-div {
-    @apply flex-grow w-full;
-  }
-
   /* HOURGLASS */
   #hourglass {
     @apply h-full flex items-center justify-center;

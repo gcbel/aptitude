@@ -2,12 +2,15 @@
 import { SIGN_UP, LOGIN } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
+import { useTheme } from "../utils/ThemeContext";
 import "../styles/login.css";
 
 import Auth from "../utils/auth";
 
 /* LOGIN */
 export default function Login() {
+  const { theme, setTheme, themes } = useTheme();
+
   const [passwordAlert, setPasswordAlert] = useState(false);
   const [usernameAlert, setUsernameAlert] = useState(false);
 
@@ -60,7 +63,7 @@ export default function Login() {
   }
 
   return (
-    <div className="montserrat" id="login-page">
+    <div className={`montserrat ${themes[theme].outer_text}`} id="login-page">
       <form onSubmit={handleSubmit} id="login-form">
         <div className="card">
           <h2 className="playfair title">
@@ -71,7 +74,7 @@ export default function Login() {
           <label htmlFor="username" className="login-label">
             <span className="med-text">Username</span>
             <input
-              className="login-input"
+              className={`login-input ${themes[theme].border}`}
               type="text"
               id="username"
               name="username"
@@ -91,7 +94,7 @@ export default function Login() {
           <label htmlFor="password" className="login-label" id="password-label">
             <span className="med-text">Password</span>
             <input
-              className="login-input"
+              className={`login-input ${themes[theme].border}`}
               type="password"
               id="password"
               name="password"
@@ -109,17 +112,24 @@ export default function Login() {
             )}
           </label>
           <div id="submit-div">
-            <button type="submit" className="bg-slate-900" id="submit">
+            <button
+              type="submit"
+              className={`${themes[theme].dark}`}
+              id="submit"
+            >
               {isLogin ? "Login" : "Sign up"}
             </button>
           </div>
           {isLogin ? (
-            <p className="med-text" id="">
+            <p className="med-text" id="choose-signup">
               Don't have an account?
-              <span onClick={() => setIsLogin(false)}> Sign up</span>
+              <span className="" onClick={() => setIsLogin(false)}>
+                {" "}
+                Sign up
+              </span>
             </p>
           ) : (
-            <p className="med-text">
+            <p className="med-text" id="choose-login">
               Already have an account?
               <span onClick={() => setIsLogin(true)}> Login</span>
             </p>

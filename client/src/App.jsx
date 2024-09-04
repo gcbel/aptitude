@@ -8,6 +8,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { ThemeProvider } from "./utils/ThemeContext";
 import "./styles/styles.css";
 
 import Nav from "./components/Nav.jsx";
@@ -38,13 +39,11 @@ const client = new ApolloClient({
 export default function Root() {
   return (
     <ApolloProvider client={client}>
-      <div className="min-width" id="main-outer-div">
+      <ThemeProvider>
         <Nav />
-        <main id="main-inner-div">
-          <Outlet />
-        </main>
+        <Outlet />
         <Footer />
-      </div>
+      </ThemeProvider>
     </ApolloProvider>
   );
 }

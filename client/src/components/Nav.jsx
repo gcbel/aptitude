@@ -2,12 +2,15 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import { motion, sync, useCycle } from "framer-motion";
+import { useTheme } from "../utils/ThemeContext";
 import Auth from "../utils/auth";
 import HamNav from "./HamNav.jsx";
 import "../styles/nav.css";
 
 /* NAV */
 export default function Nav() {
+  const { theme, setTheme, themes } = useTheme();
+
   // Regular Nav
   const location = useLocation();
   const navigate = useNavigate();
@@ -26,7 +29,7 @@ export default function Nav() {
   };
 
   return (
-    <nav className="montserrat min-width">
+    <nav className={`montserrat min-width ${themes[theme].outer_text}`}>
       <Link to="/" className="playfair page-title">
         Aptitude
       </Link>
