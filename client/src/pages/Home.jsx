@@ -22,15 +22,57 @@ export default function Home() {
 
       {/* INTRODUCTION */}
       <div className={`${themes[theme].inner_text}`} id="intro-cards">
+        {/* KEEP EVERYTHING CARD */}
         <div className={`card ${themes[theme].dark}`} id="first-intro-card">
-          <h3>Meep</h3>
+          <h3>Keep everything in one place</h3>
+          <div
+            className={`${themes[theme].clear_bg} ${themes[theme].outer_text} mini-card`}
+          >
+            <i className="fa-regular fa-circle-check"></i>
+            <p>Organize your todos, goals, reminders, and more</p>
+          </div>
+          <div
+            className={`${themes[theme].clear_bg} ${themes[theme].outer_text} mini-card`}
+          >
+            <i className="fa-regular fa-circle-check"></i>
+            <p>Integrate your calendar and track your stock picks</p>
+          </div>
+          <div
+            className={`${themes[theme].clear_bg} ${themes[theme].outer_text} mini-card`}
+          >
+            <i className="fa-regular fa-circle"></i>
+            <p>Check the weather while planning your day</p>
+          </div>
+          <div
+            className={`${themes[theme].clear_bg} ${themes[theme].outer_text} mini-card`}
+          >
+            <i className="fa-regular fa-circle"></i>
+            <p>Get reminders about upcoming birthdays</p>
+          </div>
         </div>
+        {/* GET MOTIVATED CARD */}
         <div className={`card ${themes[theme].medium}`} id="sec-intro-card">
-          <h3>Stay organized</h3>
+          <h3>Get motivated</h3>
+          <div className={`clear-mini-card`}>
+            <i className="fa-regular fa-circle-check"></i>
+            <p>
+              Keep your goals top of mind with milestones and daily reminders
+            </p>
+          </div>
+          <div className="separator"></div>
+          <div className={`clear-mini-card`}>
+            <i className="fa-regular fa-circle-check"></i>
+            <p>Integrate your goals into your every day todos</p>
+          </div>
         </div>
+        {/* PHYSCOLOGY */}
         <div className={`card ${themes[theme].light}`} id="third-intro-card">
-          <h3>Stay motivated</h3>
-          <button>Get started</button>
+          <h3>Psychology-backed productivity techniques</h3>
+          <div
+            className={`${themes[theme].clear_bg} ${themes[theme].outer_text} mini-card large-text`}
+          >
+            Get started
+          </div>
         </div>
       </div>
 

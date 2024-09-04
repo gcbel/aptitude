@@ -10,7 +10,7 @@
   }
 
   #home-page h1 {
-    @apply mt-[15vh];
+    @apply mt-[10vh] md:mt-[15vh];
   }
 
   /* INTRO CARDS */
@@ -19,7 +19,7 @@
   }
 
   #first-intro-card {
-    @apply h-[46vh];
+    @apply min-h-[46vh];
   }
 
   #second-intro-card {
@@ -33,6 +33,11 @@
 
   #third-intro-card {
     @apply w-[98vw] md:w-[32vw] h-[300px];
+  }
+
+  #intro-cards .mini-card,
+  #intro-cards .clear-mini-card {
+    @apply flex flex-row gap-2;
   }
 
   /* EXAMPLE PROFILE */
@@ -51,13 +56,5 @@
 
   .customize-card {
     @apply h-[58px] w-[60px] rounded-full;
-  }
-
-  .mini-card-outer {
-    @apply flex flex-row rounded-xl mt-2 p-4;
-  }
-
-  .mini-card {
-    @apply w-[15vw] h-[70px] rounded-xl;
   }
 }
