@@ -7,6 +7,9 @@ const validateUsername = (username) =>
   /^[a-z0-9_]+$/.test(username) && username === username.toLowerCase();
 
 const userSchema = new Schema({
+  name: {
+    type: String,
+  },
   username: {
     type: String,
     required: true,
@@ -14,7 +17,7 @@ const userSchema = new Schema({
     unique: true,
     validate: [
       validateUsername,
-      "Username must be alphanumeric and in lowercase with no spaces.",
+      "Username must be alphanumeric and lowercase with no spaces.",
     ],
   },
   password: {
@@ -22,6 +25,10 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
     select: false, // Exclude password from query results by default
+  },
+  selectedTheme: {
+    type: Number,
+    default: 0,
   },
 });
 

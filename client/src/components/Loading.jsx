@@ -1,16 +1,14 @@
 /* DEPENDENCIES */
 import React, { useEffect } from "react";
 import { hourglass } from "ldrs";
+import { useTheme } from "../utils/ThemeContext";
 
 hourglass.register();
 
 /* HOURGLASS */
-const Hourglass = ({
-  size = "40",
-  bgOpacity = "0.1",
-  speed = "1.75",
-  color = "black",
-}) => {
+const Hourglass = () => {
+  const { theme, setTheme, themes } = useTheme();
+
   useEffect(() => {
     hourglass.register();
   }, []);
@@ -18,10 +16,10 @@ const Hourglass = ({
   return (
     <div id="hourglass">
       <l-hourglass
-        size={size}
-        bg-opacity={bgOpacity}
-        speed={speed}
-        color={color}
+        size="40"
+        bg-opacity="0.25"
+        speed="1.75"
+        color={themes[theme].hourglass}
       />
     </div>
   );

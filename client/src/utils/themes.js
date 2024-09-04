@@ -9,6 +9,7 @@ export const themes = [
     light: "bg-slate-800",
     clear_bg: "bg-slate-300",
     border: "border-slate-300",
+    hourglass: "#000000",
   },
   {
     id: 1,
@@ -20,6 +21,7 @@ export const themes = [
     light: "bg-neutral-900",
     clear_bg: "bg-stone-300",
     border: "border-slate-300",
+    hourglass: "#000000",
   },
   {
     id: 2,
@@ -31,5 +33,6 @@ export const themes = [
     light: "bg-pink-900",
     clear_bg: "bg-pink-100",
     border: "border-slate-300",
+    hourglass: "#000000",
   },
 ];

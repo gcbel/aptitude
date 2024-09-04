@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Login from "./pages/Login.jsx";
+import Support from "./pages/Support.jsx";
 import Profile from "./pages/Profile.jsx";
 import "./styles/tailwind.css";
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/support",
+        element: <Support />,
       },
       {
         path: "/profile",
