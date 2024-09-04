@@ -1,8 +1,8 @@
 /* DEPENDENCIES */
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Hourglass from "../components/Loading";
 
 /* PROFILE */
 export default function Profile() {
-  return <div></div>;
+  return <Hourglass />;
 }

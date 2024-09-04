@@ -76,8 +76,6 @@ export default function Login() {
               id="username"
               name="username"
               placeholder="Enter your username"
-              minLength={6}
-              maxLength={16}
               value={formData.username}
               onChange={(e) =>
                 setFormData({ ...formData, username: e.target.value })
@@ -99,8 +97,6 @@ export default function Login() {
               name="password"
               placeholder="Enter your password"
               autoComplete="on"
-              minLength={6}
-              maxLength={128}
               value={formData.password}
               onChange={(e) =>
                 setFormData({ ...formData, password: e.target.value })

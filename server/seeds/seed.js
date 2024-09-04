@@ -2,7 +2,7 @@
 const db = require("../config/connection.js");
 const { User } = require("../models");
 const cleanDB = require("../config/cleanDB.js");
-const users = require("./user.json");
+const users = require("./seeds.json");
 
 db.once("open", async () => {
   try {
