@@ -117,13 +117,52 @@ export default function Home() {
           <div className="profile-main">
             <div className={`${themes[theme].light} card todo`}>
               <h4>Today's Todos</h4>
+              <div className={`clear-mini-card`}>
+                <i className="fa-regular fa-circle-check"></i>
+                <p>Work out</p>
+              </div>
+              <div className="separator"></div>
+              <div className={`clear-mini-card`}>
+                <i className="fa-regular fa-circle-check"></i>
+                <p>Drink 3 glasses of water</p>
+              </div>
+              <div className="separator"></div>
+              <div className={`clear-mini-card`}>
+                <i className="fa-regular fa-circle"></i>
+                <p>Rewrite resume</p>
+              </div>
+              <div className="separator"></div>
+              <div className={`clear-mini-card`}>
+                <i className="fa-regular fa-circle"></i>
+                <p>Email recruiter back</p>
+              </div>
             </div>
             <div className={`${themes[theme].light} card todo`}>
               <h4>Tmrw's Todos</h4>
+              <div className={`clear-mini-card`}>
+                <i className="fa-regular fa-circle"></i>
+                <p>Apply to 5 jobs</p>
+              </div>
+              <div className="separator"></div>
+              <div className={`clear-mini-card`}>
+                <i className="fa-regular fa-circle"></i>
+                <p>Practice 30 minutes of Spanish</p>
+              </div>
+              <div className="separator"></div>
+              <div className={`clear-mini-card`}>
+                <i className="fa-regular fa-circle"></i>
+                <p>Finish ML certification</p>
+              </div>
+              <div className="separator"></div>
+              <div className={`clear-mini-card`}>
+                <i className="fa-regular fa-circle"></i>
+                <p>Buy website domain</p>
+              </div>
             </div>
-            <div>
-              <div className={`${themes[theme].medium} card`}></div>
-              <div className={`${themes[theme].medium} card`}></div>
+            <div className="info-cards">
+              <div className={`${themes[theme].dark} card weather`}></div>
+              <div className={`${themes[theme].dark} card stocks`}></div>
+              <div className={`${themes[theme].dark} card stocks`}></div>
             </div>
           </div>
         </div>

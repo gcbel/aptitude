@@ -42,7 +42,7 @@
   }
 
   .clear-mini-card {
-    @apply px-2 my-3;
+    @apply flex flex-row gap-2 px-2 my-3;
   }
 
   .button-outer {
@@ -63,7 +63,7 @@
   }
 
   .profile-main {
-    @apply flex flex-row gap-2 h-full;
+    @apply flex flex-row justify-center flex-wrap gap-2 h-full;
   }
 
   .profile-card {
@@ -79,11 +79,23 @@
   }
 
   .goal-card {
-    @apply flex justify-center items-center w-[33%] min-h-[80px];
+    @apply flex justify-center items-center flex-1 min-h-[80px];
   }
 
   .todo {
-    @apply w-[50%] md:w-[33%];
+    @apply w-[49%] md:w-[33%];
+  }
+
+  .info-cards {
+    @apply flex flex-row md:flex-col gap-2 flex-1;
+  }
+
+  .weather {
+    @apply w-[50%] md:w-full h-full;
+  }
+
+  .stocks {
+    @apply w-[50%] md:w-full h-full;
   }
 
   /* HOURGLASS */

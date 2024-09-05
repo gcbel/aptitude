@@ -43,7 +43,7 @@
 
   /* CUSTOMIZABILITY */
   #customize-section {
-    @apply flex flex-row items-center gap-4 pt-5 pb-32;
+    @apply flex flex-row items-center gap-4 pt-10 pb-20 md:pb-32;
   }
 
   #customize-cards {
@@ -51,6 +51,6 @@
   }
 
   .customize-card {
-    @apply h-[58px] w-[60px] rounded-full;
+    @apply h-[38px] w-[40px] md:h-[58px] md:w-[60px] rounded-full;
   }
 }
