@@ -11,7 +11,7 @@ import { setContext } from "@apollo/client/link/context";
 import { ThemeProvider } from "./utils/ThemeContext";
 import "./styles/styles.css";
 
-import Nav from "./components/Nav.jsx";
+import Nav from "./components/Nav/Nav.jsx";
 import Footer from "./components/Footer.jsx";
 
 const httpLink = createHttpLink({
@@ -41,7 +41,9 @@ export default function Root() {
     <ApolloProvider client={client}>
       <ThemeProvider>
         <Nav />
-        <Outlet />
+        <div className="pt-[180px]">
+          <Outlet />
+        </div>
         <Footer />
       </ThemeProvider>
     </ApolloProvider>

@@ -2,10 +2,10 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import { motion, sync, useCycle } from "framer-motion";
-import { useTheme } from "../utils/ThemeContext";
-import Auth from "../utils/auth";
+import { useTheme } from "../../utils/ThemeContext";
+import Auth from "../../utils/auth";
 import HamNav from "./HamNav.jsx";
-import "../styles/nav.css";
+import "../../styles/nav.css";
 
 /* NAV */
 export default function Nav() {
