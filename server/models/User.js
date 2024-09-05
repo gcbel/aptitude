@@ -30,11 +30,13 @@ const userSchema = new Schema({
     type: Number,
     default: 0,
   },
-  dashboards: {
-    type: Schema.Types.ObjectId,
-    ref: "Dashboard",
-    default: [],
-  },
+  dashboards: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Dashboard",
+      default: [],
+    },
+  ],
 });
 
 userSchema.pre("save", async function (next) {

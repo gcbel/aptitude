@@ -1,0 +1,178 @@
+[
+  {
+    "name": "Health",
+    "goals": [
+      {
+        "title": "Drink water everyday",
+        "description": "Ensure you drink at least 8 glasses of water daily.",
+        "completed": false,
+        "milestones": [
+          { "name": "Start drinking water", "completed": false },
+          { "name": "Maintain daily routine", "completed": false }
+        ]
+      },
+      {
+        "title": "Work out 4x a week",
+        "description": "Exercise at least four times a week.",
+        "completed": false,
+        "milestones": [
+          { "name": "Join a gym or fitness class", "completed": false },
+          { "name": "Complete first workout", "completed": false }
+        ]
+      }
+    ],
+    "lists": [
+      {
+        "name": "Daily Tasks",
+        "items": [
+          { "name": "Drink water", "completed": false },
+          { "name": "Eat healthy", "completed": false },
+          { "name": "Workout", "completed": false }
+        ]
+      }
+    ],
+    "todos": [
+      {
+        "title": "Daily Health Tasks",
+        "items": [
+          { "name": "Drink water", "completed": false },
+          { "name": "Eat healthy", "completed": false },
+          { "name": "Workout", "completed": false }
+        ],
+        "completed": false
+      }
+    ],
+    "habits": [
+      {
+        "name": "Drink Water",
+        "frequency": "daily",
+        "completedDates": []
+      },
+      {
+        "name": "Workout",
+        "frequency": "weekly",
+        "completedDates": []
+      }
+    ],
+    "stocks": [],
+    "weather": 0,
+    "theme": 4
+  },
+  {
+    "name": "Health",
+    "goals": [
+      {
+        "title": "Drink water everyday",
+        "description": "Ensure you drink at least 8 glasses of water daily.",
+        "completed": false,
+        "milestones": [
+          { "name": "Start drinking water", "completed": false },
+          { "name": "Maintain daily routine", "completed": false }
+        ]
+      },
+      {
+        "title": "Work out 4x a week",
+        "description": "Exercise at least four times a week.",
+        "completed": false,
+        "milestones": [
+          { "name": "Join a gym or fitness class", "completed": false },
+          { "name": "Complete first workout", "completed": false }
+        ]
+      }
+    ],
+    "lists": [
+      {
+        "name": "Daily Tasks",
+        "items": [
+          { "name": "Drink water", "completed": false },
+          { "name": "Eat healthy", "completed": false },
+          { "name": "Workout", "completed": false }
+        ]
+      }
+    ],
+    "todos": [
+      {
+        "title": "Daily Health Tasks",
+        "items": [
+          { "name": "Drink water", "completed": false },
+          { "name": "Eat healthy", "completed": false },
+          { "name": "Workout", "completed": false }
+        ],
+        "completed": false
+      }
+    ],
+    "habits": [
+      {
+        "name": "Drink Water",
+        "frequency": "daily",
+        "completedDates": []
+      },
+      {
+        "name": "Workout",
+        "frequency": "weekly",
+        "completedDates": []
+      }
+    ],
+    "stocks": [],
+    "weather": 0,
+    "theme": 4
+  },
+  {
+    "name": "Personal Development",
+    "goals": [
+      {
+        "title": "Learn a new skill",
+        "description": "Acquire a new skill or hobby this year.",
+        "completed": false,
+        "milestones": [
+          { "name": "Research options", "completed": false },
+          { "name": "Enroll in course", "completed": false },
+          { "name": "Complete course", "completed": false }
+        ]
+      },
+      {
+        "title": "Read 12 books",
+        "description": "Read at least one book per month.",
+        "completed": false,
+        "milestones": [
+          { "name": "Choose books", "completed": false },
+          { "name": "Read first book", "completed": false }
+        ]
+      }
+    ],
+    "lists": [
+      {
+        "name": "Books to Read",
+        "items": [
+          { "name": "Book 1", "completed": false },
+          { "name": "Book 2", "completed": false }
+        ]
+      }
+    ],
+    "todos": [
+      {
+        "title": "Personal Growth Tasks",
+        "items": [
+          { "name": "Meditate", "completed": false },
+          { "name": "Journal", "completed": false }
+        ],
+        "completed": false
+      }
+    ],
+    "habits": [
+      {
+        "name": "Meditate",
+        "frequency": "daily",
+        "completedDates": []
+      },
+      {
+        "name": "Journal",
+        "frequency": "daily",
+        "completedDates": []
+      }
+    ],
+    "stocks": [],
+    "weather": 0,
+    "theme": 2
+  }
+]
