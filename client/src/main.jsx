@@ -9,6 +9,7 @@ import Login from "./pages/Login.jsx";
 import Survey from "./pages/Survey.jsx";
 import Support from "./pages/Support.jsx";
 import Profile from "./pages/Profile.jsx";
+import Settings from "./pages/Settings.jsx";
 import "./styles/tailwind.css";
 
 /* ROUTER */
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "/settings",
+        element: <Settings />,
       },
     ],
   },

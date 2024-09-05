@@ -1,5 +1,13 @@
-{
-  /* <h2 className="title playfair">Customize</h2>
+/* DEPENDENCIES */
+import { useTheme } from "../utils/ThemeContext";
+
+/* SETTINGS PAGE */
+export default function Settings() {
+  const { theme, setTheme, themes } = useTheme();
+
+  return (
+    <div>
+      <h2 className="title playfair">Customize</h2>
       <div id="customize-cards">
         {themes.map((theme) => (
           <div
@@ -16,5 +24,7 @@
             </div>
           </div>
         ))}
-      </div> */
+      </div>
+    </div>
+  );
 }
