@@ -62,7 +62,7 @@ const resolvers = {
         throw new Error("Invalid credentials");
       }
       const token = jwt.sign(
-        { id: user.id, username: user.username },
+        { id: user.id, username: user.username, name: user.name },
         process.env.JWT_SECRET,
         {
           expiresIn: expiration,
@@ -84,7 +84,7 @@ const resolvers = {
       }
 
       const token = jwt.sign(
-        { id: user.id, username: user.username },
+        { id: user.id, username: user.username, name: user.name },
         process.env.JWT_SECRET,
         {
           expiresIn: expiration,

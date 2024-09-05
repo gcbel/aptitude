@@ -2,7 +2,7 @@
 const { GraphQLError } = require("graphql");
 const jwt = require("jsonwebtoken");
 
-const secret = process.env.JWT_SECRET | "secret";
+const secret = "secret";
 const expiration = "6h";
 
 /* EXPORTS */
@@ -33,11 +33,5 @@ module.exports = {
     }
 
     return req;
-  },
-  signToken: function ({ email, username, _id }) {
-    const payload = { email, username, _id };
-    return jwt.sign({ authenticatedPerson: payload }, secret, {
-      expiresIn: expiration,
-    });
   },
 };

@@ -1,5 +1,6 @@
 [
   {
+    "name": "example name",
     "username": "example",
     "email": "example@gmail.com",
     "password": "example"

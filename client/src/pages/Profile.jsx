@@ -6,6 +6,7 @@ import { useTheme } from "../utils/ThemeContext";
 import { QUERY_USER_PROFILE } from "../utils/queries";
 import Auth from "../utils/auth";
 import Hourglass from "../components/Loading";
+import Error from "./Error.jsx";
 import "../styles/profile.css";
 
 /* PROFILE */
@@ -13,7 +14,10 @@ export default function Profile() {
   const { theme, setTheme, themes } = useTheme();
 
   // Get user and their dashboards
-  const username = Auth.getUser()?.username;
+  const user = Auth.getUser();
+  const name = user?.name;
+  const username = user?.username;
+  console.log(user);
 
   const { loading, error, data } = useQuery(QUERY_USER_PROFILE, {
     variables: { username },
@@ -25,7 +29,7 @@ export default function Profile() {
 
   if (error) {
     console.log(error);
-    return <p>Error loading dashboards</p>;
+    return <Error />;
   }
 
   const dashboards = data.userDashboards;
@@ -38,7 +42,7 @@ export default function Profile() {
     >
       <div className="profile-left">
         <div className={`${themes[theme].dark} card profile-card`}>
-          <h3>Hi Gabby!</h3>
+          <h3>Hi {name}</h3>
         </div>
         <Link
           to="/settings"
