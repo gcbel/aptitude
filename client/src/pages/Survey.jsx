@@ -1,6 +1,6 @@
+/* DEPENDENCIES */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { useMutation } from "@apollo/client";
 import { useQuery } from "@apollo/client";
 
@@ -27,56 +27,6 @@ import { useQuery } from "@apollo/client";
 //   }
 
 //   const user = userData?.me;
-
-//   const questions = [
-//     {
-//       question: (
-//         <div
-//           dangerouslySetInnerHTML={{
-//             __html: "Welcome!<br>Let's learn a bit more about you.",
-//           }}
-//         />
-//       ),
-//     },
-//     {
-//       question: `I'm a...`,
-//       inputType: "button",
-//       buttonOptions: [
-//         { text: "Newbie Crafter", value: 1 },
-//         { text: "Casual Crafter", value: 2 },
-//         { text: "Pro Crafter", value: 3 },
-//       ],
-//     },
-//     {
-//       question: (
-//         <div
-//           dangerouslySetInnerHTML={{
-//             __html: "I'm interested in...<br><h4>(Choose up to 3)</h4>",
-//           }}
-//         />
-//       ),
-//       inputType: "button",
-//       buttonOptions: [
-//         { text: "Sewing", value: "Sewing" },
-//         { text: "Painting", value: "Painting" },
-//         { text: "Pottery", value: "Pottery" },
-//         { text: "Crochet", value: "Crochet" },
-//         { text: "Woodworking", value: "Woodworking" },
-//         { text: "Stained Glass", value: "Stained Glass" },
-//         { text: "Scrapbooking", value: "Scrapbooking" },
-//         { text: "Origami", value: "Origami" },
-//       ],
-//     },
-//     {
-//       question: `My ideal price point for a new craft is...`,
-//       inputType: "button",
-//       buttonOptions: [
-//         { text: "$10–20", value: 1 },
-//         { text: "$20–80", value: 2 },
-//         { text: "$100+", value: 3 },
-//       ],
-//     },
-//   ];
 
 //   const handleUserResponse = (response) => {
 //     if (currentQuestion === 3) {
@@ -201,7 +151,61 @@ import { useQuery } from "@apollo/client";
 //   );
 // };
 
-// export default Survey;
+const questions = [
+  {
+    question: (
+      <div
+        dangerouslySetInnerHTML={{
+          __html: "Welcome!<br>Let's learn a bit more about you.",
+        }}
+      />
+    ),
+  },
+  {
+    question: `I'm a...`,
+    inputType: "button",
+    buttonOptions: [
+      { text: "Newbie Crafter", value: 1 },
+      { text: "Casual Crafter", value: 2 },
+      { text: "Pro Crafter", value: 3 },
+    ],
+  },
+  {
+    question: (
+      <div
+        dangerouslySetInnerHTML={{
+          __html: "I'm interested in...<br><h4>(Choose up to 3)</h4>",
+        }}
+      />
+    ),
+    inputType: "button",
+    buttonOptions: [
+      { text: "Sewing", value: "Sewing" },
+      { text: "Painting", value: "Painting" },
+      { text: "Pottery", value: "Pottery" },
+      { text: "Crochet", value: "Crochet" },
+      { text: "Woodworking", value: "Woodworking" },
+      { text: "Stained Glass", value: "Stained Glass" },
+      { text: "Scrapbooking", value: "Scrapbooking" },
+      { text: "Origami", value: "Origami" },
+    ],
+  },
+  {
+    question: `My ideal price point for a new craft is...`,
+    inputType: "button",
+    buttonOptions: [
+      { text: "$10–20", value: 1 },
+      { text: "$20–80", value: 2 },
+      { text: "$100+", value: 3 },
+    ],
+  },
+];
+
+/* SURVEY PAGE */
 export default function Survey() {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [userResponses, setUserResponses] = useState([]);
+  const [isSurveyCompleted, setIsSurveyCompleted] = useState(false);
+
   return <div></div>;
 }
