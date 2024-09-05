@@ -1,4 +1,5 @@
 /* DEPENDENCIES */
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import React from "react";
 import { useState, useEffect } from "react";
 import { useTheme } from "../utils/ThemeContext";
@@ -74,11 +75,12 @@ export default function Home() {
             <p>Control your productivity style</p>
           </div>
           <div className="button-outer pb-2">
-            <button
+            <Link
+              to="/survey"
               className={`${themes[theme].clear_bg} ${themes[theme].outer_text} button large-text`}
             >
-              Get started <span className="font-bold"> ➛</span>
-            </button>
+              Get started <span className="font-bold not-italic"> →</span>
+            </Link>
           </div>
         </div>
       </div>
@@ -89,20 +91,40 @@ export default function Home() {
         className={`${themes[theme].clear_bg} ${themes[theme].inner_text} card`}
         id="example-profile"
       >
-        <div id="example-profile-left">
-          <div className={`${themes[theme].dark} card`}>
+        <div className="profile-left">
+          <div className={`${themes[theme].dark} card profile-card`}>
             <h3>Hi Gabby!</h3>
           </div>
-          <div className={`${themes[theme].medium} card`}>
-            <h3>Edit profile</h3>
+          <div className={`${themes[theme].light} card edit-profile-card`}>
+            <p className="text-center">Edit profile</p>
           </div>
         </div>
-        <div id="example-profile-right">
-          <div className={`${themes[theme].light} card`}>
+        <div className="profile-right">
+          <div className={`${themes[theme].medium} card`}>
             <h3>Goals</h3>
+            <div className={`${themes[theme].outer_text} goals`}>
+              <div className={`${themes[theme].clear_bg} mini-card goal-card`}>
+                Workout 4x a week
+              </div>
+              <div className={`${themes[theme].clear_bg} mini-card goal-card`}>
+                Learn Spanish
+              </div>
+              <div className={`${themes[theme].clear_bg} mini-card goal-card`}>
+                Get a new job
+              </div>
+            </div>
           </div>
-          <div className="card">
-            <h3>Goals</h3>
+          <div className="profile-main">
+            <div className={`${themes[theme].light} card todo`}>
+              <h4>Today's Todos</h4>
+            </div>
+            <div className={`${themes[theme].light} card todo`}>
+              <h4>Tmrw's Todos</h4>
+            </div>
+            <div>
+              <div className={`${themes[theme].medium} card`}></div>
+              <div className={`${themes[theme].medium} card`}></div>
+            </div>
           </div>
         </div>
       </div>

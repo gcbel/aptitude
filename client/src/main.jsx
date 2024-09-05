@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Login from "./pages/Login.jsx";
+import Survey from "./pages/Survey.jsx";
 import Support from "./pages/Support.jsx";
 import Profile from "./pages/Profile.jsx";
 import "./styles/tailwind.css";
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/support",
         element: <Support />,
+      },
+      {
+        path: "/survey",
+        element: <Survey />,
       },
       {
         path: "/profile",

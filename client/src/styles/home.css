@@ -38,15 +38,7 @@
 
   /* EXAMPLE PROFILE */
   #example-profile {
-    @apply h-[65vh] w-[98vw] rounded-xl mt-10 flex flex-row;
-  }
-
-  #example-profile-left {
-    @apply flex flex-col flex-auto;
-  }
-
-  #example-profile-right {
-    @apply flex flex-col flex-auto;
+    @apply h-[65vh] w-[98vw] rounded-xl mt-10 flex flex-col md:flex-row gap-2;
   }
 
   /* CUSTOMIZABILITY */

@@ -33,6 +33,10 @@
     @apply text-2xl text-center;
   }
 
+  .card h4 {
+    @apply text-xl text-center;
+  }
+
   .mini-card {
     @apply rounded-xl p-3 my-2 shadow-xl;
   }
@@ -42,11 +46,44 @@
   }
 
   .button-outer {
-    @apply flex;
+    @apply flex justify-center;
   }
 
   .button {
     @apply rounded-xl py-3 px-5 shadow-xl font-medium italic;
+  }
+
+  /* PROFILE PAGE */
+  .profile-left {
+    @apply flex flex-row md:flex-col flex-auto md:w-[30vw] md:max-w-[300px] gap-2;
+  }
+
+  .profile-right {
+    @apply flex flex-col flex-auto gap-2;
+  }
+
+  .profile-main {
+    @apply flex flex-row gap-2 h-full;
+  }
+
+  .profile-card {
+    @apply w-full md:h-full;
+  }
+
+  .edit-profile-card {
+    @apply flex items-center justify-center;
+  }
+
+  .goals {
+    @apply flex flex-row gap-2 text-center;
+  }
+
+  .goal-card {
+    @apply flex justify-center items-center w-[33%] min-h-[80px];
+  }
+
+  .todo {
+    @apply w-[50%] md:w-[33%];
   }
 
   /* HOURGLASS */
