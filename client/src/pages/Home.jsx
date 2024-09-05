@@ -173,7 +173,7 @@ export default function Home() {
           {themes.map((theme) => (
             <div
               key={theme.id}
-              className={`customize-card ${theme.medium}`}
+              className={`customize-card ${theme.light}`}
               onClick={() => setTheme(theme.id)}
             ></div>
           ))}
