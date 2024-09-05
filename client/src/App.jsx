@@ -41,7 +41,7 @@ export default function Root() {
     <ApolloProvider client={client}>
       <ThemeProvider>
         <Nav />
-        <div className="pt-[180px]">
+        <div className="pt-[76px]">
           <Outlet />
         </div>
         <Footer />

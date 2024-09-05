@@ -6,7 +6,7 @@
 /* NAV */
 @layer components {
   nav {
-    @apply bg-white w-full flex flex-wrap items-end justify-between py-6 px-[100px] fixed z-10 left-[-100px];
+    @apply bg-white w-full flex flex-wrap items-end justify-between py-4 px-[100px] fixed z-10 left-[-100px];
   }
 
   .page-title {

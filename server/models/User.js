@@ -24,11 +24,16 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minlength: 5,
-    select: false, // Exclude password from query results by default
+    select: false,
   },
   selectedTheme: {
     type: Number,
     default: 0,
+  },
+  dashboards: {
+    type: Schema.Types.ObjectId,
+    ref: "Dashboard",
+    default: [],
   },
 });
 
