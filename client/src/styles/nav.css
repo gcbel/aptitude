@@ -18,8 +18,8 @@
     @apply block md:hidden;
   }
 
-  #ham-nav-button {
-  }
+  /* #ham-nav-button {
+  } */
 
   /* FULL SIZE NAV */
   #main-nav {
@@ -27,6 +27,6 @@
   }
 
   #main-nav-links {
-    @apply text-lg flex flex-col lg:flex-row lg:gap-8;
+    @apply text-lg flex flex-row md:gap-8;
   }
 }

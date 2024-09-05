@@ -46,12 +46,14 @@ export default function Nav() {
 
       {/* FULL SIZE NAV */}
       <div id="main-nav">
-        <div id="main-nav-links">
+        <div>
           {Auth.isLoggedIn() && (
-            <Link to="/profile">{Auth.getUser().username}</Link>
+            <div id="main-nav-links">
+              <Link to="/profile">{Auth.getUser().username}</Link>
+            </div>
           )}
           {!Auth.isLoggedIn() && (
-            <div>
+            <div id="main-nav-links">
               <Link to="/about">About</Link>
               <Link to="/login">Login</Link>
             </div>
