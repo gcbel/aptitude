@@ -1,5 +1,5 @@
 /* DEPENDENCIES */
-const { User } = require("../models");
+const { User, Dashboard } = require("../models");
 const { GraphQLScalarType, Kind } = require("graphql");
 const jwt = require("jsonwebtoken");
 
@@ -36,6 +36,22 @@ const resolvers = {
     currentUser: async (_, __, { user }) => {
       if (!user) throw new Error("Not authenticated");
       return User.findById(user.id);
+    },
+    userDashboards: async (_, { username }) => {
+      try {
+        // Find user
+        const currentUser = await User.findOne({ username: username });
+        if (!currentUser) throw new Error("User not found");
+
+        // Find user's dashboards
+        const dashboards = await Dashboard.find({
+          author: currentUser.username,
+        });
+        return dashboards;
+      } catch (error) {
+        console.error("Error fetching dashboards:", error);
+        throw new Error("Error fetching dashboards");
+      }
     },
   },
   Mutation: {

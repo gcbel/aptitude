@@ -1,5 +1,6 @@
 [
   {
+    "author": "example",
     "name": "Health",
     "goals": [
       {
@@ -59,6 +60,7 @@
     "theme": 4
   },
   {
+    "author": "example",
     "name": "Health",
     "goals": [
       {
@@ -118,6 +120,7 @@
     "theme": 4
   },
   {
+    "author": "example",
     "name": "Personal Development",
     "goals": [
       {

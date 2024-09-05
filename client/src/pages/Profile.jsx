@@ -1,7 +1,10 @@
 /* DEPENDENCIES */
-import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 import { useTheme } from "../utils/ThemeContext";
+import { QUERY_USER_PROFILE } from "../utils/queries";
+import Auth from "../utils/auth";
 import Hourglass from "../components/Loading";
 import "../styles/profile.css";
 
@@ -9,11 +12,24 @@ import "../styles/profile.css";
 export default function Profile() {
   const { theme, setTheme, themes } = useTheme();
 
-  const loading = false;
+  // Get user and their dashboards
+  const username = Auth.getUser()?.username;
+
+  const { loading, error, data } = useQuery(QUERY_USER_PROFILE, {
+    variables: { username },
+  });
 
   if (loading) {
     return <Hourglass />;
   }
+
+  if (error) {
+    console.log(error);
+    return <p>Error loading dashboards</p>;
+  }
+
+  const dashboards = data.userDashboards;
+  console.log(dashboards);
 
   return (
     <div
@@ -30,73 +46,6 @@ export default function Profile() {
         >
           <p className="text-center">Edit profile</p>
         </Link>
-      </div>
-      <div className="profile-right">
-        <div className={`${themes[theme].medium} card`}>
-          <h3>Goals</h3>
-          <div className={`${themes[theme].outer_text} goals`}>
-            <div className={`${themes[theme].clear_bg} mini-card goal-card`}>
-              Workout 4x a week
-            </div>
-            <div className={`${themes[theme].clear_bg} mini-card goal-card`}>
-              Learn Spanish
-            </div>
-            <div className={`${themes[theme].clear_bg} mini-card goal-card`}>
-              Get a new job
-            </div>
-          </div>
-        </div>
-        <div className="profile-main">
-          <div className={`${themes[theme].light} card todo`}>
-            <h4>Today's Todos</h4>
-            <div className={`clear-mini-card`}>
-              <i className="fa-regular fa-circle-check"></i>
-              <p>Work out</p>
-            </div>
-            <div className="separator"></div>
-            <div className={`clear-mini-card`}>
-              <i className="fa-regular fa-circle-check"></i>
-              <p>Drink 3 glasses of water</p>
-            </div>
-            <div className="separator"></div>
-            <div className={`clear-mini-card`}>
-              <i className="fa-regular fa-circle"></i>
-              <p>Rewrite resume</p>
-            </div>
-            <div className="separator"></div>
-            <div className={`clear-mini-card`}>
-              <i className="fa-regular fa-circle"></i>
-              <p>Email recruiter back</p>
-            </div>
-          </div>
-          <div className={`${themes[theme].light} card todo`}>
-            <h4>Tmrw's Todos</h4>
-            <div className={`clear-mini-card`}>
-              <i className="fa-regular fa-circle"></i>
-              <p>Apply to 5 jobs</p>
-            </div>
-            <div className="separator"></div>
-            <div className={`clear-mini-card`}>
-              <i className="fa-regular fa-circle"></i>
-              <p>Practice 30 minutes of Spanish</p>
-            </div>
-            <div className="separator"></div>
-            <div className={`clear-mini-card`}>
-              <i className="fa-regular fa-circle"></i>
-              <p>Finish ML certification</p>
-            </div>
-            <div className="separator"></div>
-            <div className={`clear-mini-card`}>
-              <i className="fa-regular fa-circle"></i>
-              <p>Buy website domain</p>
-            </div>
-          </div>
-          <div className="info-cards">
-            <div className={`${themes[theme].dark} card weather`}></div>
-            <div className={`${themes[theme].dark} card stocks`}></div>
-            <div className={`${themes[theme].dark} card stocks`}></div>
-          </div>
-        </div>
       </div>
     </div>
   );

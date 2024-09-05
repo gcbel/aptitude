@@ -8,9 +8,9 @@ const dashboards = require("./dashboards.json");
 db.once("open", async () => {
   try {
     await cleanDB("User", "users");
-    // await cleanDB("Dashboard", "dashboards");
+    await cleanDB("Dashboard", "dashboards");
     await User.create(users);
-    // await Dashboard.create(dashboards);
+    await Dashboard.create(dashboards);
 
     console.log("Database seeded.");
     process.exit(0);
