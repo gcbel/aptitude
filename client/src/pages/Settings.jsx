@@ -1,6 +1,6 @@
 /* DEPENDENCIES */
 import { useTheme } from "../utils/ThemeContext";
-import Nav from "../components/SettingsNav";
+import Nav from "../components/Nav/SettingsNav";
 
 /* SETTINGS PAGE */
 export default function Settings() {
@@ -11,7 +11,7 @@ export default function Settings() {
       <Nav />
       <div>
         <h2 className="title playfair">Preferences</h2>
-        <div id="customize-cards">
+        <div id="style-settings">
           {themes.map((theme) => (
             <div
               key={theme.id}
@@ -29,7 +29,7 @@ export default function Settings() {
           ))}
         </div>
         <h2 className="title playfair">Objectives</h2>
-        <div id="customize-cards"></div>
+        <div id="goal-settings"></div>
       </div>
     </div>
   );
