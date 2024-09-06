@@ -17,7 +17,6 @@ export default function Profile() {
   const user = Auth.getUser();
   const name = user?.name;
   const username = user?.username;
-  console.log(user);
 
   const { loading, error, data } = useQuery(QUERY_USER_PROFILE, {
     variables: { username },
@@ -33,7 +32,6 @@ export default function Profile() {
   }
 
   const dashboards = data.userDashboards;
-  console.log(dashboards);
 
   return (
     <div
@@ -42,7 +40,7 @@ export default function Profile() {
     >
       <div className="profile-left">
         <div className={`${themes[theme].dark} card profile-card`}>
-          <h3>Hi {name}</h3>
+          <h3>Hi {name}!</h3>
         </div>
         <Link
           to="/settings"
