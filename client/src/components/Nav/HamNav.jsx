@@ -21,15 +21,16 @@ export default function HamNav({ toggle }) {
   const isLoggedIn = Auth.isLoggedIn();
   const [showNav, setNav] = useState(false);
 
+  // Sets nav to normal after click
+  const navClick = () => {
+    setNav((prev) => !prev);
+    toggle();
+  };
+
   return (
     <div>
       {/* ICON */}
-      <button
-        onClick={() => {
-          setNav((prev) => !prev);
-          toggle();
-        }}
-      >
+      <button onClick={() => navClick()}>
         <svg width="23" height="23" viewBox="0 0 23 23">
           <Path
             variants={{
@@ -59,14 +60,29 @@ export default function HamNav({ toggle }) {
         <div className="large-text" id="ham-dropdown">
           {isLoggedIn ? (
             <>
-              <Link to="/profile">Profile</Link>
-              <Link to="/settings">Settings</Link>
-              <p onClick={() => Auth.logout()}>Logout</p>
+              <Link to="/profile" onClick={() => navClick()}>
+                Profile
+              </Link>
+              <Link to="/settings" onClick={() => navClick()}>
+                Settings
+              </Link>
+              <p
+                onClick={() => {
+                  Auth.logout();
+                  navClick();
+                }}
+              >
+                Logout
+              </p>
             </>
           ) : (
             <>
-              <Link to="/about">About</Link>
-              <Link to="/login">Login</Link>
+              <Link to="/about" onClick={() => navClick()}>
+                About
+              </Link>
+              <Link to="/login" onClick={() => navClick()}>
+                Login
+              </Link>
             </>
           )}
         </div>

@@ -20,7 +20,7 @@
   }
 
   #ham-dropdown {
-    @apply fixed flex flex-col gap-[4px] justify-center items-center bg-white bg-opacity-90 h-[100vh] top-[60px] left-0 z-10 pb-[15vh] font-medium;
+    @apply fixed flex flex-col gap-[4px] justify-center items-center bg-white bg-opacity-90 h-[100vh] top-[60px] left-0 z-10 pb-[15vh] font-normal;
     width: calc(100%);
   }
 

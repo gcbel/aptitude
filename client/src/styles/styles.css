@@ -38,7 +38,7 @@
   }
 
   .mini-card {
-    @apply rounded-xl p-3 shadow-xl;
+    @apply rounded-xl p-3 my-2 shadow-xl;
   }
 
   .clear-mini-card {

@@ -49,6 +49,21 @@ export default function Profile() {
           <p className="text-center">Edit profile</p>
         </Link>
       </div>
+      <div className="profile-right">
+        <div className={`${themes[theme].medium} card`}>
+          <h3>Goals</h3>
+          <div className={`${themes[theme].outer_text} goals`}>
+            {dashboards[0].goals?.map((goal, index) => (
+              <div
+                key={index}
+                className={`${themes[theme].clear_bg} mini-card goal-card`}
+              >
+                {goal.title}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

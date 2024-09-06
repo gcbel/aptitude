@@ -51,15 +51,36 @@ export default function Nav() {
           )}
           {openProfileNav && (
             <div id="profile-dropdown">
-              <Link to="/profile">Profile</Link>
-              <Link to="/settings">Settings</Link>
-              <p onClick={() => Auth.logout()}>Logout</p>
+              <Link
+                to="/profile"
+                onClick={() => setProfileNav((prev) => !prev)}
+              >
+                Profile
+              </Link>
+              <Link
+                to="/settings"
+                onClick={() => setProfileNav((prev) => !prev)}
+              >
+                Settings
+              </Link>
+              <p
+                onClick={() => {
+                  Auth.logout();
+                  setProfileNav((prev) => !prev);
+                }}
+              >
+                Logout
+              </p>
             </div>
           )}
           {!Auth.isLoggedIn() && (
             <div id="main-nav-links">
-              <Link to="/about">About</Link>
-              <Link to="/login">Login</Link>
+              <Link to="/about" onClick={() => setProfileNav((prev) => !prev)}>
+                About
+              </Link>
+              <Link to="/login" onClick={() => setProfileNav((prev) => !prev)}>
+                Login
+              </Link>
             </div>
           )}
         </div>
