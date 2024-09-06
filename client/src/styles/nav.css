@@ -6,7 +6,7 @@
 /* NAV */
 @layer components {
   nav {
-    @apply bg-white w-full flex flex-wrap items-end justify-between py-4 px-[100px] fixed z-10 left-[-100px];
+    @apply bg-white w-full flex flex-wrap items-end justify-between py-4 px-[100px] fixed z-20 left-[-100px];
   }
 
   .page-title {
@@ -18,8 +18,9 @@
     @apply block md:hidden;
   }
 
-  /* #ham-nav-button {
-  } */
+  #ham-dropdown {
+    @apply fixed flex flex-col gap-[4px] justify-center items-center bg-white bg-opacity-90 h-[100vh] top-[60px] left-0 z-10 pb-[15vh] font-medium;
+  }
 
   /* FULL SIZE NAV */
   #main-nav {
@@ -42,6 +43,10 @@
 
 nav {
   width: calc(100% + 200px);
+}
+
+#ham-dropdown {
+  width: calc(100%);
 }
 
 #expand-username {
