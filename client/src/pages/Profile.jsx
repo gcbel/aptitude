@@ -54,9 +54,7 @@ export default function Profile() {
                 <div
                   key={index}
                   className={`indicator-circle ${
-                    index === currentDb
-                      ? "bg-gray-800"
-                      : "bg-gray-400 hover:bg-gray-600"
+                    index === currentDb ? "bg-gray-400" : "bg-gray-300"
                   }`}
                 />
               ))}

@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { useTheme } from "../utils/ThemeContext";
 import { icons } from "../utils/icons";
 
+import Habits from "./Dashboard/Habits";
+import Stocks from "./Dashboard/Stocks";
+
 /* DASHBOARD */
 export default function Dashboard({
   user,
@@ -26,18 +29,9 @@ export default function Dashboard({
           <h3>{name == "Main" ? `Hi ${user.name}!` : name}</h3>
         </div>
         {/* Habits */}
-        {habits && (
-          <div className="card">
-            <h4>Habits</h4>
-            {habits.map((habit, index) => (
-              <div key={index} className={`${themes[theme].clear_bg}`}>
-                <i className={`${icons[habit.icon]}`}></i>
-                <p>{habit.name}</p>
-              </div>
-            ))}
-          </div>
-        )}
+        {habits && <Habits habits={habits} />}
         {/* Stocks */}
+        {stocks && <Stocks />}
       </div>
       <div className="profile-right">
         <div className={`${themes[theme].medium} card`}>
