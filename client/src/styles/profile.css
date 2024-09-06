@@ -6,6 +6,10 @@
 /* PROFILE PAGE */
 @layer components {
   #profile-page {
-    @apply h-[90vh] w-[100vw] rounded-xl flex flex-col md:flex-row gap-2;
+    @apply w-[100vw] rounded-xl flex flex-col md:flex-row gap-2;
   }
+}
+
+#profile-page {
+  height: calc(90vh - 60px);
 }

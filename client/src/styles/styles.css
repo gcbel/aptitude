@@ -38,7 +38,7 @@
   }
 
   .mini-card {
-    @apply rounded-xl p-3 my-2 shadow-xl;
+    @apply rounded-xl p-3 shadow-xl;
   }
 
   .clear-mini-card {
@@ -75,7 +75,7 @@
   }
 
   .goals {
-    @apply flex flex-row gap-2 text-center;
+    @apply flex flex-row gap-2 text-center flex-wrap items-center mt-2;
   }
 
   .goal-card {
@@ -83,7 +83,7 @@
   }
 
   .todo {
-    @apply w-[49%] md:w-[33%];
+    @apply w-[98%] sm:w-[49%] md:w-[33%];
   }
 
   .info-cards {

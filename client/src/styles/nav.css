@@ -7,6 +7,7 @@
 @layer components {
   nav {
     @apply bg-white w-full flex flex-wrap items-end justify-between py-4 px-[100px] fixed z-20 left-[-100px];
+    width: calc(100% + 200px);
   }
 
   .page-title {
@@ -20,6 +21,7 @@
 
   #ham-dropdown {
     @apply fixed flex flex-col gap-[4px] justify-center items-center bg-white bg-opacity-90 h-[100vh] top-[60px] left-0 z-10 pb-[15vh] font-medium;
+    width: calc(100%);
   }
 
   /* FULL SIZE NAV */
@@ -37,16 +39,9 @@
 
   /* PROFILE VIEW */
   #profile-dropdown {
-    @apply flex flex-col absolute gap-[4px] top-[60px] bg-white rounded-xl p-4 text-lg;
+    @apply flex flex-col absolute top-[60px] bg-white rounded-xl px-10 pb-4 text-lg;
+    transform: translateX(-40px);
   }
-}
-
-nav {
-  width: calc(100% + 200px);
-}
-
-#ham-dropdown {
-  width: calc(100%);
 }
 
 #expand-username {

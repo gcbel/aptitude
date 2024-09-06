@@ -24,7 +24,7 @@
 
   #first-intro-card,
   #sec-intro-card {
-    @apply w-[48vw] md:w-[32vw];
+    @apply w-[98vw] sm:w-[48vw] md:w-[32vw];
   }
 
   #third-intro-card {
@@ -47,10 +47,10 @@
   }
 
   #customize-cards {
-    @apply flex flex-row flex-wrap justify-center gap-4;
+    @apply flex flex-row flex-wrap justify-center gap-2 md:gap-4;
   }
 
   .customize-card {
-    @apply h-[38px] w-[40px] md:h-[58px] md:w-[60px] rounded-full;
+    @apply h-[34px] w-[36px] md:h-[38px] md:w-[40px] md:h-[58px] md:w-[60px] rounded-full;
   }
 }
