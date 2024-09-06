@@ -6,8 +6,7 @@
 /* PROFILE PAGE */
 @layer components {
   #profile-page {
-    @apply w-[100vw] rounded-xl flex flex-col md:flex-row gap-2;
-    height: calc(90vh - 60px);
+    @apply w-full rounded-xl flex flex-col md:flex-row gap-2;
   }
 
   .navigation-buttons {
@@ -16,11 +15,17 @@
   }
 
   .indicators {
-    @apply flex gap-2;
+    @apply flex gap-2 mt-[2px];
   }
 
   .indicator-circle {
     @apply w-[18px] h-[12px] transition-colors duration-200;
     border-radius: 50%;
+  }
+
+  /* DASHBOARD */
+  #dashboard {
+    @apply w-[100vw];
+    min-height: calc(90vh - 60px);
   }
 }

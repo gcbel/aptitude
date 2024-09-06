@@ -29,6 +29,7 @@ const goalSchema = new Schema({
 
 /* HABIT SCHEMA */
 const habitSchema = new Schema({
+  icon: { type: Number, required: true },
   name: { type: String, required: true },
   frequency: {
     type: String,

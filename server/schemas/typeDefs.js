@@ -63,6 +63,7 @@ const typeDefs = `
     
     type Habit {
         _id: ID!
+        icon: Int!
         name: String!
         frequency: String # Should be 'daily', 'weekly', or 'monthly'
         completedDates: [Date]

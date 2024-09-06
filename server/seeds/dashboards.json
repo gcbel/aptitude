@@ -45,11 +45,13 @@
     ],
     "habits": [
       {
+        "icon": 0,
         "name": "Drink Water",
         "frequency": "daily",
         "completedDates": []
       },
       {
+        "icon": 0,
         "name": "Workout",
         "frequency": "weekly",
         "completedDates": []
@@ -105,11 +107,13 @@
     ],
     "habits": [
       {
+        "icon": 0,
         "name": "Drink Water",
         "frequency": "daily",
         "completedDates": []
       },
       {
+        "icon": 0,
         "name": "Workout",
         "frequency": "weekly",
         "completedDates": []
@@ -164,11 +168,13 @@
     ],
     "habits": [
       {
+        "icon": 0,
         "name": "Meditate",
         "frequency": "daily",
         "completedDates": []
       },
       {
+        "icon": 0,
         "name": "Journal",
         "frequency": "daily",
         "completedDates": []

@@ -47,6 +47,7 @@ export const QUERY_USER_PROFILE = gql`
       }
       habits {
         _id
+        icon
         name
         frequency
         completedDates

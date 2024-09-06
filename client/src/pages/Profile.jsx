@@ -44,12 +44,12 @@ export default function Profile() {
             {...dashboards[currentDb]}
           />
           <div
-            className={`navigation-buttons large-text ${themes[theme].outer_text}`}
+            className={`navigation-buttons large-text playfair ${themes[theme].outer_text}`}
           >
             {currentDb !== 0 && (
               <button onClick={() => switchDb(-1)}>&lt;</button>
             )}
-            <div className="indicators">
+            <div className="indicators ">
               {dashboards.map((_, index) => (
                 <div
                   key={index}
