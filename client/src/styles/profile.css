@@ -7,9 +7,20 @@
 @layer components {
   #profile-page {
     @apply w-[100vw] rounded-xl flex flex-col md:flex-row gap-2;
+    height: calc(90vh - 60px);
   }
-}
 
-#profile-page {
-  height: calc(90vh - 60px);
+  .navigation-buttons {
+    @apply flex flex-row items-center justify-center gap-4;
+    transform: scale(1, 1.5);
+  }
+
+  .indicators {
+    @apply flex gap-2;
+  }
+
+  .indicator-circle {
+    @apply w-[18px] h-[12px] transition-colors duration-200;
+    border-radius: 50%;
+  }
 }

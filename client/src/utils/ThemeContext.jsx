@@ -9,7 +9,7 @@ export const ThemeProvider = ({ children }) => {
   // Get saved theme or set default
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("selectedTheme");
-    return savedTheme !== null ? parseInt(savedTheme) : 0;
+    return savedTheme !== null ? parseInt(savedTheme) : 6;
   });
 
   // Save theme to local storage whenever it changes
