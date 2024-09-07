@@ -70,21 +70,32 @@ const resolvers = {
       );
       return { token, user };
     },
-    signUp: async (_, { username, password }) => {
+    signUp: async (_, { name, email, username, password }) => {
       // Check if username is unique
-      const existingUser = await User.findOne({ username });
-      if (existingUser) {
+      const existingUsername = await User.findOne({ username });
+      if (existingUsenamer) {
         throw new Error("That username is not available");
       }
 
+      // Check if email is unique
+      const existingEmail = await User.findOne({ email });
+      if (existingEmail) {
+        throw new Error("That email is already associated with an account");
+      }
+
       // If username is unique, create user
-      const user = await User.create({ username, password });
+      const user = await User.create({ name, email, username, password });
       if (!user) {
         throw new Error("Something went wrong!");
       }
 
       const token = jwt.sign(
-        { id: user.id, username: user.username, name: user.name },
+        {
+          id: user.id,
+          name: user.name,
+          username: user.username,
+          name: user.name,
+        },
         process.env.JWT_SECRET,
         {
           expiresIn: expiration,

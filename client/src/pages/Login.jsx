@@ -9,6 +9,7 @@ import Auth from "../utils/auth";
 /* LOGIN */
 export default function Login() {
   const [nameAlert, setNameAlert] = useState(false);
+  const [emailAlert, setEmailAlert] = useState(false);
   const [usernameAlert, setUsernameAlert] = useState(false);
   const [passwordAlert, setPasswordAlert] = useState(false);
 
@@ -20,6 +21,7 @@ export default function Login() {
   });
   const [signupFormData, setSignupFormData] = useState({
     name: "",
+    email: "",
     username: "",
     password: "",
   });
@@ -30,38 +32,77 @@ export default function Login() {
   const clearForm = () => {
     setFormErrorMessage("");
     setLoginFormData({ username: "", password: "" });
-    setSignupFormData({ name: "", username: "", password: "" });
+    setSignupFormData({ name: "", email: "", username: "", password: "" });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setFormErrorMessage("");
 
-    if (!/^[a-zA-Z0-9_]*$/.test(formData.username)) {
-      setFormErrorMessage("Username must be alphanumeric");
-      return;
-    }
+    if (isLogin) {
+      try {
+        const variables = {
+          username: loginFormData.username.trim().toLowerCase(),
+          password: loginFormData.password,
+        };
 
-    try {
-      const variables = {
-        username: formData.username.trim().toLowerCase(),
-        password: formData.password,
-      };
-
-      if (isLogin) {
         const { data } = await login({ variables });
         Auth.login(data.login.token);
-      } else {
-        if (formData.password.length < 6) {
-          setFormErrorMessage("Password must be at least 6 characters long");
-          return;
+      } catch (e) {
+        setFormErrorMessage(e.message || "An error occurred");
+      }
+    } else {
+      try {
+        const variables = {
+          name: signupFormData.name,
+          email: signupFormData.email,
+          username: signupFormData.username.trim().toLowerCase(),
+          password: signupFormData.password,
+        };
+
+        let formApproved = true;
+
+        if (signupFormData.name.length < 2) {
+          setNameAlert(true);
+          formApproved = false;
+        } else {
+          setNameAlert(false);
         }
 
-        const { data } = await signUp({ variables });
-        Auth.login(data.signUp.token);
+        if (
+          !/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(
+            signupFormData.email
+          )
+        ) {
+          setEmailAlert(true);
+          formApproved = false;
+        } else {
+          setEmailAlert(false);
+        }
+
+        if (!/^[a-zA-Z0-9_]*$/.test(signupFormData.username)) {
+          setUsernameAlert(true);
+          formApproved = false;
+        } else {
+          setUsernameAlert(false);
+        }
+
+        if (signupFormData.password.length < 6) {
+          setPasswordAlert(true);
+          formApproved = false;
+        } else {
+          setPasswordAlert(false);
+        }
+
+        if (formApproved) {
+          const { data } = await signUp({ variables });
+          Auth.login(data.signUp.token);
+        } else {
+          return;
+        }
+      } catch (e) {
+        setFormErrorMessage(e.message || "An error occurred");
       }
-    } catch (e) {
-      setFormErrorMessage(e.message || "An error occurred");
     }
   };
 
@@ -73,6 +114,7 @@ export default function Login() {
     <div className="montserrat" id="login-page">
       <form onSubmit={handleSubmit} id="login-form">
         {isLogin ? (
+          // LOGIN
           <div id="login-card">
             <h2 className="title">Welcome back!</h2>
             {formErrorMessage && <div id="form-error">{formErrorMessage}</div>}
@@ -122,11 +164,20 @@ export default function Login() {
             </p>
           </div>
         ) : (
+          // SIGN UP
           <div id="login-card">
-            <h2 className="title">Welcome</h2>
+            <h2 className="title">Welcome!</h2>
+            {formErrorMessage && <div id="form-error">{formErrorMessage}</div>}
             <label htmlFor="name" className="login-label">
               <div>
-                <span className="med-text">First name</span>
+                <div className="name-and-alert">
+                  <span className="med-text">First name</span>
+                  {nameAlert && (
+                    <p className="small-text alert">
+                      Please enter a longer name.
+                    </p>
+                  )}
+                </div>
                 <input
                   className="login-input"
                   type="text"
@@ -143,8 +194,38 @@ export default function Login() {
                 />
               </div>
             </label>
+            <label htmlFor="email" className="login-label">
+              <div className="name-and-alert">
+                <span className="med-text">Email</span>
+                {emailAlert && (
+                  <p className="small-text alert">Please enter your email.</p>
+                )}
+              </div>
+              <input
+                className="login-input"
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                value={signupFormData.email}
+                onChange={(e) =>
+                  setSignupFormData({
+                    ...signupFormData,
+                    email: e.target.value,
+                  })
+                }
+              />
+            </label>
             <label htmlFor="username" className="login-label">
-              <span className="med-text">Username</span>
+              <div className="name-and-alert">
+                <span className="med-text">Username</span>
+                {usernameAlert && (
+                  <p className="small-text alert">
+                    Your username should be at least 6 characters long and must
+                    use only lowercase alphanumeric characters.
+                  </p>
+                )}
+              </div>
               <input
                 className="login-input"
                 type="text"
@@ -160,14 +241,15 @@ export default function Login() {
                 }
               />
             </label>
-            {usernameAlert && (
-              <p className="small-text">
-                Your username should be at least 6 characters long and must use
-                only lowercase alphanumeric characters.
-              </p>
-            )}
             <label htmlFor="password" className="login-label">
-              <span className="med-text">Password</span>
+              <div className="name-and-alert">
+                <span className="med-text">Password</span>
+                {passwordAlert && (
+                  <p className="small-text alert">
+                    Your password must be at least 6 characters long.
+                  </p>
+                )}
+              </div>
               <input
                 className="login-input"
                 type="password"
@@ -183,11 +265,6 @@ export default function Login() {
                   })
                 }
               />
-              {passwordAlert && (
-                <p className="small-text">
-                  Your password must be at least 6 characters long.
-                </p>
-              )}
             </label>
             <div id="submit-div">
               <button type="submit" id="submit">
@@ -195,8 +272,8 @@ export default function Login() {
               </button>
             </div>
             <p className="med-text" id="choose-signup">
-              Don't have an account?
-              <span onClick={() => setIsLogin(false)}> Sign up</span>
+              Already have an account?
+              <span onClick={() => setIsLogin(true)}> Login</span>
             </p>
           </div>
         )}

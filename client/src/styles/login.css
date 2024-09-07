@@ -30,7 +30,15 @@
   }
 
   .login-input {
-    @apply w-full px-3 border border-zinc-300 rounded-xl focus:border-zinc-400 focus:bg-white mb-2;
+    @apply w-full px-3 border border-zinc-300 rounded-xl focus:border-zinc-400 focus:bg-white mb-3;
+  }
+
+  .name-and-alert {
+    @apply flex flex-col justify-between sm:flex-row sm:items-end sm:gap-4;
+  }
+
+  .alert {
+    @apply text-red-600 mb-[2px] sm:text-right;
   }
 
   #submit-div {
