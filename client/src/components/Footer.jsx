@@ -6,7 +6,7 @@ import "../styles/footer.css";
 /* FOOTER */
 export default function Footer() {
   return (
-    <footer className="footer montserrat text-black">
+    <footer className="footer montserrat">
       <div className="footer-container">
         <p className="footer-text">
           &copy; 2024 Aptitude. All rights reserved.

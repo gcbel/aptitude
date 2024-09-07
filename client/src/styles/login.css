@@ -6,11 +6,19 @@
 /* LOGIN */
 @layer components {
   #login-page {
-    @apply flex items-center justify-center mt-10;
+    @apply flex items-center justify-center mt-10 text-black;
   }
 
   #login-form {
-    @apply w-full max-w-md;
+    @apply flex items-center justify-center w-full max-w-md;
+  }
+
+  #login-card {
+    @apply max-w-[380px] rounded-xl p-6 md:p-8 shadow-xl;
+  }
+
+  #login-card h2 {
+    @apply mb-4;
   }
 
   #form-error {
@@ -18,11 +26,11 @@
   }
 
   .login-label {
-    @apply flex flex-col gap-1 w-full mb-6;
+    @apply flex flex-col gap-1 w-full mb-5;
   }
 
   .login-input {
-    @apply w-full px-3 border rounded-lg focus:border-slate-950 focus:bg-white;
+    @apply w-full px-3 border border-zinc-300 rounded-xl focus:border-zinc-400 focus:bg-white;
   }
 
   #submit-div {
@@ -30,12 +38,12 @@
   }
 
   #submit {
-    @apply px-6 py-3 rounded-lg text-white;
+    @apply px-6 py-[11px] rounded-xl text-white bg-black font-medium;
   }
 
   #choose-signup span,
   #choose-login span {
-    @apply font-bold;
+    @apply font-medium;
   }
 }
 

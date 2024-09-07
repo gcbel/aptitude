@@ -6,7 +6,7 @@
 /* FOOTER */
 @layer components {
   .footer {
-    @apply py-4;
+    @apply py-4 text-black;
   }
 
   .footer-container {

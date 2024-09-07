@@ -17,7 +17,7 @@ export default function Nav() {
   const containerRef = useRef(null);
 
   return (
-    <nav className="montserrat min-width text-black">
+    <nav className="montserrat min-width">
       <Link to="/" className="playfair page-title">
         Aptitude
       </Link>

@@ -2,15 +2,12 @@
 import { SIGN_UP, LOGIN } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
-import { useTheme } from "../utils/ThemeContext";
 import "../styles/login.css";
 
 import Auth from "../utils/auth";
 
 /* LOGIN */
 export default function Login() {
-  const { theme, setTheme, themes } = useTheme();
-
   const [passwordAlert, setPasswordAlert] = useState(false);
   const [usernameAlert, setUsernameAlert] = useState(false);
 
@@ -63,18 +60,31 @@ export default function Login() {
   }
 
   return (
-    <div className={`montserrat ${themes[theme].outer_text}`} id="login-page">
+    <div className="montserrat" id="login-page">
       <form onSubmit={handleSubmit} id="login-form">
-        <div className="card">
-          <h2 className="playfair title">
-            {isLogin ? "Welcome back!" : "Welcome!"}
-          </h2>
-          <h3 className="large-text">{isLogin ? "Login" : "Sign Up"}</h3>
+        <div id="login-card">
+          <h2 className="title">{isLogin ? "Welcome back!" : "Welcome!"}</h2>
           {formErrorMessage && <div id="form-error">{formErrorMessage}</div>}
           <label htmlFor="username" className="login-label">
+            {!isLogin && (
+              <div>
+                <span className="med-text">First name</span>
+                <input
+                  className="login-input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                />
+              </div>
+            )}
             <span className="med-text">Username</span>
             <input
-              className={`login-input ${themes[theme].border}`}
+              className="login-input"
               type="text"
               id="username"
               name="username"
@@ -94,7 +104,7 @@ export default function Login() {
           <label htmlFor="password" className="login-label" id="password-label">
             <span className="med-text">Password</span>
             <input
-              className={`login-input ${themes[theme].border}`}
+              className="login-input"
               type="password"
               id="password"
               name="password"
@@ -112,11 +122,7 @@ export default function Login() {
             )}
           </label>
           <div id="submit-div">
-            <button
-              type="submit"
-              className={`${themes[theme].dark}`}
-              id="submit"
-            >
+            <button type="submit" id="submit">
               {isLogin ? "Login" : "Sign up"}
             </button>
           </div>
