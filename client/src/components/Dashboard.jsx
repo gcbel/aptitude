@@ -2,6 +2,8 @@
 import { useTheme } from "../utils/ThemeContext";
 
 import Goals from "./Dashboard/Goals";
+import Todos from "./Dashboard/Todos";
+import Lists from "./Dashboard/Lists";
 import Habits from "./Dashboard/Habits";
 import Stocks from "./Dashboard/Stocks";
 
@@ -36,6 +38,10 @@ export default function Dashboard({
       </div>
       <div className="profile-right">
         {goals && <Goals goals={goals} themeArray={themeArray} />}
+        <div className="todos-and-lists">
+          {todos && <Todos todos={todos} themeArray={themeArray} />}
+          {lists && <Lists lists={lists} themeArray={themeArray} />}
+        </div>
       </div>
     </div>
   );

@@ -86,8 +86,12 @@
     @apply flex justify-center items-center flex-1 min-h-[80px];
   }
 
+  .todos-and-lists {
+    @apply flex flex-col sm:flex-row;
+  }
+
   .todo {
-    @apply w-[98%] sm:w-[49%] md:w-[33%];
+    @apply w-[98%] md:w-[49%] lg:w-[33%];
   }
 
   .info-cards {
