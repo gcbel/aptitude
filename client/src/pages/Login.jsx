@@ -95,6 +95,7 @@ export default function Login() {
         }
 
         if (formApproved) {
+          console.log("Form approved");
           const { data } = await signUp({ variables });
           Auth.login(data.signUp.token);
         } else {

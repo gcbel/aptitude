@@ -73,7 +73,7 @@ const resolvers = {
     signUp: async (_, { name, email, username, password }) => {
       // Check if username is unique
       const existingUsername = await User.findOne({ username });
-      if (existingUsenamer) {
+      if (existingUsername) {
         throw new Error("That username is not available");
       }
 
