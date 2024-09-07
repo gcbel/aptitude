@@ -1,6 +1,5 @@
 /* LISTS */
 export default function Lists({ lists, themeArray }) {
-  console.log(lists);
   return (
     <div>
       {lists.map((list, index) => (
