@@ -30,10 +30,12 @@ export default function Dashboard({
           <h3>{name == "Main" ? `Hi ${user.name}!` : name}</h3>
         </div>
         <div>
-          {/* Habits */}
-          {habits && <Habits habits={habits} themeArray={themeArray} />}
+          {/* Weather */}
+
           {/* Stocks */}
           {stocks && <Stocks />}
+          {/* Habits */}
+          {habits && <Habits habits={habits} themeArray={themeArray} />}
         </div>
       </div>
       <div className="profile-right">

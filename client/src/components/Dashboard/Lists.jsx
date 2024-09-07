@@ -1,9 +1,9 @@
 /* LISTS */
 export default function Lists({ lists, themeArray }) {
   return (
-    <div>
+    <div className="flex-1">
       {lists.map((list, index) => (
-        <div className={`${themeArray.light} card`} key={index}>
+        <div key={index} className={`${themeArray.light} card`}>
           <h4>{list.name}</h4>
           {list.items.map((item, index) => (
             <div

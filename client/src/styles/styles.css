@@ -53,59 +53,6 @@
     @apply rounded-xl py-3 px-5 shadow-xl font-medium italic;
   }
 
-  /* PROFILE PAGE */
-  #dashboard {
-    @apply flex flex-col md:flex-row gap-2;
-  }
-
-  .profile-left {
-    @apply flex flex-col md:w-[30vw] md:max-w-[300px] gap-2;
-  }
-
-  .profile-right {
-    @apply flex flex-col flex-auto gap-2;
-  }
-
-  .profile-main {
-    @apply flex flex-row justify-center flex-wrap gap-2 h-full;
-  }
-
-  .profile-card {
-    @apply w-full md:h-full;
-  }
-
-  .edit-profile-card {
-    @apply flex items-center justify-center;
-  }
-
-  .goals {
-    @apply flex flex-row gap-2 text-center flex-wrap items-center mt-2;
-  }
-
-  .goal-card {
-    @apply flex justify-center items-center flex-1 min-h-[80px];
-  }
-
-  .todos-and-lists {
-    @apply flex flex-col sm:flex-row;
-  }
-
-  .todo {
-    @apply w-[98%] md:w-[49%] lg:w-[33%];
-  }
-
-  .info-cards {
-    @apply flex flex-row md:flex-col gap-2 flex-1;
-  }
-
-  .weather {
-    @apply w-[50%] md:w-full h-full;
-  }
-
-  .stocks {
-    @apply w-[50%] md:w-full h-full;
-  }
-
   /* HOURGLASS */
   #hourglass {
     @apply w-[100vw] flex items-center justify-center;

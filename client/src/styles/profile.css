@@ -23,14 +23,59 @@
     border-radius: 50%;
   }
 
-  /* DASHBOARD */
   #dashboard {
-    @apply w-[100vw];
+    @apply w-[100vw] flex flex-col md:flex-row gap-2;
     min-height: calc(90vh - 60px);
   }
 
-  /* HABITS */
-  /* .habit-card {
+  /* LEFT DASHBOARD */
+  .profile-left {
+    @apply flex flex-col md:w-[30vw] md:max-w-[300px] gap-2;
+  }
 
+  .profile-card {
+    @apply w-full md:h-full;
+  }
+
+  /* RIGHT DASHBOARD */
+  .profile-right {
+    @apply flex flex-col flex-auto gap-2;
+  }
+
+  .goals {
+    @apply flex flex-row gap-2 text-center flex-wrap items-center mt-2;
+  }
+
+  .goal-card {
+    @apply flex justify-center items-center flex-1 min-h-[80px];
+  }
+
+  .todos-and-lists {
+    @apply flex flex-col flex-wrap sm:flex-row gap-2;
+  }
+
+  .todo-or-list {
+    @apply flex-1;
+  }
+
+  /* HOME PAGE */
+  .profile-main {
+    @apply flex flex-row justify-center flex-wrap gap-2 h-full;
+  }
+
+  .todo {
+    @apply w-[98%] md:w-[49%] lg:w-[33%];
+  }
+
+  /* .info-cards {
+    @apply flex flex-row md:flex-col gap-2 flex-1;
+  }
+
+  .weather {
+    @apply w-[50%] md:w-full h-full;
+  }
+
+  .stocks {
+    @apply w-[50%] md:w-full h-full;
   } */
 }
