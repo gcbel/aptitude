@@ -16,10 +16,9 @@ export default function Dashboard({
   habits,
   stocks,
   weather,
-  dbTheme,
+  theme,
 }) {
-  const { theme, setTheme, themes } = useTheme();
-  console.log(habits);
+  const { ogTheme, setTheme, themes } = useTheme();
 
   return (
     <div className={`${themes[theme].clear_bg} card`} id="dashboard">
@@ -29,7 +28,7 @@ export default function Dashboard({
           <h3>{name == "Main" ? `Hi ${user.name}!` : name}</h3>
         </div>
         {/* Habits */}
-        {habits && <Habits habits={habits} />}
+        {habits && <Habits habits={habits} theme={theme} />}
         {/* Stocks */}
         {stocks && <Stocks />}
       </div>

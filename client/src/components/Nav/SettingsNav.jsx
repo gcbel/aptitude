@@ -1,5 +1,4 @@
 /* DEPENDENCIES */
-import { useTheme } from "../../utils/ThemeContext";
 
 /* NAV FOR SETTINGS */
 export default function Nav() {

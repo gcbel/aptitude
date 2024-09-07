@@ -1,12 +1,22 @@
+/* DEPENDENCIES */
+import { useTheme } from "../../utils/ThemeContext";
+import { icons } from "../../utils/icons";
+
 /* HABITS */
 export default function Habits(habits) {
+  const { theme, setTheme, themes } = useTheme();
+  const array = habits.habits;
+
   return (
     <div className="card">
       <h4>Habits</h4>
-      {habits.map((habit, index) => (
-        <div key={index} className={`${themes[theme].clear_bg}`}>
-          <i className={`${icons[habit.icon]}`}></i>
-          <p>{habit.name}</p>
+      {array.map((habit, index) => (
+        <div key={index} className={`mini-card habit-card `}>
+          <i className="fa-regular fa-square-check"></i>
+          <div>
+            <i className={`${icons[habit.icon]}`}></i>
+            <p>{habit.name}</p>
+          </div>
         </div>
       ))}
     </div>

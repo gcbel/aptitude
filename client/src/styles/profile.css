@@ -28,4 +28,6 @@
     @apply w-[100vw];
     min-height: calc(90vh - 60px);
   }
+
+  /* HABITS */
 }
