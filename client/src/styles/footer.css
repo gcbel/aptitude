@@ -6,7 +6,7 @@
 /* FOOTER */
 @layer components {
   .footer {
-    @apply py-4 text-black;
+    @apply py-4 text-black text-xs md:text-sm;
   }
 
   .footer-container {
@@ -14,10 +14,10 @@
   }
 
   .footer-text {
-    @apply text-sm mb-4 sm:mb-0;
+    @apply mb-4 sm:mb-0 text-center;
   }
 
   .footer-links {
-    @apply text-sm flex flex-row space-x-4 sm:space-x-6;
+    @apply flex flex-row flex-wrap justify-center items-center gap-3 md:gap-6;
   }
 }
