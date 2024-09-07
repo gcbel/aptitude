@@ -115,6 +115,29 @@ const resolvers = {
       await User.findByIdAndDelete(id);
       return true;
     },
+    // addTodoItem: async (_, { title, userId }) => {
+    //   const newTodo = new Todo({
+    //     title,
+    //     userId,
+    //     items: [],
+    //   });
+    //   return await newTodo.save();
+    // },
+    // updateTodoItem: async (_, { todoId, itemId, completed }) => {
+    //   const todo = await Todo.findById(todoId);
+    //   const item = todo.items.id(itemId);
+    //   if (item) {
+    //     item.completed = completed;
+    //     await todo.save();
+    //   }
+    //   return todo;
+    // },
+    // removeTodoItem: async (_, { todoId, itemId }) => {
+    //   const todo = await Todo.findById(todoId);
+    //   todo.items.id(itemId).remove();
+    //   await todo.save();
+    //   return todo;
+    // },
   },
 };
 

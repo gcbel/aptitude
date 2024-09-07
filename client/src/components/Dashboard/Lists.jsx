@@ -7,6 +7,7 @@ export default function Lists({ lists, themeArray }) {
           <h4>{list.name}</h4>
           {list.items.map((item, index) => (
             <div
+              key={index}
               className={`${themeArray.clear_bg} ${themeArray.outer_text} mini-card`}
             >
               <p>{item.name}</p>

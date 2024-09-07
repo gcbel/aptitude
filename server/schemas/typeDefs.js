@@ -13,6 +13,9 @@ const typeDefs = `
         signUp(name: String!, email: String!, username: String!, password: String!): Auth
         updateUser(id: ID!, username: String, password: String): User
         deleteUser(id: ID!): Boolean
+        addTodoItem(todoId: ID!, title: String!): Todo
+        updateTodoItem(todoId: ID!, itemId: ID!, name: String!, completed: Boolean!): Todo
+        deleteTodoItem(todoId: ID!, itemId: ID!): Todo
     }
 
     type Auth {
