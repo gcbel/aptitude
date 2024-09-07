@@ -100,7 +100,8 @@
 
   /* HOURGLASS */
   #hourglass {
-    @apply w-[100vw] h-[90vh] flex items-center justify-center;
+    @apply w-[100vw] flex items-center justify-center;
+    min-height: calc(100vh - 150px);
   }
 
   /* ERROR PAGE */

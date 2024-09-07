@@ -50,7 +50,7 @@ export default function Profile() {
                 <div
                   key={index}
                   className={`indicator-circle ${
-                    index === currentDb ? "bg-gray-400" : "bg-gray-300"
+                    index === currentDb ? "bg-neutral-400" : "bg-neutral-300"
                   }`}
                 />
               ))}
