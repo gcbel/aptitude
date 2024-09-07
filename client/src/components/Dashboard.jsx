@@ -27,10 +27,12 @@ export default function Dashboard({
         <div className={`${themeArray.dark} card profile-card`}>
           <h3>{name == "Main" ? `Hi ${user.name}!` : name}</h3>
         </div>
-        {/* Habits */}
-        {habits && <Habits habits={habits} themeArray={themeArray} />}
-        {/* Stocks */}
-        {stocks && <Stocks />}
+        <div>
+          {/* Habits */}
+          {habits && <Habits habits={habits} themeArray={themeArray} />}
+          {/* Stocks */}
+          {stocks && <Stocks />}
+        </div>
       </div>
       <div className="profile-right">
         {goals && <Goals goals={goals} themeArray={themeArray} />}
