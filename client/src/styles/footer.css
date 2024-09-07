@@ -10,7 +10,7 @@
   }
 
   .footer-container {
-    @apply container mx-auto px-4 flex flex-col items-center sm:flex-row sm:justify-between;
+    @apply container mx-auto px-4 flex flex-col items-center md:flex-row md:justify-between;
   }
 
   .footer-text {
