@@ -129,10 +129,7 @@ export default function Login() {
           {isLogin ? (
             <p className="med-text" id="choose-signup">
               Don't have an account?
-              <span className="" onClick={() => setIsLogin(false)}>
-                {" "}
-                Sign up
-              </span>
+              <span onClick={() => setIsLogin(false)}> Sign up</span>
             </p>
           ) : (
             <p className="med-text" id="choose-login">

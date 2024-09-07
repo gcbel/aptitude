@@ -26,11 +26,11 @@
   }
 
   .login-label {
-    @apply flex flex-col gap-1 w-full mb-5;
+    @apply flex flex-col gap-1 w-full;
   }
 
   .login-input {
-    @apply w-full px-3 border border-zinc-300 rounded-xl focus:border-zinc-400 focus:bg-white;
+    @apply w-full px-3 border border-zinc-300 rounded-xl focus:border-zinc-400 focus:bg-white mb-2;
   }
 
   #submit-div {
@@ -38,7 +38,7 @@
   }
 
   #submit {
-    @apply px-6 py-[11px] rounded-xl text-white bg-black font-medium;
+    @apply px-6 py-[11px] mt-3 rounded-xl text-white bg-black font-medium;
   }
 
   #choose-signup span,
@@ -48,6 +48,6 @@
 }
 
 #login-page {
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 150px);
   margin: 0 auto;
 }

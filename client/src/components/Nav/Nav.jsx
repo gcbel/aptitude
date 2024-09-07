@@ -46,7 +46,7 @@ export default function Nav() {
               </p>
             </div>
           )}
-          {openProfileNav && (
+          {Auth.isLoggedIn() && openProfileNav && (
             <div id="profile-dropdown">
               <Link
                 to="/profile"
