@@ -100,7 +100,7 @@
 
   /* HOURGLASS */
   #hourglass {
-    @apply h-full flex items-center justify-center;
+    @apply w-[100vw] h-[90vh] flex items-center justify-center;
   }
 
   /* ERROR PAGE */

@@ -1,10 +1,8 @@
 /* DEPENDENCIES */
-import { useTheme } from "../../utils/ThemeContext";
 import { icons } from "../../utils/icons";
 
 /* HABITS */
-export default function Habits(habits) {
-  const { theme, setTheme, themes } = useTheme();
+export default function Habits(habits, themeArray) {
   const array = habits.habits;
 
   return (

@@ -14,10 +14,7 @@ const Hourglass = () => {
   }, []);
 
   return (
-    <div
-      className="w-[100vw] h-[90vh] flex justify-center items-center"
-      id="hourglass"
-    >
+    <div id="hourglass">
       <l-hourglass
         size="40"
         bg-opacity="0.25"

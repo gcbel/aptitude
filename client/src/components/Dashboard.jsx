@@ -1,8 +1,7 @@
 /* DEPENDENCIES */
-import { Link } from "react-router-dom";
 import { useTheme } from "../utils/ThemeContext";
-import { icons } from "../utils/icons";
 
+import Goals from "./Dashboard/Goals";
 import Habits from "./Dashboard/Habits";
 import Stocks from "./Dashboard/Stocks";
 
@@ -19,33 +18,22 @@ export default function Dashboard({
   theme,
 }) {
   const { ogTheme, setTheme, themes } = useTheme();
+  const themeArray = themes[theme];
 
   return (
-    <div className={`${themes[theme].clear_bg} card`} id="dashboard">
+    <div className={`${themeArray.clear_bg} card`} id="dashboard">
       <div className="profile-left">
         {/* Title */}
-        <div className={`${themes[theme].dark} card profile-card`}>
+        <div className={`${themeArray.dark} card profile-card`}>
           <h3>{name == "Main" ? `Hi ${user.name}!` : name}</h3>
         </div>
         {/* Habits */}
-        {habits && <Habits habits={habits} theme={theme} />}
+        {habits && <Habits habits={habits} themeArray={themeArray} />}
         {/* Stocks */}
         {stocks && <Stocks />}
       </div>
       <div className="profile-right">
-        <div className={`${themes[theme].medium} card`}>
-          <h4>Goals</h4>
-          <div className={`${themes[theme].outer_text} goals`}>
-            {goals?.map((goal, index) => (
-              <div
-                key={index}
-                className={`${themes[theme].clear_bg} mini-card goal-card`}
-              >
-                {goal.title}
-              </div>
-            ))}
-          </div>
-        </div>
+        {goals && <Goals goals={goals} themeArray={themeArray} />}
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 /* DEPENDENCIES */
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
-import { useTheme } from "../utils/ThemeContext";
 import { QUERY_USER_PROFILE } from "../utils/queries";
 import Auth from "../utils/auth";
 import Error from "./Error";
@@ -11,7 +10,6 @@ import "../styles/profile.css";
 
 /* PROFILE */
 export default function Profile() {
-  const { theme, setTheme, themes } = useTheme();
   const [currentDb, setCurrentDb] = useState(0);
 
   // Get user and their dashboards
@@ -31,7 +29,7 @@ export default function Profile() {
   };
 
   return (
-    <div className={`montserrat ${themes[theme].inner_text}`} id="profile-page">
+    <div className="montserrat" id="profile-page">
       {loading && <Hourglass />}
 
       {error && <Error />}
@@ -43,9 +41,7 @@ export default function Profile() {
             user={user}
             {...dashboards[currentDb]}
           />
-          <div
-            className={`navigation-buttons large-text playfair ${themes[theme].outer_text}`}
-          >
+          <div className="navigation-buttons large-text playfair">
             {currentDb !== 0 && (
               <button onClick={() => switchDb(-1)}>&lt;</button>
             )}
