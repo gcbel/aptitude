@@ -10,19 +10,33 @@
   }
 
   #settings-right {
-    @apply w-full sm:mx-6 md:mx-12;
+    @apply w-full mx-6 sm:mx-8 md:mx-12;
   }
 
   /* INDIVIDUAL DASHBOARD SETTINGS */
   .dashboard-title-div {
-    @apply flex flex-row justify-between items-end gap-6 my-10;
+    @apply flex flex-row justify-between items-end gap-6 mt-6 mb-4;
   }
-  .style-settings {
-    @apply flex flex-row flex-wrap gap-4 px-2 lg:px-6;
+
+  .expand-profile {
+    transform: scale(1.2, 0.7);
+  }
+
+  .db-settings {
+    @apply my-5;
+  }
+
+  /* STYLE SETTINGS */
+  .db-style-title {
+    @apply mb-2 text-center;
+  }
+
+  .db-style-settings {
+    @apply flex flex-row flex-wrap justify-center items-center gap-2 md:gap-4 px-2 lg:px-6;
   }
 
   .style-card {
-    @apply flex flex-row gap-1 h-[100px] w-[130px];
+    @apply flex flex-row gap-1 h-[80px] w-[80px] md:h-[100px] md:w-[100px];
   }
 
   .style-card > * {
@@ -35,5 +49,22 @@
 
   .right-style-cards > * {
     @apply h-full;
+  }
+
+  /* CONTENT SETTINGS */
+  .db-content-title {
+    @apply mt-10 text-center;
+  }
+
+  .db-content-settings {
+  }
+
+  .db-title-setting {
+    @apply flex flex-row items-end gap-4;
+  }
+
+  .db-title-setting input {
+    border: 0px solid black;
+    border-bottom: 0.5px solid black;
   }
 }
