@@ -1,36 +1,41 @@
 /* DEPENDENCIES */
-import { useTheme } from "../utils/ThemeContext";
-import Nav from "../components/Nav/SettingsNav";
+import { useQuery } from "@apollo/client";
+import { QUERY_USER_PROFILE } from "../utils/queries";
+import Auth from "../utils/auth";
 
-/* SETTINGS PAGE */
+import Nav from "../components/Settings/SettingsNav";
+import DBSettings from "../components/Settings/DBSettings";
+
+/* SETTINGS */
 export default function Settings() {
-  const { theme, setTheme, themes } = useTheme();
+  // Get user and their dashboards
+  const user = Auth.getUser();
+  const username = user?.username;
+
+  const { loading, error, data } = useQuery(QUERY_USER_PROFILE, {
+    variables: { username },
+  });
+
+  const dashboards = data?.userDashboards ?? [];
+  const numDbs = dashboards.length;
 
   return (
-    <div className="flex flex-row">
-      <Nav />
-      <div>
-        <h2 className="title playfair">Preferences</h2>
-        <div id="style-settings">
-          {themes.map((theme) => (
-            <div
-              key={theme.id}
-              className={`card ${theme.dark} ${theme.inner_text}`}
-              onClick={() => setTheme(theme.id)}
-            >
-              <h2>{theme.name}</h2>
-              <div className={`mini-card-outer ${theme.clear_bg}`}>
-                <div className={`mini-card ${theme.medium}`}></div>
-                <div className={`mini-card ${theme.light}`}></div>
-                <div className={`mini-card ${theme.medium}`}></div>
-                <div className={`mini-card ${theme.dark}`}></div>
-              </div>
-            </div>
-          ))}
+    <div>
+      {loading && <Hourglass />}
+
+      {error && <Error />}
+
+      {!loading && !error && numDbs > 0 && (
+        <div className="flex flex-row">
+          <Nav />
+          <DBSettings />
+          {numDbs < 5 && (
+            <button className={`bg-gray-300 button large-text`}>
+              Create new dashboard +
+            </button>
+          )}
         </div>
-        <h2 className="title playfair">Objectives</h2>
-        <div id="goal-settings"></div>
-      </div>
+      )}
     </div>
   );
 }

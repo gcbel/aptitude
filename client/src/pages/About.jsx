@@ -89,7 +89,7 @@ export default function Error() {
         </div>
       </div>
       <div className="about-div flex-col gap-1">
-        <h2 className="playfair title font-medium">And do so much more</h2>
+        <h2 className="playfair title font-medium">And so much more</h2>
         <Link
           to="/survey"
           className={`${themes[theme].clear_bg} ${themes[theme].outer_text} button large-text`}

@@ -14,7 +14,6 @@ export default function Profile() {
 
   // Get user and their dashboards
   const user = Auth.getUser();
-  const name = user?.name;
   const username = user?.username;
 
   const { loading, error, data } = useQuery(QUERY_USER_PROFILE, {
@@ -27,8 +26,6 @@ export default function Profile() {
   const switchDb = (change) => {
     setCurrentDb((prev) => prev + change);
   };
-
-  console.log(dashboards[0]);
 
   return (
     <div className="montserrat" id="profile-page">
