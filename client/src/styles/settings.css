@@ -1,0 +1,39 @@
+/* DEPENDENCIES */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SETTINGS PAGE */
+@layer components {
+  #settings-and-nav {
+    @apply flex flex-row;
+  }
+
+  #settings-right {
+    @apply w-full sm:mx-6 md:mx-12;
+  }
+
+  /* INDIVIDUAL DASHBOARD SETTINGS */
+  .dashboard-title-div {
+    @apply flex flex-row justify-between items-end gap-6 my-10;
+  }
+  .style-settings {
+    @apply flex flex-row flex-wrap gap-4 px-2 lg:px-6;
+  }
+
+  .style-card {
+    @apply flex flex-row gap-1 h-[100px] w-[130px];
+  }
+
+  .style-card > * {
+    @apply grow;
+  }
+
+  .right-style-cards {
+    @apply flex flex-col h-full gap-1;
+  }
+
+  .right-style-cards > * {
+    @apply h-full;
+  }
+}

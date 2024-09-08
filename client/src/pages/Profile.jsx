@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_USER_PROFILE } from "../utils/queries";
 import Auth from "../utils/auth";
+import "../styles/profile.css";
+
 import Error from "./Error";
 import Hourglass from "../components/Loading";
 import Dashboard from "../components/Dashboard";
-import "../styles/profile.css";
 
 /* PROFILE */
 export default function Profile() {

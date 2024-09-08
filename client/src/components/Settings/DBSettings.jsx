@@ -1,32 +1,42 @@
 /* DEPENDENCIES */
+import { useState } from "react";
 import { useTheme } from "../../utils/ThemeContext";
 
 /* DASHBOARD SETTINGS */
-export default function DBSettings() {
+export default function DBSettings(dashboard) {
   const { theme, setTheme, themes } = useTheme();
+
+  const array = dashboard.dashboard;
+  const [openDBSettings, setOpenDBSettings] = useState(false);
 
   return (
     <div>
-      <h2 className="title playfair">Preferences</h2>
-      <div id="style-settings">
-        {themes.map((theme) => (
-          <div
-            key={theme.id}
-            className={`card ${theme.dark} ${theme.inner_text}`}
-            onClick={() => setTheme(theme.id)}
-          >
-            <h2>{theme.name}</h2>
-            <div className={`mini-card-outer ${theme.clear_bg}`}>
-              <div className={`mini-card ${theme.medium}`}></div>
-              <div className={`mini-card ${theme.light}`}></div>
-              <div className={`mini-card ${theme.medium}`}></div>
-              <div className={`mini-card ${theme.dark}`}></div>
-            </div>
-          </div>
-        ))}
+      <div className="subtitle playfair dashboard-title-div">
+        <h2 className="dashboard-title">{array.name} Dashboard</h2>
+        <p>{openDBSettings ? "∧" : "∨"}</p>
       </div>
-      <h2 className="title playfair">Objectives</h2>
-      <div id="goal-settings"></div>
+      <div className="dark-separator"></div>
+      {openDBSettings && (
+        <div>
+          {/* STYLE */}
+          <div className="style-settings">
+            {themes.map((theme) => (
+              <div
+                key={theme.id}
+                className={`card ${theme.clear_bg} ${theme.outer_text} style-card`}
+              >
+                <div className={`mini-card ${theme.dark}`}></div>
+                <div className="right-style-cards">
+                  <div className={`mini-card ${theme.medium}`}></div>
+                  <div className={`mini-card ${theme.light}`}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <h2 className="title playfair">Objectives</h2>
+          <div id="goal-settings"></div>
+        </div>
+      )}
     </div>
   );
 }

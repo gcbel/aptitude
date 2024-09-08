@@ -13,6 +13,10 @@
     @apply text-xl sm:text-3xl md:text-4xl text-center;
   }
 
+  .subtitle {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+
   .large-text {
     @apply text-base sm:text-xl my-2;
   }
