@@ -1,0 +1,31 @@
+/* DEPENDENCIES */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ABOUT PAGE */
+@layer components {
+  #about-page {
+    @apply px-5;
+  }
+
+  #about-title {
+    @apply text-xl sm:text-2xl lg:text-3xl text-center mx-6 sm:mx-12 md:mx-28 lg:mx-64 font-medium;
+  }
+
+  #about-div {
+    @apply flex flex-col sm:flex-row justify-center items-center my-10 flex-1 gap-6;
+  }
+
+  #about-goals > * {
+    @apply flex-1;
+  }
+
+  #about-goals {
+    @apply md:min-w-[450px];
+  }
+
+  #about-page p {
+    @apply my-3;
+  }
+}

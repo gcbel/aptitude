@@ -10,15 +10,15 @@
   }
 
   .title {
-    @apply text-3xl md:text-4xl text-center;
+    @apply text-xl sm:text-3xl md:text-4xl text-center;
   }
 
   .large-text {
-    @apply text-xl my-2;
+    @apply text-base sm:text-xl my-2;
   }
 
   .med-text {
-    @apply text-lg;
+    @apply text-base sm:text-lg;
   }
 
   .small-text {
@@ -38,7 +38,7 @@
   }
 
   .mini-card {
-    @apply rounded-xl p-3 my-2 shadow-xl;
+    @apply rounded-xl p-3 shadow-xl;
   }
 
   .clear-mini-card {
@@ -59,6 +59,11 @@
 
   .separator {
     border-top: 0.5px solid rgba(255, 255, 255, 0.407);
+    margin: 0px 20px 0px 20px;
+  }
+
+  .dark-separator {
+    border-top: 0.5px solid rgba(0, 0, 0, 0.407);
     margin: 0px 20px 0px 20px;
   }
 

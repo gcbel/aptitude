@@ -28,6 +28,8 @@ export default function Profile() {
     setCurrentDb((prev) => prev + change);
   };
 
+  console.log(dashboards[0]);
+
   return (
     <div className="montserrat" id="profile-page">
       {loading && <Hourglass />}
