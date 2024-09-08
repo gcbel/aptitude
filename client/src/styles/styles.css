@@ -53,6 +53,15 @@
     @apply rounded-xl py-3 px-5 shadow-xl font-medium italic;
   }
 
+  .min-width {
+    min-width: 250px;
+  }
+
+  .separator {
+    border-top: 0.5px solid rgba(255, 255, 255, 0.407);
+    margin: 0px 20px 0px 20px;
+  }
+
   /* HOURGLASS */
   #hourglass {
     @apply w-[100vw] flex items-center justify-center;
@@ -80,14 +89,4 @@
   font-weight: 300;
   font-style: normal;
   transform: scale(0.92, 1);
-}
-
-/* REUSABLE */
-.min-width {
-  min-width: 250px;
-}
-
-.separator {
-  border-top: 0.5px solid rgba(255, 255, 255, 0.407);
-  margin: 0px 20px 0px 20px;
 }
