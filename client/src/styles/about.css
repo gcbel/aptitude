@@ -13,19 +13,23 @@
     @apply text-xl sm:text-2xl lg:text-3xl text-center mx-6 sm:mx-12 md:mx-28 lg:mx-64 font-medium;
   }
 
-  #about-div {
-    @apply flex flex-col sm:flex-row justify-center items-center my-10 flex-1 gap-6;
+  .about-div {
+    @apply flex flex-col sm:flex-row justify-center items-center my-28 flex-1 gap-2 sm:gap-6 lg:gap-12;
   }
 
-  #about-goals > * {
-    @apply flex-1;
-  }
-
-  #about-goals {
+  .about-example-div {
     @apply md:min-w-[450px];
   }
 
-  #about-page p {
-    @apply my-3;
+  .about-example-div > * {
+    @apply flex-1;
+  }
+
+  .about-text-div p {
+    @apply my-3 text-center;
+  }
+
+  #example-todos {
+    @apply flex-col-reverse sm:flex-row;
   }
 }

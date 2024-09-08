@@ -30,5 +30,40 @@ export const example = [
         ],
       },
     ],
+    habits: [
+      {
+        icon: 0,
+        name: "Drink Water",
+        frequency: "daily",
+        completedDates: [],
+      },
+      {
+        icon: 1,
+        name: "Workout",
+        frequency: "daily",
+        completedDates: [],
+      },
+    ],
+    lists: [
+      {
+        name: "Daily Tasks",
+        items: [
+          { name: "Drink water", completed: false },
+          { name: "Eat healthy", completed: false },
+          { name: "Workout", completed: false },
+        ],
+      },
+    ],
+    todos: [
+      {
+        title: "Daily Health Tasks",
+        items: [
+          { name: "Drink water", completed: false },
+          { name: "Eat healthy", completed: false },
+          { name: "Workout", completed: false },
+        ],
+        completed: false,
+      },
+    ],
   },
 ];

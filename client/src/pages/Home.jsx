@@ -1,5 +1,5 @@
 /* DEPENDENCIES */
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React from "react";
 import { useState, useEffect } from "react";
 import { useTheme } from "../utils/ThemeContext";

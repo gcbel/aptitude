@@ -28,13 +28,13 @@ export default function Todos({ todos, themeArray }) {
   };
 
   return (
-    <div className="todo-or-list">
+    <div className={`todo-or-list ${themeArray.inner_text}`}>
       {todoList.map((todo, todoIndex) => (
         <div className={`${themeArray.light} card`} key={todoIndex}>
           <h4>{todo.title}</h4>
           {todo.items.map((item, itemIndex) => (
             <div key={itemIndex}>
-              <div className={`${themeArray.outer_text} clear-mini-card`}>
+              <div className="clear-mini-card">
                 <i
                   className={`fa-regular ${
                     item.completed ? "fa-square-check" : "fa-square"
