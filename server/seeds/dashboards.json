@@ -1,24 +1,24 @@
 [
   {
     "author": "example",
-    "name": "Health",
+    "name": "Main",
     "goals": [
       {
-        "title": "Drink water everyday",
-        "description": "Ensure you drink at least 8 glasses of water daily.",
+        "title": "Work out 4x a week",
+        "description": "Work out Mon-Wed and Friday.",
         "completed": false,
         "milestones": [
-          { "name": "Start drinking water", "completed": false },
-          { "name": "Maintain daily routine", "completed": false }
+          { "name": "Bench 200", "completed": false },
+          { "name": "Join a gym or fitness class", "completed": false }
         ]
       },
       {
-        "title": "Work out 4x a week",
-        "description": "Exercise at least four times a week.",
+        "title": "Learn Spanish",
+        "description": "Be ready for upcoming trip and speak naturally.",
         "completed": false,
         "milestones": [
-          { "name": "Join a gym or fitness class", "completed": false },
-          { "name": "Complete first workout", "completed": false }
+          { "name": "Know 500 words", "completed": false },
+          { "name": "Speak in a conversation fluently", "completed": false }
         ]
       }
     ],
@@ -51,15 +51,15 @@
         "completedDates": []
       },
       {
-        "icon": 0,
+        "icon": 1,
         "name": "Workout",
-        "frequency": "weekly",
+        "frequency": "daily",
         "completedDates": []
       }
     ],
     "stocks": [],
     "weather": 0,
-    "theme": 4
+    "theme": 5
   },
   {
     "author": "example",

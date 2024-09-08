@@ -34,16 +34,16 @@ export const LOGIN = gql`
   }
 `;
 
-const UPDATE_TODO = gql`
-  mutation updateTodoItem($todoId: ID!, $itemId: ID!, $completed: Boolean!) {
-    updateTodoItem(todoId: $todoId, itemId: $itemId, completed: $completed) {
-      _id
-      title
-      items {
-        _id
-        name
-        completed
-      }
-    }
-  }
-`;
+// const UPDATE_TODO = gql`
+//   mutation updateTodoItem($todoId: ID!, $itemId: ID!, $completed: Boolean!) {
+//     updateTodoItem(todoId: $todoId, itemId: $itemId, completed: $completed) {
+//       _id
+//       title
+//       items {
+//         _id
+//         name
+//         completed
+//       }
+//     }
+//   }
+// `;

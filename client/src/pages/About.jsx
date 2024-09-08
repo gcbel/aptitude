@@ -8,11 +8,8 @@ export default function Error() {
   return (
     <div className={`about-page montserrat ${themes[theme].outer_text}`}>
       <h1 className="title">
-        We set out to make a beautiful, easy to use productivity tool based on
-        research.
+        Welcome to Your All-in-One Productivity Dashboard!
       </h1>
-      <p>Meet the team</p>
-      <div>Gabrielle Belanger</div>
     </div>
   );
 }
