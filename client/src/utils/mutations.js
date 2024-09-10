@@ -36,9 +36,7 @@ export const LOGIN = gql`
 
 export const CHANGE_THEME = gql`
   mutation changeTheme($id: ID!, $theme: Int!) {
-    changeTheme(id: $id, theme: $theme) {
-      Boolean
-    }
+    changeTheme(id: $id, theme: $theme)
   }
 `;
 

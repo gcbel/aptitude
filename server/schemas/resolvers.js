@@ -116,13 +116,18 @@ const resolvers = {
       return true;
     },
     changeTheme: async (_, { id, theme }) => {
-      const db = await Dashboard.findById(id);
-      if (!db) {
-        console.error("Error fetching dashboard:", error);
-      } else {
+      try {
+        const db = await Dashboard.findById(id);
+        if (!db) {
+          throw new Error("Couldn't find the dashboard!");
+        }
+
         db.theme = theme;
         await db.save();
         return true;
+      } catch (error) {
+        console.error("Error updating theme:", error);
+        return false;
       }
     },
     // addTodoItem: async (_, { title, userId }) => {

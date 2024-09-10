@@ -1,4 +1,6 @@
 /* DEPENDENCIES */
+import { CHANGE_THEME } from "../../utils/mutations";
+import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { useTheme } from "../../utils/ThemeContext";
 
@@ -6,12 +8,25 @@ import { useTheme } from "../../utils/ThemeContext";
 export default function DBSettings({ dashboard }) {
   const { theme, setTheme, themes } = useTheme();
 
+  const [changeTheme] = useMutation(CHANGE_THEME);
+
   const [openDBSettings, setOpenDBSettings] = useState(false);
   const [DBTheme, setDBTheme] = useState(dashboard.theme);
 
-  function changeTheme(index) {
+  const onThemeChange = async (index) => {
     setDBTheme(index);
-  }
+    try {
+      const { data } = await changeTheme({
+        variables: {
+          id: dashboard._id,
+          theme: index,
+        },
+      });
+      console.log("Theme change result:", data); // This should show the mutation result
+    } catch (error) {
+      console.error("Error persisting theme:", error);
+    }
+  };
 
   return (
     <div>
@@ -36,7 +51,7 @@ export default function DBSettings({ dashboard }) {
                 className={`card ${theme.clear_bg} ${
                   theme.outer_text
                 } style-card ${DBTheme === index && "border border-black"}`}
-                onClick={() => changeTheme(index)}
+                onClick={() => onThemeChange(index)}
               >
                 <div className={`mini-card ${theme.dark}`}></div>
                 <div className="right-style-cards">
