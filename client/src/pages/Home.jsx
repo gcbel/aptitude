@@ -12,6 +12,23 @@ const loading = false;
 export default function Home() {
   const { theme, setTheme, themes } = useTheme();
 
+  // Handle clicking/unclicking of homepage icons
+  const [checked, setChecked] = useState([
+    true,
+    true,
+    false,
+    false,
+    true,
+    true,
+    true,
+  ]);
+
+  function toggleIcon(index) {
+    setChecked((prevChecked) =>
+      prevChecked.map((isChecked, i) => (i === index ? !isChecked : isChecked))
+    );
+  }
+
   if (loading) {
     return <Hourglass />;
   }
@@ -28,41 +45,81 @@ export default function Home() {
           <h3>Keep everything in one place</h3>
           <div
             className={`${themes[theme].clear_bg} ${themes[theme].outer_text} mini-card`}
+            onClick={() => toggleIcon(0)}
+            style={{ cursor: "pointer" }}
           >
-            <i className="fa-regular fa-circle-check"></i>
+            <i
+              className={`fa-regular ${
+                checked[0] ? "fa-circle-check" : "fa-circle"
+              }`}
+            ></i>
             <p>Organize your todos, goals, reminders, and more</p>
           </div>
           <div
             className={`${themes[theme].clear_bg} ${themes[theme].outer_text} mini-card`}
+            onClick={() => toggleIcon(1)}
+            style={{ cursor: "pointer" }}
           >
-            <i className="fa-regular fa-circle-check"></i>
+            <i
+              className={`fa-regular ${
+                checked[1] ? "fa-circle-check" : "fa-circle"
+              }`}
+            ></i>
             <p>Integrate your calendar and track your stock picks</p>
           </div>
           <div
             className={`${themes[theme].clear_bg} ${themes[theme].outer_text} mini-card`}
+            onClick={() => toggleIcon(2)}
+            style={{ cursor: "pointer" }}
           >
-            <i className="fa-regular fa-circle"></i>
+            <i
+              className={`fa-regular ${
+                checked[2] ? "fa-circle-check" : "fa-circle"
+              }`}
+            ></i>
             <p>Check the weather while planning your day</p>
           </div>
           <div
             className={`${themes[theme].clear_bg} ${themes[theme].outer_text} mini-card`}
+            onClick={() => toggleIcon(3)}
+            style={{ cursor: "pointer" }}
           >
-            <i className="fa-regular fa-circle"></i>
+            <i
+              className={`fa-regular ${
+                checked[3] ? "fa-circle-check" : "fa-circle"
+              }`}
+            ></i>
             <p>Get reminders about upcoming birthdays</p>
           </div>
         </div>
         {/* GET MOTIVATED CARD */}
         <div className={`card ${themes[theme].light}`} id="sec-intro-card">
           <h3>Get motivated</h3>
-          <div className={`clear-mini-card`}>
-            <i className="fa-regular fa-circle-check"></i>
+          <div
+            className={`clear-mini-card`}
+            onClick={() => toggleIcon(4)}
+            style={{ cursor: "pointer" }}
+          >
+            <i
+              className={`fa-regular ${
+                checked[4] ? "fa-circle-check" : "fa-circle"
+              }`}
+            ></i>
             <p>
               Keep your goals top of mind with milestones and daily reminders
             </p>
           </div>
           <div className="separator"></div>
-          <div className={`clear-mini-card`}>
-            <i className="fa-regular fa-circle-check"></i>
+          <div
+            className={`clear-mini-card`}
+            onClick={() => toggleIcon(5)}
+            style={{ cursor: "pointer" }}
+          >
+            <i
+              className={`fa-regular ${
+                checked[5] ? "fa-circle-check" : "fa-circle"
+              }`}
+            ></i>
             <p>Integrate your goals into your every day todos</p>
           </div>
         </div>
@@ -70,8 +127,16 @@ export default function Home() {
         <div className={`card ${themes[theme].medium}`} id="third-intro-card">
           <h3>Psychology-backed productivity techniques</h3>
           <div className="separator mt-2"></div>
-          <div className={`clear-mini-card`}>
-            <i className="fa-regular fa-circle-check"></i>
+          <div
+            className={`clear-mini-card`}
+            onClick={() => toggleIcon(6)}
+            style={{ cursor: "pointer" }}
+          >
+            <i
+              className={`fa-regular ${
+                checked[6] ? "fa-circle-check" : "fa-circle"
+              }`}
+            ></i>
             <p>Control your productivity style</p>
           </div>
           <div className="button-outer pb-2">
