@@ -4,6 +4,8 @@ import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { useTheme } from "../../utils/ThemeContext";
 
+import TodoSettings from "./TodoSettings";
+
 /* DASHBOARD SETTINGS */
 export default function DBSettings({ dashboard }) {
   const { theme, setTheme, themes } = useTheme();
@@ -13,11 +15,12 @@ export default function DBSettings({ dashboard }) {
 
   const [openDBSettings, setOpenDBSettings] = useState(false);
   const [showDBNameSubmit, setShowDBNameSubmit] = useState(false);
-  const [showWeatherSubmit, setShowWeatherSubmit] = useState(false);
 
   const [DBTheme, setDBTheme] = useState(dashboard.theme);
   const [DBName, setDBName] = useState(dashboard.name);
   const [changedDBName, setChangedDBName] = useState(dashboard.name);
+
+  console.log(dashboard);
 
   // Change dashboard's theme
   const onThemeChange = async (index) => {
@@ -58,7 +61,9 @@ export default function DBSettings({ dashboard }) {
     }
   };
 
-  // Change database weather
+  // TODO: Change weather
+  //   const [showWeatherSubmit, setShowWeatherSubmit] = useState(false);
+  // TODO: Change stocks
 
   return (
     <div>
@@ -66,7 +71,7 @@ export default function DBSettings({ dashboard }) {
         className="subtitle playfair dashboard-title-div"
         onClick={() => setOpenDBSettings((prev) => !prev)}
       >
-        <h2 className="dashboard-title">{DBName} Dashboard</h2>
+        <h2 className="dashboard-title font-semibold">{DBName} Dashboard</h2>
         <button className="expand-profile">{openDBSettings ? "∧" : "∨"}</button>
       </div>
       <div className="settings-separator"></div>
@@ -165,12 +170,7 @@ export default function DBSettings({ dashboard }) {
                 <p className="xs:mb-[0.78rem]">Todo list title:</p>
                 {dashboard.todos.map((todo, index) => (
                   <div key={todo.id}>
-                    <input
-                      type="text"
-                      id="todo-name"
-                      name="todo-name"
-                      placeholder={todo.title}
-                    ></input>
+                    <TodoSettings todo={todo} />
                   </div>
                 ))}
               </div>

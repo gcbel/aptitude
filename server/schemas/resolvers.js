@@ -1,5 +1,5 @@
 /* DEPENDENCIES */
-const { User, Dashboard } = require("../models");
+const { User, Dashboard, Todo } = require("../models");
 const { GraphQLScalarType, Kind } = require("graphql");
 const jwt = require("jsonwebtoken");
 
@@ -142,6 +142,21 @@ const resolvers = {
         return true;
       } catch (error) {
         console.error("Error updating dashboard name:", error);
+        return false;
+      }
+    },
+    changeTodoName: async (_, { id, name }) => {
+      try {
+        const todo = await Todo.findById(id);
+        if (!todo) {
+          throw new Error("Couldn't find the todo list!");
+        }
+
+        todo.title = name;
+        await todo.save();
+        return true;
+      } catch (error) {
+        console.error("Error updating todo list name:", error);
         return false;
       }
     },
