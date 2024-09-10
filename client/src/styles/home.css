@@ -53,4 +53,9 @@
   .customize-card {
     @apply h-[34px] w-[36px] md:h-[38px] md:w-[40px] md:h-[58px] md:w-[60px] rounded-full;
   }
+
+  /* BOTTOM BUTTONS */
+  #additional-info {
+    @apply flex flex-col sm:flex-row gap-2 sm:gap-6 mb-20 md:mb-28;
+  }
 }

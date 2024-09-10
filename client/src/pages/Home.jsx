@@ -244,6 +244,20 @@ export default function Home() {
           ))}
         </div>
       </div>
+      <div id="additional-info">
+        <Link
+          to="/about"
+          className={`${themes[theme].clear_bg} ${themes[theme].outer_text} button title`}
+        >
+          Learn more
+        </Link>
+        <Link
+          to="/survey"
+          className={`${themes[theme].dark} ${themes[theme].inner_text} button title`}
+        >
+          Get started
+        </Link>
+      </div>
     </div>
   );
 }
