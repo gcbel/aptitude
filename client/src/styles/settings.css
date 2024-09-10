@@ -57,13 +57,16 @@
   }
 
   .db-content-settings {
+    @apply mb-10;
   }
 
-  .db-title-setting {
-    @apply flex flex-row items-end gap-4;
+  .db-title-setting,
+  .db-weather-setting {
+    @apply flex flex-col xs:flex-row xs:items-end xs:gap-4 mb-2;
   }
 
-  .db-title-setting input {
+  .db-title-setting input,
+  .db-weather-setting input {
     border: 0px solid black;
     border-bottom: 0.5px solid black;
   }

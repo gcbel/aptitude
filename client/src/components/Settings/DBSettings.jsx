@@ -12,6 +12,7 @@ export default function DBSettings({ dashboard }) {
 
   const [openDBSettings, setOpenDBSettings] = useState(false);
   const [DBTheme, setDBTheme] = useState(dashboard.theme);
+  console.log(dashboard);
 
   const onThemeChange = async (index) => {
     setDBTheme(index);
@@ -22,7 +23,6 @@ export default function DBSettings({ dashboard }) {
           theme: index,
         },
       });
-      console.log("Theme change result:", data); // This should show the mutation result
     } catch (error) {
       console.error("Error persisting theme:", error);
     }
@@ -66,13 +66,38 @@ export default function DBSettings({ dashboard }) {
           <h3 className="subtitle playfair db-content-title">Content</h3>
           <div className="montserrat db-content-settings">
             <div className="db-title-setting">
-              <p>Dashboard name:</p>
+              <p className="mb-3">Dashboard name:</p>
               <input
                 type="text"
                 id="db-name"
                 name="db-name"
                 placeholder={dashboard.name}
               ></input>
+            </div>
+            <div className="db-weather-setting">
+              <p className="mb-3">Weather zipcode:</p>
+              <input
+                type="text"
+                id="db-name"
+                name="db-name"
+                placeholder={dashboard.weather}
+              ></input>
+            </div>
+            <div className="db-stock-setting">
+              <p className="mb-3">Stocks:</p>
+              <div>
+                {dashboard.stocks?.map((stock, index) => (
+                  <div key={theme.id}>
+                    <input
+                      type="text"
+                      id="db-name"
+                      name="db-name"
+                      placeholder={stock}
+                    ></input>
+                  </div>
+                ))}
+                {dashboard.stocks?.length < 3 && <p>+</p>}
+              </div>
             </div>
           </div>
         </div>
