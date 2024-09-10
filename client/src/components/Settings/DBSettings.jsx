@@ -20,8 +20,6 @@ export default function DBSettings({ dashboard }) {
   const [DBName, setDBName] = useState(dashboard.name);
   const [changedDBName, setChangedDBName] = useState(dashboard.name);
 
-  console.log(dashboard);
-
   // Change dashboard's theme
   const onThemeChange = async (index) => {
     setDBTheme(index);
@@ -60,6 +58,9 @@ export default function DBSettings({ dashboard }) {
       console.error("Error changing DB name:", error);
     }
   };
+
+  // Add new Todo
+  const addNewTodoList = () => {};
 
   // TODO: Change weather
   //   const [showWeatherSubmit, setShowWeatherSubmit] = useState(false);
@@ -166,17 +167,26 @@ export default function DBSettings({ dashboard }) {
           <h3 className="subtitle playfair settings-section-title">Todos</h3>
           <div className="montserrat db-content-settings">
             {dashboard.todos.length > 0 && (
-              <div className="db-content-setting">
-                <p className="xs:mb-[0.78rem]">Todo list title:</p>
+              <div>
+                <p className="xs:mb-[0.78rem]">Todo list titles:</p>
                 {dashboard.todos.map((todo, index) => (
-                  <div key={todo.id}>
-                    <TodoSettings todo={todo} />
+                  <div key={index}>
+                    <TodoSettings
+                      dashboardId={dashboard._id}
+                      index={index}
+                      todo={todo}
+                    />
                   </div>
                 ))}
               </div>
             )}
             {dashboard.todos.length + dashboard.lists.length < 3 && (
-              <button className="settings-button">Add todo list</button>
+              <button
+                className="settings-button"
+                onClick={() => addNewTodoList()}
+              >
+                Add todo list
+              </button>
             )}
           </div>
 

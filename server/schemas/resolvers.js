@@ -145,15 +145,14 @@ const resolvers = {
         return false;
       }
     },
-    changeTodoName: async (_, { id, name }) => {
+    changeTodoName: async (_, { id, index, name }) => {
       try {
-        const todo = await Todo.findById(id);
-        if (!todo) {
-          throw new Error("Couldn't find the todo list!");
+        const db = await Dashboard.findById(id);
+        if (!db) {
+          throw new Error("Couldn't find the dashboard!");
         }
-
-        todo.title = name;
-        await todo.save();
+        db.todos[index].title = name;
+        await db.save();
         return true;
       } catch (error) {
         console.error("Error updating todo list name:", error);

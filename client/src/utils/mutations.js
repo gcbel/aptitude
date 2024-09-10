@@ -47,8 +47,8 @@ export const CHANGE_DB_NAME = gql`
 `;
 
 export const CHANGE_TODO_NAME = gql`
-  mutation changeTodoName($id: ID!, $name: String!) {
-    changeTodoName(id: $id, name: $name)
+  mutation changeTodoName($id: ID!, $index: Int!, $name: String!) {
+    changeTodoName(id: $id, index: $index, name: $name)
   }
 `;
 
