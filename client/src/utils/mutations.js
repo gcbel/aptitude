@@ -34,6 +34,14 @@ export const LOGIN = gql`
   }
 `;
 
+export const CHANGE_THEME = gql`
+  mutation changeTheme($id: ID!, $theme: Int!) {
+    changeTheme(id: $id, theme: $theme) {
+      Boolean
+    }
+  }
+`;
+
 // const UPDATE_TODO = gql`
 //   mutation updateTodoItem($todoId: ID!, $itemId: ID!, $completed: Boolean!) {
 //     updateTodoItem(todoId: $todoId, itemId: $itemId, completed: $completed) {

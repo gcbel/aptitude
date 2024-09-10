@@ -115,6 +115,16 @@ const resolvers = {
       await User.findByIdAndDelete(id);
       return true;
     },
+    changeTheme: async (_, { id, theme }) => {
+      const db = await Dashboard.findById(id);
+      if (!db) {
+        console.error("Error fetching dashboard:", error);
+      } else {
+        db.theme = theme;
+        await db.save();
+        return true;
+      }
+    },
     // addTodoItem: async (_, { title, userId }) => {
     //   const newTodo = new Todo({
     //     title,
