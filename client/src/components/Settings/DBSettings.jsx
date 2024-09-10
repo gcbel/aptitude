@@ -1,5 +1,5 @@
 /* DEPENDENCIES */
-import { CHANGE_THEME } from "../../utils/mutations";
+import { CHANGE_THEME, CHANGE_DB_NAME } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { useTheme } from "../../utils/ThemeContext";
@@ -9,11 +9,16 @@ export default function DBSettings({ dashboard }) {
   const { theme, setTheme, themes } = useTheme();
 
   const [changeTheme] = useMutation(CHANGE_THEME);
+  const [changeDBName] = useMutation(CHANGE_DB_NAME);
 
   const [openDBSettings, setOpenDBSettings] = useState(false);
-  const [DBTheme, setDBTheme] = useState(dashboard.theme);
-  console.log(dashboard);
+  const [showDBNameSubmit, setShowDBNameSubmit] = useState(false);
 
+  const [DBTheme, setDBTheme] = useState(dashboard.theme);
+  const [DBName, setDBName] = useState(dashboard.name);
+  const [changedDBName, setChangedDBName] = useState(dashboard.name);
+
+  // Change dashboard's theme
   const onThemeChange = async (index) => {
     setDBTheme(index);
     try {
@@ -28,10 +33,38 @@ export default function DBSettings({ dashboard }) {
     }
   };
 
+  // Handle changing database name
+  const handleDBNameInput = (event) => {
+    const newName = event.target.value;
+    setChangedDBName(newName);
+    if (event.target.value.trim() !== "") {
+      setShowDBNameSubmit(true);
+    }
+  };
+
+  const handleDBNameBlur = () => {
+    setShowDBNameSubmit(false);
+  };
+
+  const onSubmitDBName = async () => {
+    try {
+      setDBName(changedDBName);
+      const { data } = await changeDBName({
+        variables: {
+          id: dashboard._id,
+          name: changedDBName,
+        },
+      });
+      console.log("Changed db name:", DBName);
+    } catch (error) {
+      console.error("Error changing DB name:", error);
+    }
+  };
+
   return (
     <div>
       <div className="subtitle playfair dashboard-title-div">
-        <h2 className="dashboard-title">{dashboard.name} Dashboard</h2>
+        <h2 className="dashboard-title">{DBName} Dashboard</h2>
         <button
           className="expand-profile"
           onClick={() => setOpenDBSettings((prev) => !prev)}
@@ -71,8 +104,13 @@ export default function DBSettings({ dashboard }) {
                 type="text"
                 id="db-name"
                 name="db-name"
-                placeholder={dashboard.name}
+                value={changedDBName}
+                placeholder={DBName}
+                onChange={handleDBNameInput}
               ></input>
+              {showDBNameSubmit && (
+                <button onClick={() => onSubmitDBName()}>Submit</button>
+              )}
             </div>
             <div className="db-weather-setting">
               <p className="mb-3">Weather zipcode:</p>

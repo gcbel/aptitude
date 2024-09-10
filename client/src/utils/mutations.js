@@ -40,6 +40,12 @@ export const CHANGE_THEME = gql`
   }
 `;
 
+export const CHANGE_DB_NAME = gql`
+  mutation changeDBName($id: ID!, $name: String!) {
+    changeDBName(id: $id, name: $name)
+  }
+`;
+
 // const UPDATE_TODO = gql`
 //   mutation updateTodoItem($todoId: ID!, $itemId: ID!, $completed: Boolean!) {
 //     updateTodoItem(todoId: $todoId, itemId: $itemId, completed: $completed) {
