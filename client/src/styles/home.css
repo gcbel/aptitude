@@ -19,7 +19,7 @@
   }
 
   #first-intro-card {
-    @apply min-h-[46vh];
+    @apply flex flex-col gap-2 min-h-[46vh];
   }
 
   #first-intro-card,
