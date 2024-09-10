@@ -247,13 +247,13 @@ export default function Home() {
       <div id="additional-info">
         <Link
           to="/about"
-          className={`${themes[theme].clear_bg} ${themes[theme].outer_text} button title`}
+          className={`${themes[theme].clear_bg} ${themes[theme].outer_text} button subtitle`}
         >
           Learn more
         </Link>
         <Link
           to="/survey"
-          className={`${themes[theme].dark} ${themes[theme].inner_text} button title`}
+          className={`${themes[theme].dark} ${themes[theme].inner_text} button subtitle`}
         >
           Get started
         </Link>

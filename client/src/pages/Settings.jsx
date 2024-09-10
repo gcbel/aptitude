@@ -37,7 +37,7 @@ export default function Settings() {
               </div>
             ))}
             {numDbs < 5 && (
-              <button className={`bg-gray-300 button large-text`}>
+              <button className="settings-button">
                 Create new dashboard +
               </button>
             )}

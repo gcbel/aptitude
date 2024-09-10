@@ -26,11 +26,30 @@
     @apply my-5;
   }
 
-  /* STYLE SETTINGS */
-  .db-style-title {
-    @apply mb-2 text-center;
+  .settings-separator {
+    border-top: 0.5px solid rgba(0, 0, 0, 0.407);
   }
 
+  /* INDIVIDUAL SETTINGS SECTION */
+  .settings-section-title {
+    @apply mt-2 mb-2;
+  }
+
+  /* CONTENT SETTINGS */
+  .db-content-settings {
+    @apply mb-10;
+  }
+
+  .db-content-setting {
+    @apply flex flex-col xs:flex-row xs:items-end xs:gap-4 mb-2;
+  }
+
+  .db-content-setting input {
+    border: 0px solid black;
+    border-bottom: 0.5px solid rgba(164, 165, 148, 0.714);
+  }
+
+  /* STYLE SETTINGS */
   .db-style-settings {
     @apply flex flex-row flex-wrap justify-center items-center gap-2 md:gap-4 px-2 lg:px-6;
   }
@@ -51,23 +70,8 @@
     @apply h-full;
   }
 
-  /* CONTENT SETTINGS */
-  .db-content-title {
-    @apply mt-10 text-center;
-  }
-
-  .db-content-settings {
-    @apply mb-10;
-  }
-
-  .db-title-setting,
-  .db-weather-setting {
-    @apply flex flex-col xs:flex-row xs:items-end xs:gap-4 mb-2;
-  }
-
-  .db-title-setting input,
-  .db-weather-setting input {
-    border: 0px solid black;
-    border-bottom: 0.5px solid black;
+  /* SETTINGS BUTTON */
+  .settings-button {
+    @apply bg-[#F7F7F5] rounded-xl py-3 px-5 shadow-xl font-medium italic;
   }
 }

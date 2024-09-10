@@ -42,12 +42,9 @@ export default function DBSettings({ dashboard }) {
     }
   };
 
-  const handleDBNameBlur = () => {
-    setShowDBNameSubmit(false);
-  };
-
   const onSubmitDBName = async () => {
     try {
+      setShowDBNameSubmit(false);
       setDBName(changedDBName);
       const { data } = await changeDBName({
         variables: {
@@ -55,7 +52,6 @@ export default function DBSettings({ dashboard }) {
           name: changedDBName,
         },
       });
-      console.log("Changed db name:", DBName);
     } catch (error) {
       console.error("Error changing DB name:", error);
     }
@@ -63,20 +59,42 @@ export default function DBSettings({ dashboard }) {
 
   return (
     <div>
-      <div className="subtitle playfair dashboard-title-div">
+      <div
+        className="subtitle playfair dashboard-title-div"
+        onClick={() => setOpenDBSettings((prev) => !prev)}
+      >
         <h2 className="dashboard-title">{DBName} Dashboard</h2>
-        <button
-          className="expand-profile"
-          onClick={() => setOpenDBSettings((prev) => !prev)}
-        >
-          {openDBSettings ? "∧" : "∨"}
-        </button>
+        <button className="expand-profile">{openDBSettings ? "∧" : "∨"}</button>
       </div>
-      <div className="dark-separator"></div>
+      <div className="settings-separator"></div>
       {openDBSettings && (
         <div className="db-settings">
+          {/* GENERAL */}
+          <h3 className="subtitle playfair settings-section-title">General</h3>
+          <div className="montserrat db-content-settings">
+            <div className="db-content-setting">
+              <p className="xs:mb-[0.78rem]">Dashboard name:</p>
+              <input
+                type="text"
+                id="db-name"
+                name="db-name"
+                value={changedDBName}
+                placeholder={DBName}
+                onChange={handleDBNameInput}
+              ></input>
+              {showDBNameSubmit && (
+                <button
+                  onClick={() => onSubmitDBName()}
+                  className="settings-button"
+                >
+                  Save
+                </button>
+              )}
+            </div>
+          </div>
+
           {/* STYLE */}
-          <h3 className="subtitle playfair db-style-title">Style</h3>
+          <h3 className="subtitle playfair settings-section-title">Style</h3>
           <div className="db-style-settings">
             {themes.map((theme, index) => (
               <div
@@ -95,48 +113,91 @@ export default function DBSettings({ dashboard }) {
             ))}
           </div>
 
-          {/* CONTENT */}
-          <h3 className="subtitle playfair db-content-title">Content</h3>
+          {/* WEATHER */}
+          <h3 className="subtitle playfair settings-section-title">Weather</h3>
           <div className="montserrat db-content-settings">
-            <div className="db-title-setting">
-              <p className="mb-3">Dashboard name:</p>
-              <input
-                type="text"
-                id="db-name"
-                name="db-name"
-                value={changedDBName}
-                placeholder={DBName}
-                onChange={handleDBNameInput}
-              ></input>
-              {showDBNameSubmit && (
-                <button onClick={() => onSubmitDBName()}>Submit</button>
-              )}
-            </div>
-            <div className="db-weather-setting">
-              <p className="mb-3">Weather zipcode:</p>
-              <input
-                type="text"
-                id="db-name"
-                name="db-name"
-                placeholder={dashboard.weather}
-              ></input>
-            </div>
-            <div className="db-stock-setting">
-              <p className="mb-3">Stocks:</p>
-              <div>
-                {dashboard.stocks?.map((stock, index) => (
-                  <div key={theme.id}>
+            {dashboard.weather ? (
+              <div className="db-content-setting">
+                <p className="xs:mb-[0.78rem]">Zipcode:</p>
+                <input
+                  type="text"
+                  id="db-name"
+                  name="db-name"
+                  placeholder={dashboard.weather}
+                ></input>
+              </div>
+            ) : (
+              <button className="settings-button">Add weather</button>
+            )}
+          </div>
+
+          {/* STOCKS */}
+          <h3 className="subtitle playfair settings-section-title">Stocks</h3>
+          <div className="montserrat db-content-settings">
+            {dashboard.stocks.length > 0 && (
+              <div className="db-content-setting">
+                <p className="xs:mb-[0.78rem]">Stocks:</p>
+                {dashboard.stocks.map((stock, index) => (
+                  <div key={index}>
                     <input
                       type="text"
-                      id="db-name"
-                      name="db-name"
+                      id="stock-name"
+                      name="stock-name"
                       placeholder={stock}
                     ></input>
                   </div>
                 ))}
-                {dashboard.stocks?.length < 3 && <p>+</p>}
               </div>
-            </div>
+            )}
+            {dashboard.stocks.length < 3 && (
+              <button className="settings-button">Add stock</button>
+            )}
+          </div>
+
+          {/* TODOS */}
+          <h3 className="subtitle playfair settings-section-title">Todos</h3>
+          <div className="montserrat db-content-settings">
+            {dashboard.todos.length > 0 && (
+              <div className="db-content-setting">
+                <p className="xs:mb-[0.78rem]">Todo list title:</p>
+                {dashboard.todos.map((todo, index) => (
+                  <div key={todo.id}>
+                    <input
+                      type="text"
+                      id="todo-name"
+                      name="todo-name"
+                      placeholder={todo.title}
+                    ></input>
+                  </div>
+                ))}
+              </div>
+            )}
+            {dashboard.todos.length + dashboard.lists.length < 3 && (
+              <button className="settings-button">Add todo list</button>
+            )}
+          </div>
+
+          {/* LISTS */}
+          <h3 className="subtitle playfair settings-section-title">Lists</h3>
+          <div className="montserrat db-content-settings">
+            {dashboard.lists.length > 0 && (
+              <div className="db-content-setting">
+                <p className="xs:mb-[0.78rem]">List title:</p>
+                {dashboard.lists.map((list, index) => (
+                  <div key={list.id}>
+                    <input
+                      type="text"
+                      id="list-name"
+                      name="list-name"
+                      placeholder={list.name}
+                    ></input>
+                  </div>
+                ))}
+              </div>
+            )}
+            {dashboard.todos.length + dashboard.lists.length < 3 && (
+              <button className="settings-button">Add list</button>
+            )}
           </div>
         </div>
       )}
