@@ -37,11 +37,11 @@
 
   /* CONTENT SETTINGS */
   .db-content-settings {
-    @apply mb-10;
+    @apply mb-8;
   }
 
   .db-content-setting {
-    @apply flex flex-col xs:flex-row xs:items-end xs:gap-4 mb-2;
+    @apply flex flex-col flex-wrap xs:flex-row xs:items-end xs:gap-x-4 mb-2;
   }
 
   .db-content-setting input {
@@ -51,7 +51,7 @@
 
   /* STYLE SETTINGS */
   .db-style-settings {
-    @apply flex flex-row flex-wrap justify-center items-center gap-2 md:gap-4 px-2 lg:px-6;
+    @apply flex flex-row flex-wrap justify-center items-center gap-2 md:gap-4 px-2 lg:px-6 mb-8;
   }
 
   .style-card {
@@ -72,6 +72,6 @@
 
   /* SETTINGS BUTTON */
   .settings-button {
-    @apply bg-[#F7F7F5] rounded-xl py-3 px-5 shadow-xl font-medium italic;
+    @apply bg-[#F7F7F5] rounded-xl py-3 px-5 shadow-xl font-medium italic mt-1;
   }
 }

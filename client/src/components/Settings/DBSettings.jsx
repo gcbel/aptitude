@@ -13,6 +13,7 @@ export default function DBSettings({ dashboard }) {
 
   const [openDBSettings, setOpenDBSettings] = useState(false);
   const [showDBNameSubmit, setShowDBNameSubmit] = useState(false);
+  const [showWeatherSubmit, setShowWeatherSubmit] = useState(false);
 
   const [DBTheme, setDBTheme] = useState(dashboard.theme);
   const [DBName, setDBName] = useState(dashboard.name);
@@ -33,7 +34,7 @@ export default function DBSettings({ dashboard }) {
     }
   };
 
-  // Handle changing database name
+  // Change database name
   const handleDBNameInput = (event) => {
     const newName = event.target.value;
     setChangedDBName(newName);
@@ -56,6 +57,8 @@ export default function DBSettings({ dashboard }) {
       console.error("Error changing DB name:", error);
     }
   };
+
+  // Change database weather
 
   return (
     <div>
