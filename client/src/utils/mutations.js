@@ -52,6 +52,12 @@ export const CHANGE_TODO_NAME = gql`
   }
 `;
 
+export const ADD_TODO_LIST = gql`
+  mutation addTodoList($id: ID!, $name: String!) {
+    addTodoList(id: $id, name: $name)
+  }
+`;
+
 // const UPDATE_TODO = gql`
 //   mutation updateTodoItem($todoId: ID!, $itemId: ID!, $completed: Boolean!) {
 //     updateTodoItem(todoId: $todoId, itemId: $itemId, completed: $completed) {

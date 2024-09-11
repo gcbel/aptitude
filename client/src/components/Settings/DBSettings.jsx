@@ -10,15 +10,19 @@ import TodoSettings from "./TodoSettings";
 export default function DBSettings({ dashboard }) {
   const { theme, setTheme, themes } = useTheme();
 
+  // Mutations
   const [changeTheme] = useMutation(CHANGE_THEME);
   const [changeDBName] = useMutation(CHANGE_DB_NAME);
 
   const [openDBSettings, setOpenDBSettings] = useState(false);
   const [showDBNameSubmit, setShowDBNameSubmit] = useState(false);
 
+  // Track changing states
   const [DBTheme, setDBTheme] = useState(dashboard.theme);
   const [DBName, setDBName] = useState(dashboard.name);
   const [changedDBName, setChangedDBName] = useState(dashboard.name);
+  const [todos, setTodos] = useState(dashboard.todos);
+  const [lists, setLists] = useState(dashboard.lists);
 
   // Change dashboard's theme
   const onThemeChange = async (index) => {
@@ -60,7 +64,9 @@ export default function DBSettings({ dashboard }) {
   };
 
   // Add new Todo
-  const addNewTodoList = () => {};
+  const addNewTodoList = async () => {
+    setTodos((prev) => [...prev, { title: "" }]);
+  };
 
   // TODO: Change weather
   //   const [showWeatherSubmit, setShowWeatherSubmit] = useState(false);
@@ -147,7 +153,7 @@ export default function DBSettings({ dashboard }) {
               <div className="db-content-setting">
                 <p className="xs:mb-[0.78rem]">Stocks:</p>
                 {dashboard.stocks.map((stock, index) => (
-                  <div key={index}>
+                  <div key={15 + index}>
                     <input
                       type="text"
                       id="stock-name"
@@ -166,21 +172,22 @@ export default function DBSettings({ dashboard }) {
           {/* TODOS */}
           <h3 className="subtitle playfair settings-section-title">Todos</h3>
           <div className="montserrat db-content-settings">
-            {dashboard.todos.length > 0 && (
+            {todos.length > 0 && (
               <div>
                 <p className="xs:mb-[0.78rem]">Todo list titles:</p>
-                {dashboard.todos.map((todo, index) => (
-                  <div key={index}>
+                {todos.map((todo, index) => (
+                  <div key={18 + index}>
                     <TodoSettings
                       dashboardId={dashboard._id}
                       index={index}
                       todo={todo}
+                      numTodos={dashboard.todos.length}
                     />
                   </div>
                 ))}
               </div>
             )}
-            {dashboard.todos.length + dashboard.lists.length < 3 && (
+            {todos.length + lists.length < 3 && (
               <button
                 className="settings-button"
                 onClick={() => addNewTodoList()}
@@ -197,7 +204,7 @@ export default function DBSettings({ dashboard }) {
               <div className="db-content-setting">
                 <p className="xs:mb-[0.78rem]">List title:</p>
                 {dashboard.lists.map((list, index) => (
-                  <div key={list.id}>
+                  <div key={21 + index}>
                     <input
                       type="text"
                       id="list-name"
@@ -208,7 +215,7 @@ export default function DBSettings({ dashboard }) {
                 ))}
               </div>
             )}
-            {dashboard.todos.length + dashboard.lists.length < 3 && (
+            {todos.length + lists.length < 3 && (
               <button className="settings-button">Add list</button>
             )}
           </div>

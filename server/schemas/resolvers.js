@@ -159,6 +159,20 @@ const resolvers = {
         return false;
       }
     },
+    addTodoList: async (_, { id, name }) => {
+      try {
+        const db = await Dashboard.findById(id);
+        if (!db) {
+          throw new Error("Couldn't find the dashboard!");
+        }
+        db.todos.push({ title: name });
+        await db.save();
+        return true;
+      } catch (error) {
+        console.error("Error updating todo list name:", error);
+        return false;
+      }
+    },
     // addTodoItem: async (_, { title, userId }) => {
     //   const newTodo = new Todo({
     //     title,

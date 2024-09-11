@@ -16,6 +16,7 @@ const typeDefs = `
         changeTheme(id: ID!, theme: Int! ): Boolean
         changeDBName(id: ID!, name: String! ): Boolean
         changeTodoName(id: ID!, index: Int!, name: String! ): Boolean
+        addTodoList(id: ID!, name: String! ): Boolean
         addTodoItem(todoId: ID!, title: String!): Todo
         updateTodoItem(todoId: ID!, itemId: ID!, name: String!, completed: Boolean!): Todo
         deleteTodoItem(todoId: ID!, itemId: ID!): Todo
