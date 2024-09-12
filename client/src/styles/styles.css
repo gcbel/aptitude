@@ -71,6 +71,10 @@
     margin: 0px 20px 0px 20px;
   }
 
+  .input {
+    @apply focus:ring-0 focus:outline-none;
+  }
+
   /* HOURGLASS */
   #hourglass {
     @apply w-[100vw] flex items-center justify-center;
@@ -98,4 +102,10 @@
   font-weight: 300;
   font-style: normal;
   transform: scale(0.92, 1);
+}
+
+/* INPUTS */
+textarea:focus,
+input:focus {
+  border: 0px solid transparent;
 }

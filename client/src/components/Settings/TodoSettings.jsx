@@ -67,6 +67,7 @@ export default function TodoSettings({ dashboardId, index, todo, numTodos }) {
       <input
         type="text"
         id="todo-name"
+        className="input"
         name="todo-name"
         value={changedTodoName}
         placeholder={todoName}

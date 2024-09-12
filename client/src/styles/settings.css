@@ -49,12 +49,20 @@
   }
 
   .db-content-setting {
-    @apply flex flex-col flex-wrap xs:flex-row xs:items-end xs:gap-x-4 mb-2;
+    @apply flex flex-col flex-wrap xs:flex-row xs:items-start xs:gap-x-4 mb-2;
   }
 
   .db-content-setting input {
     border: 0px solid black;
     border-bottom: 0.5px solid rgba(164, 165, 148, 0.714);
+  }
+
+  .setting-title {
+    @apply mt-3;
+  }
+
+  .list-titles {
+    @apply flex flex-col;
   }
 
   /* STYLE SETTINGS */

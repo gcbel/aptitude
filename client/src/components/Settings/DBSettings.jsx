@@ -98,10 +98,11 @@ export default function DBSettings({ dashboard }) {
           <h3 className="subtitle playfair settings-section-title">General</h3>
           <div className="montserrat db-content-settings">
             <div className="db-content-setting">
-              <p className="xs:mb-[0.78rem]">Dashboard name:</p>
+              <p className="setting-title">Dashboard name:</p>
               <input
                 type="text"
                 id="db-name"
+                className="input"
                 name="db-name"
                 value={changedDBName}
                 placeholder={DBName}
@@ -142,10 +143,11 @@ export default function DBSettings({ dashboard }) {
           <div className="montserrat db-content-settings">
             {dashboard.weather ? (
               <div className="db-content-setting">
-                <p className="xs:mb-[0.78rem]">Zipcode:</p>
+                <p className="setting-title">Zipcode:</p>
                 <input
                   type="text"
                   id="db-name"
+                  className="input"
                   name="db-name"
                   placeholder={dashboard.weather}
                 ></input>
@@ -160,12 +162,13 @@ export default function DBSettings({ dashboard }) {
           <div className="montserrat db-content-settings">
             {dashboard.stocks.length > 0 && (
               <div className="db-content-setting">
-                <p className="xs:mb-[0.78rem]">Stocks:</p>
+                <p className="setting-title">Stocks:</p>
                 {dashboard.stocks.map((stock, index) => (
-                  <div key={15 + index}>
+                  <div key={20 + index}>
                     <input
                       type="text"
                       id="stock-name"
+                      className="input"
                       name="stock-name"
                       placeholder={stock}
                     ></input>
@@ -182,18 +185,20 @@ export default function DBSettings({ dashboard }) {
           <h3 className="subtitle playfair settings-section-title">Todos</h3>
           <div className="montserrat db-content-settings">
             {todos.length > 0 && (
-              <div>
-                <p className="xs:mb-[0.78rem]">Todo list titles:</p>
-                {todos.map((todo, index) => (
-                  <div key={18 + index}>
-                    <TodoSettings
-                      dashboardId={dashboard._id}
-                      index={index}
-                      todo={todo}
-                      numTodos={dashboard.todos.length}
-                    />
-                  </div>
-                ))}
+              <div className="db-content-setting">
+                <p className="setting-title">Titles:</p>
+                <div className="list-titles">
+                  {todos.map((todo, index) => (
+                    <div key={30 + index}>
+                      <TodoSettings
+                        dashboardId={dashboard._id}
+                        index={index}
+                        todo={todo}
+                        numTodos={dashboard.todos.length}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
             {todos.length < 3 && (
@@ -211,12 +216,13 @@ export default function DBSettings({ dashboard }) {
           <div className="montserrat db-content-settings">
             {dashboard.lists.length > 0 && (
               <div className="db-content-setting">
-                <p className="xs:mb-[0.78rem]">List title:</p>
+                <p className="setting-title">Titles:</p>
                 {dashboard.lists.map((list, index) => (
-                  <div key={21 + index}>
+                  <div key={40 + index}>
                     <input
                       type="text"
                       id="list-name"
+                      className="input"
                       name="list-name"
                       placeholder={list.name}
                     ></input>
