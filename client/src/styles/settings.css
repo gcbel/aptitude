@@ -30,6 +30,14 @@
     border-top: 0.5px solid rgba(0, 0, 0, 0.407);
   }
 
+  .success {
+    @apply mt-1 xs:mt-0 xs:mb-[0.65rem] italic text-neutral-500;
+  }
+
+  .failure {
+    @apply mt-1 xs:mt-0 xs:mb-[0.65rem] italic text-red-500;
+  }
+
   /* INDIVIDUAL SETTINGS SECTION */
   .settings-section-title {
     @apply mt-2 mb-2;

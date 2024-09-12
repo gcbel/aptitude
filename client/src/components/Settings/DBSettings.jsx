@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useTheme } from "../../utils/ThemeContext";
 
 import TodoSettings from "./TodoSettings";
+import ListSettings from "./ListSettings";
 
 /* DASHBOARD SETTINGS */
 export default function DBSettings({ dashboard }) {
@@ -14,10 +15,10 @@ export default function DBSettings({ dashboard }) {
   const [changeTheme] = useMutation(CHANGE_THEME);
   const [changeDBName] = useMutation(CHANGE_DB_NAME);
 
-  const [openDBSettings, setOpenDBSettings] = useState(false);
-  const [showDBNameSubmit, setShowDBNameSubmit] = useState(false);
-
   // Track changing states
+  const [openDBSettings, setOpenDBSettings] = useState(false);
+  const [showDBNameSuccess, setShowDBNameSuccess] = useState(false);
+  const [showDBNameFailure, setShowDBNameFailure] = useState(false);
   const [DBTheme, setDBTheme] = useState(dashboard.theme);
   const [DBName, setDBName] = useState(dashboard.name);
   const [changedDBName, setChangedDBName] = useState(dashboard.name);
@@ -43,23 +44,32 @@ export default function DBSettings({ dashboard }) {
   const handleDBNameInput = (event) => {
     const newName = event.target.value;
     setChangedDBName(newName);
-    if (event.target.value.trim() !== "") {
-      setShowDBNameSubmit(true);
-    }
   };
 
   const onSubmitDBName = async () => {
-    try {
-      setShowDBNameSubmit(false);
-      setDBName(changedDBName);
-      const { data } = await changeDBName({
-        variables: {
-          id: dashboard._id,
-          name: changedDBName,
-        },
-      });
-    } catch (error) {
-      console.error("Error changing DB name:", error);
+    // Prevent user from changing to an empty dashboard name
+    if (changedDBName === "") {
+      setShowDBNameSuccess(false);
+      setShowDBNameFailure(true);
+      // Check whether dashboard name is changed
+    } else if (changedDBName === DBName) {
+      setShowDBNameSuccess(false);
+      setShowDBNameFailure(false);
+      // Change dashboard name if non-empty changed name
+    } else {
+      try {
+        setDBName(changedDBName);
+        const { data } = await changeDBName({
+          variables: {
+            id: dashboard._id,
+            name: changedDBName,
+          },
+        });
+        setShowDBNameFailure(false);
+        setShowDBNameSuccess(true);
+      } catch (error) {
+        console.error("Error changing DB name:", error);
+      }
     }
   };
 
@@ -78,7 +88,7 @@ export default function DBSettings({ dashboard }) {
         className="subtitle playfair dashboard-title-div"
         onClick={() => setOpenDBSettings((prev) => !prev)}
       >
-        <h2 className="dashboard-title font-semibold">{DBName} Dashboard</h2>
+        <h2 className="dashboard-title font-medium">{DBName} Dashboard</h2>
         <button className="expand-profile">{openDBSettings ? "∧" : "∨"}</button>
       </div>
       <div className="settings-separator"></div>
@@ -96,14 +106,13 @@ export default function DBSettings({ dashboard }) {
                 value={changedDBName}
                 placeholder={DBName}
                 onChange={handleDBNameInput}
+                onBlur={onSubmitDBName}
               ></input>
-              {showDBNameSubmit && (
-                <button
-                  onClick={() => onSubmitDBName()}
-                  className="settings-button"
-                >
-                  Save
-                </button>
+              {showDBNameSuccess && (
+                <p className="success small-text">Title changed!</p>
+              )}
+              {showDBNameFailure && (
+                <p className="failure small-text">Please add a title.</p>
               )}
             </div>
           </div>
@@ -187,7 +196,7 @@ export default function DBSettings({ dashboard }) {
                 ))}
               </div>
             )}
-            {todos.length + lists.length < 3 && (
+            {todos.length < 3 && (
               <button
                 className="settings-button"
                 onClick={() => addNewTodoList()}
@@ -215,7 +224,7 @@ export default function DBSettings({ dashboard }) {
                 ))}
               </div>
             )}
-            {todos.length + lists.length < 3 && (
+            {lists.length < 3 && (
               <button className="settings-button">Add list</button>
             )}
           </div>
