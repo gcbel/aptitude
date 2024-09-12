@@ -74,6 +74,7 @@ export default function ListSettings({ dashboardId, index, list, numLists }) {
         onChange={handleInput}
         onBlur={onSubmitListName}
       ></input>
+      <button className="delete-button">X</button>
       {showSuccess && <p className="success small-text">{successMessage}</p>}
       {showFailure && <p className="failure small-text">Please add a title.</p>}
     </div>

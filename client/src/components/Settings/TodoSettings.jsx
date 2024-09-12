@@ -74,6 +74,7 @@ export default function TodoSettings({ dashboardId, index, todo, numTodos }) {
         onChange={handleTodoInput}
         onBlur={onSubmitTodoName}
       ></input>
+      <button className="delete-button">X</button>
       {showSuccess && <p className="success small-text">{successMessage}</p>}
       {showFailure && <p className="failure small-text">Please add a title.</p>}
     </div>
