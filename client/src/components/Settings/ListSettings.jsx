@@ -1,63 +1,63 @@
 /* DEPENDENCIES */
-import { CHANGE_TODO_NAME, ADD_TODO_LIST } from "../../utils/mutations";
+import { CHANGE_LIST_NAME, ADD_LIST } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
 
-/* TODO SETTINGS */
-export default function TodoSettings({ dashboardId, index, todo, numTodos }) {
+/* LIST SETTINGS */
+export default function ListSettings({ dashboardId, index, list, numLists }) {
   // Mutations
-  const [changeTodoName] = useMutation(CHANGE_TODO_NAME);
-  const [addTodoList] = useMutation(ADD_TODO_LIST);
+  const [changeListName] = useMutation(CHANGE_LIST_NAME);
+  const [addList] = useMutation(ADD_LIST);
 
   // Track changing states
-  const [todoName, setTodoName] = useState(todo.title);
-  const [changedTodoName, setChangedTodoName] = useState(todo.title);
+  const [listName, setListName] = useState(list.name);
+  const [changedListName, setChangedListName] = useState(list.name);
   const [successMessage, setSuccessMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
   const [showFailure, setShowFailure] = useState(false);
 
-  // Handle changing todo name
-  const handleTodoInput = (event) => {
+  // Handle changing list name
+  const handleInput = (event) => {
     const newName = event.target.value;
     setShowSuccess(false);
-    setChangedTodoName(newName);
+    setChangedListName(newName);
   };
 
-  const onSubmitTodoName = async () => {
-    // Prevent user from changing to an empty todo list name
-    if (changedTodoName === "") {
+  const onSubmitListName = async () => {
+    // Prevent user from changing to an empty list name
+    if (changedListName === "") {
       setShowSuccess(false);
       setShowFailure(true);
-      // Change todo list name if non-empty changed name
-    } else if (changedTodoName === todoName) {
+      // Change list name if non-empty changed name
+    } else if (changedListName === listName) {
       setShowSuccess(false);
       setShowFailure(false);
     } else {
       try {
-        setTodoName(changedTodoName);
-        if (index + 1 > numTodos) {
-          const { data } = await addTodoList({
+        setListName(changedListName);
+        if (index + 1 > numLists) {
+          const { data } = await addList({
             variables: {
               id: dashboardId,
-              name: changedTodoName,
+              name: changedListName,
             },
           });
           setShowFailure(false);
           setShowSuccess(true);
-          setSuccessMessage("Todo list added!");
+          setSuccessMessage("List added!");
         } else {
-          const { data } = await changeTodoName({
+          const { data } = await changeListName({
             variables: {
               id: dashboardId,
               index: index,
-              name: changedTodoName,
+              name: changedListName,
             },
           });
           setSuccessMessage("Title changed!");
         }
         setShowSuccess(true);
       } catch (error) {
-        console.error("Error adding/changing todo:", error);
+        console.error("Error adding/changing list:", error);
       }
     }
   };
@@ -66,12 +66,13 @@ export default function TodoSettings({ dashboardId, index, todo, numTodos }) {
     <div className="db-content-setting">
       <input
         type="text"
-        id="todo-name"
-        name="todo-name"
-        value={changedTodoName}
-        placeholder={todoName}
-        onChange={handleTodoInput}
-        onBlur={onSubmitTodoName}
+        id="list-name"
+        className="input"
+        name="list-name"
+        value={changedListName}
+        placeholder={listName}
+        onChange={handleInput}
+        onBlur={onSubmitListName}
       ></input>
       {showSuccess && <p className="success small-text">{successMessage}</p>}
       {showFailure && <p className="failure small-text">Please add a title.</p>}

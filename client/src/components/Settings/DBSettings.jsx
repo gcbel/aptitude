@@ -73,9 +73,14 @@ export default function DBSettings({ dashboard }) {
     }
   };
 
-  // Add new Todo
+  // Add new todo
   const addNewTodoList = async () => {
     setTodos((prev) => [...prev, { title: "" }]);
+  };
+
+  // Add new list
+  const addNewList = async () => {
+    setLists((prev) => [...prev, { title: "" }]);
   };
 
   // TODO: Change weather
@@ -181,12 +186,14 @@ export default function DBSettings({ dashboard }) {
             )}
           </div>
 
-          {/* TODOS */}
-          <h3 className="subtitle playfair settings-section-title">Todos</h3>
+          {/* TODOS AND LISTS */}
+          <h3 className="subtitle playfair settings-section-title">
+            Todos and Lists
+          </h3>
           <div className="montserrat db-content-settings">
             {todos.length > 0 && (
               <div className="db-content-setting">
-                <p className="setting-title">Titles:</p>
+                <p className="setting-title">Todos:</p>
                 <div className="list-titles">
                   {todos.map((todo, index) => (
                     <div key={30 + index}>
@@ -209,29 +216,27 @@ export default function DBSettings({ dashboard }) {
                 Add todo list
               </button>
             )}
-          </div>
-
-          {/* LISTS */}
-          <h3 className="subtitle playfair settings-section-title">Lists</h3>
-          <div className="montserrat db-content-settings">
-            {dashboard.lists.length > 0 && (
-              <div className="db-content-setting">
-                <p className="setting-title">Titles:</p>
-                {dashboard.lists.map((list, index) => (
-                  <div key={40 + index}>
-                    <input
-                      type="text"
-                      id="list-name"
-                      className="input"
-                      name="list-name"
-                      placeholder={list.name}
-                    ></input>
-                  </div>
-                ))}
+            {lists.length > 0 && (
+              <div className="db-content-setting mt-6">
+                <p className="setting-title">Lists:</p>
+                <div className="list-titles">
+                  {lists.map((list, index) => (
+                    <div key={40 + index}>
+                      <ListSettings
+                        dashboardId={dashboard._id}
+                        index={index}
+                        list={list}
+                        numLists={dashboard.lists.length}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
             {lists.length < 3 && (
-              <button className="settings-button">Add list</button>
+              <button className="settings-button" onClick={() => addNewList()}>
+                Add list
+              </button>
             )}
           </div>
         </div>

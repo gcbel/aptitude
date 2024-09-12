@@ -49,7 +49,7 @@
   }
 
   .db-content-setting {
-    @apply flex flex-col flex-wrap xs:flex-row xs:items-start xs:gap-x-4 mb-2;
+    @apply flex flex-col flex-wrap xs:flex-row xs:items-start gap-y-1 xs:gap-y-0 xs:gap-x-4 mb-2;
   }
 
   .db-content-setting input {
@@ -58,7 +58,7 @@
   }
 
   .setting-title {
-    @apply mt-3;
+    @apply xs:mt-3;
   }
 
   .list-titles {

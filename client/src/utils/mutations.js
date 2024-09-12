@@ -58,6 +58,18 @@ export const ADD_TODO_LIST = gql`
   }
 `;
 
+export const CHANGE_LIST_NAME = gql`
+  mutation changeListName($id: ID!, $index: Int!, $name: String!) {
+    changeListName(id: $id, index: $index, name: $name)
+  }
+`;
+
+export const ADD_LIST = gql`
+  mutation addList($id: ID!, $name: String!) {
+    addList(id: $id, name: $name)
+  }
+`;
+
 // const UPDATE_TODO = gql`
 //   mutation updateTodoItem($todoId: ID!, $itemId: ID!, $completed: Boolean!) {
 //     updateTodoItem(todoId: $todoId, itemId: $itemId, completed: $completed) {
