@@ -2,7 +2,7 @@
 
 ## Description
 
-Visit the site [here](https://aptitude-ejw1.onrender.com).
+Visit the site [here](https://withaptitude.com/).
 
 Built with React, Vite, Tailwind, Framer, Node.js, Express.js, MongoDB, Mongoose and JWT.
 
