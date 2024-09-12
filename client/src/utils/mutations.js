@@ -46,6 +46,18 @@ export const CHANGE_DB_NAME = gql`
   }
 `;
 
+export const ADD_DB = gql`
+  mutation addDB($author: String!, $name: String!) {
+    addDB(author: $author, name: $name)
+  }
+`;
+
+export const DELETE_DB = gql`
+  mutation deleteDB($id: ID!) {
+    deleteDB(id: $id)
+  }
+`;
+
 export const CHANGE_TODO_NAME = gql`
   mutation changeTodoName($id: ID!, $index: Int!, $name: String!) {
     changeTodoName(id: $id, index: $index, name: $name)
@@ -58,6 +70,12 @@ export const ADD_TODO_LIST = gql`
   }
 `;
 
+export const DELETE_TODO_LIST = gql`
+  mutation deleteTodoList($id: ID!, $index: Int!) {
+    deleteTodoList(id: $id, index: $index)
+  }
+`;
+
 export const CHANGE_LIST_NAME = gql`
   mutation changeListName($id: ID!, $index: Int!, $name: String!) {
     changeListName(id: $id, index: $index, name: $name)
@@ -67,6 +85,12 @@ export const CHANGE_LIST_NAME = gql`
 export const ADD_LIST = gql`
   mutation addList($id: ID!, $name: String!) {
     addList(id: $id, name: $name)
+  }
+`;
+
+export const DELETE_LIST = gql`
+  mutation deleteList($id: ID!, $index: Int!) {
+    deleteList(id: $id, index: $index)
   }
 `;
 

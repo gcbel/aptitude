@@ -145,6 +145,34 @@ const resolvers = {
         return false;
       }
     },
+    addDB: async (_, { author, name }) => {
+      try {
+        const db = new Dashboard({
+          author,
+          name,
+          goals: [],
+          todos: [],
+          lists: [],
+        });
+        await db.save();
+        return true;
+      } catch (error) {
+        console.error("Error adding new dashboard:", error);
+        return false;
+      }
+    },
+    deleteDB: async (_, { id }) => {
+      try {
+        const db = await Dashboard.findByIdAndDelete(id);
+        if (!db) {
+          throw new Error("Dashboard not found!");
+        }
+        return true;
+      } catch (error) {
+        console.error("Error deleting dashboard:", error);
+        return false;
+      }
+    },
     changeTodoName: async (_, { id, index, name }) => {
       try {
         const db = await Dashboard.findById(id);
@@ -173,6 +201,20 @@ const resolvers = {
         return false;
       }
     },
+    deleteTodoList: async (_, { id, index }) => {
+      try {
+        const db = await Dashboard.findById(id);
+        if (!db) {
+          throw new Error("Couldn't find the dashboard!");
+        }
+        db.todos.splice(index, 1);
+        await db.save();
+        return true;
+      } catch (error) {
+        console.error("Error deleting todo list:", error);
+        return false;
+      }
+    },
     changeListName: async (_, { id, index, name }) => {
       try {
         const db = await Dashboard.findById(id);
@@ -198,6 +240,20 @@ const resolvers = {
         return true;
       } catch (error) {
         console.error("Error updating todo list name:", error);
+        return false;
+      }
+    },
+    deleteList: async (_, { id, index }) => {
+      try {
+        const db = await Dashboard.findById(id);
+        if (!db) {
+          throw new Error("Couldn't find the dashboard!");
+        }
+        db.lists.splice(index, 1);
+        await db.save();
+        return true;
+      } catch (error) {
+        console.error("Error deleting list:", error);
         return false;
       }
     },

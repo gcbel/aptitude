@@ -1,13 +1,24 @@
 /* DEPENDENCIES */
-import { CHANGE_TODO_NAME, ADD_TODO_LIST } from "../../utils/mutations";
+import {
+  CHANGE_TODO_NAME,
+  ADD_TODO_LIST,
+  DELETE_TODO_LIST,
+} from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
 
 /* TODO SETTINGS */
-export default function TodoSettings({ dashboardId, index, todo, numTodos }) {
+export default function TodoSettings({
+  dashboardId,
+  index,
+  todo,
+  numTodos,
+  onDelete,
+}) {
   // Mutations
   const [changeTodoName] = useMutation(CHANGE_TODO_NAME);
   const [addTodoList] = useMutation(ADD_TODO_LIST);
+  const [deleteTodoList] = useMutation(DELETE_TODO_LIST);
 
   // Track changing states
   const [todoName, setTodoName] = useState(todo.title);
@@ -62,6 +73,21 @@ export default function TodoSettings({ dashboardId, index, todo, numTodos }) {
     }
   };
 
+  // Handle deleting todo
+  const onDeleteTodoList = async () => {
+    try {
+      onDelete(index);
+      const { data } = await deleteTodoList({
+        variables: {
+          id: dashboardId,
+          index: index,
+        },
+      });
+    } catch (error) {
+      console.error("Error deleting todo list:", error);
+    }
+  };
+
   return (
     <div className="db-content-setting">
       <input
@@ -74,7 +100,9 @@ export default function TodoSettings({ dashboardId, index, todo, numTodos }) {
         onChange={handleTodoInput}
         onBlur={onSubmitTodoName}
       ></input>
-      <button className="delete-button">X</button>
+      <button className="delete-button" onClick={() => onDeleteTodoList()}>
+        X
+      </button>
       {showSuccess && <p className="success small-text">{successMessage}</p>}
       {showFailure && <p className="failure small-text">Please add a title.</p>}
     </div>

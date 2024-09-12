@@ -36,10 +36,15 @@ export default function Settings() {
                 <DBSettings dashboard={dashboard} />
               </div>
             ))}
-            {numDbs < 5 && (
-              <button className="settings-button">
-                Create new dashboard +
-              </button>
+            {numDbs < 8 && (
+              <div id="create-new-db-button-div">
+                <button
+                  className="playfair settings-button large-text"
+                  id="create-new-db-button"
+                >
+                  New dashboard +
+                </button>
+              </div>
             )}
           </div>
         </div>

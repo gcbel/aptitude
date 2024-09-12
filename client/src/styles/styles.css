@@ -72,7 +72,7 @@
   }
 
   .input {
-    @apply focus:ring-0 focus:outline-none;
+    @apply focus:ring-0 focus:outline-none bg-transparent;
   }
 
   /* HOURGLASS */

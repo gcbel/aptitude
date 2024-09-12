@@ -1,13 +1,20 @@
 /* DEPENDENCIES */
-import { CHANGE_LIST_NAME, ADD_LIST } from "../../utils/mutations";
+import { CHANGE_LIST_NAME, ADD_LIST, DELETE_LIST } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
 
 /* LIST SETTINGS */
-export default function ListSettings({ dashboardId, index, list, numLists }) {
+export default function ListSettings({
+  dashboardId,
+  index,
+  list,
+  numLists,
+  onDelete,
+}) {
   // Mutations
   const [changeListName] = useMutation(CHANGE_LIST_NAME);
   const [addList] = useMutation(ADD_LIST);
+  const [deleteList] = useMutation(DELETE_LIST);
 
   // Track changing states
   const [listName, setListName] = useState(list.name);
@@ -62,6 +69,21 @@ export default function ListSettings({ dashboardId, index, list, numLists }) {
     }
   };
 
+  // Handle deleting list
+  const onDeleteList = async () => {
+    try {
+      onDelete(index);
+      const { data } = await deleteList({
+        variables: {
+          id: dashboardId,
+          index: index,
+        },
+      });
+    } catch (error) {
+      console.error("Error deleting list:", error);
+    }
+  };
+
   return (
     <div className="db-content-setting">
       <input
@@ -74,7 +96,9 @@ export default function ListSettings({ dashboardId, index, list, numLists }) {
         onChange={handleInput}
         onBlur={onSubmitListName}
       ></input>
-      <button className="delete-button">X</button>
+      <button className="delete-button" onClick={() => onDeleteList()}>
+        X
+      </button>
       {showSuccess && <p className="success small-text">{successMessage}</p>}
       {showFailure && <p className="failure small-text">Please add a title.</p>}
     </div>

@@ -14,6 +14,10 @@
   }
 
   /* INDIVIDUAL DASHBOARD SETTINGS */
+  .dashboard-title {
+    @apply text-2xl sm:text-3xl text-left;
+  }
+
   .dashboard-title-div {
     @apply flex flex-row justify-between items-end gap-6 mt-6 mb-4;
   }
@@ -27,7 +31,7 @@
   }
 
   .settings-separator {
-    border-top: 0.5px solid rgba(0, 0, 0, 0.407);
+    border-top: 0.5px solid #00000068;
   }
 
   .success {
@@ -38,14 +42,17 @@
     @apply mt-1 xs:mt-0 xs:mb-[0.65rem] italic text-red-500;
   }
 
+  .settings-text {
+    @apply text-sm text-neutral-600 mb-2;
+  }
+
   /* INDIVIDUAL SETTINGS SECTION */
   .settings-section-title {
     @apply mt-2 mb-2;
   }
 
-  /* CONTENT SETTINGS */
   .db-content-settings {
-    @apply mb-8;
+    @apply flex flex-col mb-8 flex-grow-0;
   }
 
   .db-content-setting {
@@ -65,18 +72,13 @@
     @apply flex flex-col;
   }
 
-  .delete-button {
-    transform: scale(1.3, 1);
-    @apply text-[#a4a594b6] mt-[0.8rem];
-  }
-
   /* STYLE SETTINGS */
   .db-style-settings {
-    @apply flex flex-row flex-wrap justify-center items-center gap-2 md:gap-4 px-2 lg:px-6 mb-8;
+    @apply flex flex-row flex-wrap justify-center items-center gap-2 md:gap-4 xs:px-2 lg:px-6 mb-8;
   }
 
   .style-card {
-    @apply flex flex-row gap-1 h-[80px] w-[80px] md:h-[100px] md:w-[100px];
+    @apply flex flex-row gap-1 p-1 xs:p-2 h-[60px] w-[60px] xs:h-[80px] xs:w-[80px] md:h-[90px] md:w-[90px];
   }
 
   .style-card > * {
@@ -91,8 +93,27 @@
     @apply h-full;
   }
 
-  /* SETTINGS BUTTON */
+  /* SETTINGS BUTTONS */
   .settings-button {
     @apply bg-[#F7F7F5] rounded-xl py-3 px-5 shadow-xl font-medium italic mt-1;
+    width: fit-content;
+  }
+
+  .delete-button {
+    transform: scale(1.3, 1);
+    @apply text-[#a4a594] mt-[0.8rem];
+  }
+
+  .delete-db-button {
+    @apply bg-red-600 text-white rounded-xl py-3 px-5 shadow-xl font-medium italic mt-1 mb-5;
+    width: fit-content;
+  }
+
+  #create-new-db-button-div {
+    @apply flex justify-end;
+  }
+
+  #create-new-db-button {
+    @apply bg-black text-white rounded-xl py-3 px-5 shadow-xl mt-8 mb-10;
   }
 }
