@@ -6,11 +6,12 @@
 /* SETTINGS PAGE */
 @layer components {
   #settings-and-nav {
-    @apply flex flex-row;
+    @apply flex flex-col md:flex-row;
+    min-height: calc(100vh - 150px);
   }
 
   #settings-right {
-    @apply w-full mx-6 sm:mx-8 md:mx-12;
+    @apply md:w-full mx-6 sm:mx-8 md:mx-12;
   }
 
   /* INDIVIDUAL DASHBOARD SETTINGS */
@@ -115,5 +116,17 @@
 
   #create-new-db-button {
     @apply bg-black text-white rounded-xl py-3 px-5 shadow-xl mt-8 mb-10;
+  }
+
+  /* SETTINGS NAV */
+  #settings-nav {
+    @apply flex flex-row gap-6 xs:gap-10 justify-center text-xl md:text-lg md:justify-start md:h-[80vh] md:gap-1 md:flex-col md:w-[220px] lg:w-[250px] md:p-10 md:border-r-[0.5px] border-[#7a7a7a];
+    position: sticky;
+    top: 80px;
+    left: 0;
+  }
+
+  #selected-settings-title {
+    @apply underline decoration-1 underline-offset-8 md:no-underline md:bg-black md:bg-opacity-5 md:px-2 lg:px-4 md:rounded-e-xl md:border-l-4 md:border-black;
   }
 }
