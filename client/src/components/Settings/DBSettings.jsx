@@ -20,6 +20,7 @@ export default function DBSettings({ dashboard, dbIndex, onDeleteDB }) {
   const [openDBSettings, setOpenDBSettings] = useState(false);
   const [showDBNameSuccess, setShowDBNameSuccess] = useState(false);
   const [showDBNameFailure, setShowDBNameFailure] = useState(false);
+  const [showDeleteDBModal, setShowDeleteDBModal] = useState(false);
   const [DBTheme, setDBTheme] = useState(dashboard.theme);
   const [DBName, setDBName] = useState(dashboard.name);
   const [changedDBName, setChangedDBName] = useState(dashboard.name);
@@ -98,6 +99,7 @@ export default function DBSettings({ dashboard, dbIndex, onDeleteDB }) {
 
   // Delete dashboard
   const onDeleteDashboard = async () => {
+    setShowDeleteDBModal(false);
     try {
       onDeleteDB(dbIndex);
       const { data } = await deleteDB({
@@ -283,10 +285,30 @@ export default function DBSettings({ dashboard, dbIndex, onDeleteDB }) {
           <div className="montserrat db-content-settings">
             <button
               className="delete-db-button"
-              onClick={() => onDeleteDashboard()}
+              onClick={() => setShowDeleteDBModal(true)}
             >
               Delete {DBName} dashboard
             </button>
+          </div>
+        </div>
+      )}
+      {showDeleteDBModal && (
+        <div id="delete-db-modal-outer">
+          <div className="card" id="delete-db-modal">
+            <p className="playfair subtitle">
+              Are you sure you would like to delete this dashboard?
+            </p>
+            <div id="delete-db-buttons">
+              <button
+                onClick={() => setShowDeleteDBModal(false)}
+                id="cancel-delete-db"
+              >
+                Cancel
+              </button>
+              <button onClick={() => onDeleteDashboard()} id="submit-delete-db">
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       )}

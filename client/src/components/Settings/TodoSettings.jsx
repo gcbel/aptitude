@@ -90,18 +90,20 @@ export default function TodoSettings({
 
   return (
     <div className="db-content-setting">
-      <input
-        type="text"
-        id="todo-name"
-        name="todo-name"
-        value={changedTodoName}
-        placeholder={todoName}
-        onChange={handleTodoInput}
-        onBlur={onSubmitTodoName}
-      ></input>
-      <button className="delete-button" onClick={() => onDeleteTodoList()}>
-        X
-      </button>
+      <div className="input-and-delete">
+        <input
+          type="text"
+          id="todo-name"
+          name="todo-name"
+          value={changedTodoName}
+          placeholder={todoName}
+          onChange={handleTodoInput}
+          onBlur={onSubmitTodoName}
+        ></input>
+        <button className="delete-button" onClick={() => onDeleteTodoList()}>
+          X
+        </button>
+      </div>
       {showSuccess && <p className="success small-text">{successMessage}</p>}
       {showFailure && <p className="failure small-text">Please add a title.</p>}
     </div>
