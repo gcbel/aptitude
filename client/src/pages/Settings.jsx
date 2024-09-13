@@ -42,13 +42,21 @@ export default function Settings() {
           <div>
             <div className="montserrat" id="settings-nav">
               <h3
-                id={!showProfileSettings ? "selected-settings-title" : ""}
+                id={
+                  !showProfileSettings
+                    ? "selected-settings-title"
+                    : "unselected-settings-title"
+                }
                 onClick={() => setShowProfileSettings(false)}
               >
                 Dashboards
               </h3>
               <h3
-                id={showProfileSettings ? "selected-settings-title" : ""}
+                id={
+                  showProfileSettings
+                    ? "selected-settings-title"
+                    : "unselected-settings-title"
+                }
                 onClick={() => setShowProfileSettings(true)}
               >
                 Profile

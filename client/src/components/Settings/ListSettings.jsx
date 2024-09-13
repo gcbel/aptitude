@@ -89,7 +89,6 @@ export default function ListSettings({
       <input
         type="text"
         id="list-name"
-        className="input"
         name="list-name"
         value={changedListName}
         placeholder={listName}

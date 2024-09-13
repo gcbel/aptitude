@@ -93,7 +93,6 @@ export default function TodoSettings({
       <input
         type="text"
         id="todo-name"
-        className="input"
         name="todo-name"
         value={changedTodoName}
         placeholder={todoName}

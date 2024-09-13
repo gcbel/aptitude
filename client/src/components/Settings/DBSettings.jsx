@@ -134,7 +134,6 @@ export default function DBSettings({ dashboard, dbIndex, onDeleteDB }) {
               <input
                 type="text"
                 id="db-name"
-                className="input"
                 name="db-name"
                 value={changedDBName}
                 placeholder={DBName}
@@ -182,7 +181,6 @@ export default function DBSettings({ dashboard, dbIndex, onDeleteDB }) {
                 <input
                   type="text"
                   id="db-name"
-                  className="input"
                   name="db-name"
                   placeholder={dashboard.weather}
                 ></input>
@@ -206,7 +204,6 @@ export default function DBSettings({ dashboard, dbIndex, onDeleteDB }) {
                     <input
                       type="text"
                       id="stock-name"
-                      className="input"
                       name="stock-name"
                       placeholder={stock}
                     ></input>
