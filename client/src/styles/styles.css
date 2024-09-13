@@ -71,10 +71,6 @@
     margin: 0px 20px 0px 20px;
   }
 
-  .input {
-    @apply focus:ring-0 focus:outline-none bg-transparent;
-  }
-
   /* HOURGLASS */
   #hourglass {
     @apply w-[100vw] flex items-center justify-center;

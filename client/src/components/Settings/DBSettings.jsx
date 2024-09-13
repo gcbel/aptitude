@@ -157,7 +157,7 @@ export default function DBSettings({ dashboard, dbIndex, onDeleteDB }) {
               <div
                 key={theme.id}
                 className={`card ${theme.clear_bg} style-card ${
-                  DBTheme === index && "border border-black"
+                  DBTheme === index && "border border-[#00000068]"
                 }`}
                 onClick={() => onThemeChange(index)}
               >

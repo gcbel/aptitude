@@ -61,9 +61,15 @@
   }
 
   .db-content-setting input {
+    @apply focus:ring-0 focus:outline-none bg-transparent;
     border: 0px solid black;
     border-bottom: 0.5px solid #a4a594b6;
   }
+
+  /* 
+  .input {
+    @apply focus:ring-0 focus:outline-none bg-transparent;
+  } */
 
   .setting-title {
     @apply xs:mt-3;
@@ -115,12 +121,12 @@
   }
 
   #create-new-db-button {
-    @apply bg-black text-white rounded-xl py-3 px-5 shadow-xl mt-8 mb-10;
+    @apply bg-black text-white rounded-xl py-3 px-5 shadow-xl mt-8 mb-10 italic font-medium;
   }
 
   /* SETTINGS NAV */
   #settings-nav {
-    @apply flex flex-row gap-6 xs:gap-10 justify-center text-xl md:text-lg md:justify-start md:h-[80vh] md:gap-1 md:flex-col md:w-[220px] lg:w-[250px] md:p-10 md:border-r-[0.5px] border-[#7a7a7a];
+    @apply flex flex-row mb-2 gap-6 xs:gap-10 justify-center text-xl md:text-lg md:justify-start md:h-[80vh] md:gap-1 md:flex-col md:w-[220px] lg:w-[250px] md:p-10 md:border-r-[0.5px] border-[#7a7a7a];
     position: sticky;
     top: 80px;
     left: 0;

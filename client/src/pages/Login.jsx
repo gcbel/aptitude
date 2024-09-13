@@ -121,7 +121,7 @@ export default function Login() {
             <label htmlFor="username" className="login-label">
               <span className="med-text">Username</span>
               <input
-                className="login-input input"
+                className="login-input"
                 type="text"
                 id="username"
                 name="username"
@@ -138,7 +138,7 @@ export default function Login() {
             <label htmlFor="password" className="login-label">
               <span className="med-text">Password</span>
               <input
-                className="login-input input"
+                className="login-input"
                 type="password"
                 id="password"
                 name="password"
@@ -179,7 +179,7 @@ export default function Login() {
                   )}
                 </div>
                 <input
-                  className="login-inputn input"
+                  className="login-input"
                   type="text"
                   id="name"
                   name="name"
@@ -202,7 +202,7 @@ export default function Login() {
                 )}
               </div>
               <input
-                className="login-input input"
+                className="login-input"
                 type="text"
                 id="email"
                 name="email"
@@ -227,7 +227,7 @@ export default function Login() {
                 )}
               </div>
               <input
-                className="login-input input"
+                className="login-input"
                 type="text"
                 id="username"
                 name="username"
@@ -251,7 +251,7 @@ export default function Login() {
                 )}
               </div>
               <input
-                className="login-input input"
+                className="login-input"
                 type="password"
                 id="password"
                 name="password"

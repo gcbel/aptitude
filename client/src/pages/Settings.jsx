@@ -71,7 +71,7 @@ export default function Settings() {
               {numDbs < 8 && (
                 <div id="create-new-db-button-div">
                   <button
-                    className="playfair settings-button large-text"
+                    className="playfair large-text"
                     id="create-new-db-button"
                   >
                     New dashboard +
