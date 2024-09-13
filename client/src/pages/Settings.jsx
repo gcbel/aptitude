@@ -22,7 +22,14 @@ export default function Settings() {
   });
 
   const dashboards = data?.userDashboards ?? [];
-  const numDbs = dashboards.length;
+  const [dbs, setDbs] = useState(dashboards);
+  const [numDbs, setNumDbs] = useState(dashboards.length);
+
+  // Remove a dashboard
+  const handleDeleteDB = (index) => {
+    setDbs((prev) => prev.filter((_, i) => i !== index));
+    setNumDbs(dbs.length);
+  };
 
   return (
     <div>
@@ -52,9 +59,13 @@ export default function Settings() {
             <ProfileSettings user={user} />
           ) : (
             <div id="settings-right">
-              {dashboards.map((dashboard, index) => (
+              {dbs.map((dashboard, index) => (
                 <div key={index}>
-                  <DBSettings dashboard={dashboard} />
+                  <DBSettings
+                    dashboard={dashboard}
+                    dbIndex={index}
+                    onDeleteDB={handleDeleteDB}
+                  />
                 </div>
               ))}
               {numDbs < 8 && (

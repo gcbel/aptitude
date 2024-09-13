@@ -8,7 +8,7 @@ import TodoSettings from "./TodoSettings";
 import ListSettings from "./ListSettings";
 
 /* DASHBOARD SETTINGS */
-export default function DBSettings({ dashboard }) {
+export default function DBSettings({ dashboard, dbIndex, onDeleteDB }) {
   const { theme, setTheme, themes } = useTheme();
 
   // Mutations
@@ -97,18 +97,14 @@ export default function DBSettings({ dashboard }) {
   };
 
   // Delete dashboard
-  const onDeleteDashboard = async (index) => {
+  const onDeleteDashboard = async () => {
     try {
+      onDeleteDB(dbIndex);
       const { data } = await deleteDB({
         variables: {
           id: dashboard._id,
         },
       });
-      if (data.deleteDB) {
-        console.log("Dashboard deleted");
-      } else {
-        console.error("Failed to delete dashboard");
-      }
     } catch (error) {
       console.error("Error deleting dashboard:", error);
     }
