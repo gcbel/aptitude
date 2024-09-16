@@ -4,7 +4,7 @@
 
 Visit the site [here](https://withaptitude.com/).
 
-Productivity application built to help users track and achieve their goals.
+Productivity application built to help users track and achieve their goals. Allows users to create dashboards that track their goals, habits, todos, and more.
 
 Built with React, Vite, Tailwind, Framer, Node.js, Express.js, MongoDB, Mongoose and JWT.
 
