@@ -1,0 +1,63 @@
+/* DEPENDENCIES */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LOGIN */
+@layer components {
+  #survey-page {
+    @apply flex flex-col text-black items-center;
+    min-height: calc(100vh - 100px);
+  }
+
+  .survey-question {
+    @apply flex flex-col justify-center;
+  }
+
+  .survey-question h1 {
+    @apply mb-1;
+  }
+
+  .survey-question p {
+    @apply text-center;
+  }
+
+  .indicators {
+    @apply flex gap-2 pt-16 mb-5;
+  }
+
+  .indicator-circle {
+    @apply w-[32px] h-[24px] transition-colors duration-200;
+    border-radius: 50%;
+  }
+
+  /* STYLE SETTINGS */
+  .db-style-settings {
+    @apply flex flex-row flex-wrap justify-center items-center gap-2 md:gap-4 xs:px-2 lg:px-6 mb-8 md:max-w-[900px];
+  }
+
+  .style-card {
+    @apply flex flex-row gap-1 p-1 xs:p-2 h-[60px] w-[60px] xs:h-[80px] xs:w-[80px] md:h-[90px] md:w-[90px];
+  }
+
+  .style-card > * {
+    @apply grow;
+  }
+
+  .right-style-cards {
+    @apply flex flex-col h-full gap-1;
+  }
+
+  .right-style-cards > * {
+    @apply h-full;
+  }
+
+  /* GO BACK AND NEXT BUTTONS */
+  #survey-navigate-buttons {
+    @apply flex flex-row gap-6 mt-10;
+  }
+
+  #survey-navigate-buttons button {
+    @apply bg-[#F7F7F5] rounded-xl py-3 px-5 shadow-xl font-medium italic mt-1 hover:bg-[#f2f0f0] active:bg-[#f2f0f0];
+  }
+}

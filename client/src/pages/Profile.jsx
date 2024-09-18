@@ -45,7 +45,7 @@ export default function Profile() {
             {currentDb !== 0 && (
               <button onClick={() => switchDb(-1)}>&lt;</button>
             )}
-            <div className="indicators ">
+            <div className="indicators">
               {dashboards.map((_, index) => (
                 <div
                   key={index}

@@ -16,6 +16,8 @@ Clone the repository locally. Install dependencies with `npm install`. Configure
 
 Webpage can be viewed in any browser and navigation links in the top right can be used to navigate to sections on the page.
 
+Users can login to view their saved dashboards.
+
 ## Credits
 
 Hourglass loader: https://uiball.com/ldrs/ <br>
