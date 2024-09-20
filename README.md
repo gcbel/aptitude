@@ -14,7 +14,9 @@ Clone the repository locally. Install dependencies with `npm install`. Configure
 
 ## Usage
 
-Webpage can be viewed in any browser and navigation links in the top right can be used to navigate to sections on the page.
+Webpage can be viewed in any browser at https://withaptitude.com. Please allow a minute or two for the site to load, as the speed spins down with inactivity.
+
+Navigation links in the top right can be used to navigate to sections on the page.
 
 Users can login to view their saved dashboards.
 
