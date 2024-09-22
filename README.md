@@ -19,6 +19,8 @@ Webpage can be viewed in any browser at https://withaptitude.com. Please allow a
 Navigation links in the top right can be used to navigate to sections on the page.
 
 Users can login to view their saved dashboards.
+To view a fully set up dashboard, use credentials: example example
+
 
 ## Credits
 
