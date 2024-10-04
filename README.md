@@ -16,6 +16,10 @@ Clone the repository locally. Install dependencies with `npm install`. Configure
 
 Webpage can be viewed in any browser at https://withaptitude.com. Please allow a minute or two for the site to load, as the speed spins down with inactivity.
 
+To see an example profile, use credentials: <br>
+Username: `example` <br>
+Password `example` <br>
+
 Navigation links in the top right can be used to navigate to sections on the page.
 
 Users can login to view their saved dashboards.
