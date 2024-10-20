@@ -8,7 +8,7 @@ export const themes = [
     medium: "bg-[#F2D7CA]",
     light: "bg-[#F5EEE6]",
     clear_bg: "bg-[#fcfaf7]",
-    border: "border-[#F2D7CA]",
+    border: "border-[#0a0701]",
     hourglass: "#F2D7CA",
   },
   {
@@ -32,7 +32,7 @@ export const themes = [
     medium: "bg-[#CBD3CA]",
     light: "bg-[#DEDEDE]",
     clear_bg: "bg-[#ebeff5]",
-    border: "border-[#B5C0CF]",
+    border: "border-[#02090a]",
     hourglass: "#B5C0CF",
   },
   {
@@ -56,7 +56,7 @@ export const themes = [
     medium: "bg-[#BED7DC]",
     light: "bg-[#c1d5d9]",
     clear_bg: "bg-[#f2f9fa]",
-    border: "border-[#B3C7CF]",
+    border: "border-[#02090a]",
     hourglass: "#B3C7CF",
   },
   {
@@ -68,7 +68,7 @@ export const themes = [
     medium: "bg-[#3e5d89]",
     light: "bg-[#465f82]",
     clear_bg: "bg-[#cad5e6]",
-    border: "border-[#3e5d89]",
+    border: "border-white",
     hourglass: "#243957",
   },
   {
@@ -80,7 +80,7 @@ export const themes = [
     medium: "bg-[#151f38]",
     light: "bg-[#242e4a]",
     clear_bg: "bg-slate-300",
-    border: "border-[#151f38]",
+    border: "border-white",
     hourglass: "#151f38",
   },
   {
@@ -92,7 +92,7 @@ export const themes = [
     medium: "bg-[#627e82]",
     light: "bg-[#708f91]",
     clear_bg: "bg-[#ced9db]",
-    border: "border-[#455d61]",
+    border: "border-white",
     hourglass: "#376343",
   },
   {
@@ -104,7 +104,7 @@ export const themes = [
     medium: "bg-[#5B8374]",
     light: "bg-[#87a89c]",
     clear_bg: "bg-[#e1f0ea]",
-    border: "border-[#193D3D]",
+    border: "border-white",
     hourglass: "#193D3D",
   },
   {
@@ -116,7 +116,7 @@ export const themes = [
     medium: "bg-[#3C3D37]",
     light: "bg-[#687564]",
     clear_bg: "bg-[#dcded5]",
-    border: "border-[#3C3D37]",
+    border: "border-white",
     hourglass: "#3C3D37",
   },
   {
@@ -128,7 +128,7 @@ export const themes = [
     medium: "bg-[#1c1919]",
     light: "bg-stone-800",
     clear_bg: "bg-stone-300",
-    border: "border-[#1c1919]",
+    border: "border-white",
     hourglass: "#1c1919",
   },
   {
@@ -140,7 +140,7 @@ export const themes = [
     medium: "bg-[#D2756B]",
     light: "bg-[#d18382]",
     clear_bg: "bg-[#f5ede9]",
-    border: "border-[#A75D5D]",
+    border: "border-[#f5ede9]",
     hourglass: "#A75D5D",
   },
   {
@@ -152,7 +152,7 @@ export const themes = [
     medium: "bg-[#F998B6]",
     light: "bg-[#F9C5D5]",
     clear_bg: "bg-[#ffedf2]",
-    border: "border-[#F1789F]",
+    border: "border-[#ffedf2]",
     hourglass: "#F1789F",
   },
   {
@@ -161,10 +161,10 @@ export const themes = [
     outer_text: "text-[#080114]",
     inner_text: "text-[#080114]",
     dark: "bg-[#ac94d6]",
-    medium: "bg-[#645BAA]",
+    medium: "bg-[#7f75c7]",
     light: "bg-[#BFACE0]",
     clear_bg: "bg-[#ece9f2]",
-    border: "border-[#645BAA]",
+    border: "border-[#ece9f2]",
     hourglass: "#645BAA",
   },
   {

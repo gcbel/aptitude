@@ -142,9 +142,9 @@ export default function Home() {
           <div className="button-outer pb-2">
             <Link
               to="/survey"
-              className={`${themes[theme].clear_bg} ${themes[theme].outer_text} button large-text`}
+              className={`${themes[theme].border} ${themes[theme].inner_text} outline-button large-text`}
             >
-              Get started <span className="font-bold not-italic"> →</span>
+              Get started
             </Link>
           </div>
         </div>
@@ -247,13 +247,13 @@ export default function Home() {
       <div id="additional-info">
         <Link
           to="/about"
-          className={`${themes[theme].clear_bg} ${themes[theme].outer_text} button subtitle`}
+          className={`${themes[theme].clear_bg} ${themes[theme].outer_text} border- outline-button subtitle`}
         >
           Learn more
         </Link>
         <Link
           to="/survey"
-          className={`${themes[theme].dark} ${themes[theme].inner_text} button subtitle`}
+          className={`border-${themes[theme].dark} ${themes[theme].outer_text} outline-button subtitle`}
         >
           Get started
         </Link>
