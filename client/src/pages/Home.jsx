@@ -247,13 +247,13 @@ export default function Home() {
       <div id="additional-info">
         <Link
           to="/about"
-          className={`${themes[theme].clear_bg} ${themes[theme].outer_text} border- outline-button subtitle`}
+          className={`${themes[theme].border} ${themes[theme].clear_bg} ${themes[theme].outer_text} outline-button subtitle`}
         >
           Learn more
         </Link>
         <Link
           to="/survey"
-          className={`border-${themes[theme].dark} ${themes[theme].outer_text} outline-button subtitle`}
+          className={`${themes[theme].border} ${themes[theme].outer_text} outline-button subtitle`}
         >
           Get started
         </Link>

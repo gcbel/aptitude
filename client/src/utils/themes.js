@@ -176,7 +176,7 @@ export const themes = [
     medium: "bg-[#7776B3]",
     light: "bg-[#9B86BD]",
     clear_bg: "bg-[#f5ebf7]",
-    border: "border-[#7776B3]",
+    border: "border-[#f5ebf7]",
     hourglass: "#7776B3",
   },
 ];
