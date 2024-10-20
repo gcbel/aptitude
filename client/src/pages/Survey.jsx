@@ -26,29 +26,29 @@ export default function Survey() {
   return (
     <div className="montserrat" id="survey-page">
       {/* QUESTION TRACKER */}
-      <div className="indicators">
+      <div className="survey-indicators">
         <div
-          className={`indicator-circle ${
+          className={`survey-indicator-circle ${
             question === 0 ? "bg-stone-400" : "bg-stone-300"
           }`}
         />
         <div
-          className={`indicator-circle ${
+          className={`survey-indicator-circle ${
             question === 1 ? "bg-stone-400" : "bg-stone-300"
           }`}
         />
         <div
-          className={`indicator-circle ${
+          className={`survey-indicator-circle ${
             question === 2 ? "bg-stone-400" : "bg-stone-300"
           }`}
         />
         <div
-          className={`indicator-circle ${
+          className={`survey-indicator-circle ${
             question === 3 ? "bg-stone-400" : "bg-stone-300"
           }`}
         />
         <div
-          className={`indicator-circle ${
+          className={`survey-indicator-circle ${
             question === 4 ? "bg-stone-400" : "bg-stone-300"
           }`}
         />

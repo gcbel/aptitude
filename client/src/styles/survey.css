@@ -22,12 +22,12 @@
     @apply text-center;
   }
 
-  .indicators {
+  .survey-indicators {
     @apply flex gap-2 pt-16 mb-5;
   }
 
-  .indicator-circle {
-    @apply w-[32px] h-[24px] transition-colors duration-200;
+  .survey-indicator-circle {
+    @apply w-[18px] h-[18px] transition-colors duration-200;
     border-radius: 50%;
   }
 
