@@ -33,6 +33,10 @@
     @apply text-lg flex flex-row md:gap-8;
   }
 
+  #main-nav-links a {
+    @apply hover:text-stone-500;
+  }
+
   #profile-nav-links {
     @apply text-lg flex flex-row md:gap-2;
   }
