@@ -33,7 +33,10 @@
     @apply text-lg flex flex-row md:gap-8;
   }
 
-  #main-nav-links a {
+  #profile-dropdown a,
+  #profile-dropdown p,
+  #main-nav-links a,
+  #profile-nav-links  {
     @apply hover:text-stone-500;
   }
 
