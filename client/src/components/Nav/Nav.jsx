@@ -35,6 +35,8 @@ export default function Nav() {
       {/* FULL SIZE NAV */}
       <div id="main-nav">
         <div>
+          {/* when logged in, always show Username and
+          chevron for toggling profile menu (show/hide)... */}
           {Auth.isLoggedIn() && (
             <div id="profile-nav-links">
               <Link to="/profile">{Auth.getUser().username}</Link>
@@ -46,6 +48,7 @@ export default function Nav() {
               </p>
             </div>
           )}
+          {/* ...and expand profile menu only when open  */}
           {Auth.isLoggedIn() && openProfileNav && (
             <div id="profile-dropdown">
               <Link
@@ -70,6 +73,8 @@ export default function Nav() {
               </p>
             </div>
           )}
+
+          {/* when NOT logged in */}
           {!Auth.isLoggedIn() && (
             <div id="main-nav-links">
               <Link to="/about" onClick={() => setProfileNav((prev) => !prev)}>

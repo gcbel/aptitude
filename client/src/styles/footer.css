@@ -20,4 +20,8 @@
   .footer-links {
     @apply flex flex-row flex-wrap justify-center items-center gap-3 md:gap-6;
   }
+
+  .footer-links a {
+    @apply hover:text-stone-500;
+  }
 }
